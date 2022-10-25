@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<record model="ir.ui.view" id="view_id_approbation_engagement_form">
+    <field name="name">view.appro_engagement.form</field>
+    <field name="model">budg_approbation_engagement</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">
+        <form string="Engagement" create = "false" edit = "false">
+            <header>
+                   <button string="Approuver" name="action_eng_approuver" type="object" class="oe_highlight"/>
+                   <button string="Rejeter" name="action_eng_rejeter" type="object" class="oe_highlight"/>
+            </header>
+        <sheet>
+            <group>
+                <group string="Engagement">
+                    <field name="no_eng" style = "width:50%"/>
+                    <field name="type_engagement_id" style = "width:75%"/>
+                    <field name="cd_type_depense" style = "width:75%" options="{'no_create': True}"/>
+                    <field name="cd_nature_depense" style = "width:75%" options="{'no_create': True}" domain = "[('cd_type_depense' ,'=', cd_type_depense)]"/>
+                </group>
+                <group string="Imputation">
+                    <field name="cd_titre_id" style = "width:100%"/>
+                    <field name="cd_section_id" style = "width:100%" domain = "[('cd_titre_id' ,'=', cd_titre_id)]" options="{'no_create': True}"/>
+                    <field name="cd_chapitre_id" style = "width:100%" domain = "[('cd_section_id', '=', cd_section_id)]" options="{'no_create': True}"/>
+                    <field name="cd_article_id" style = "width:100%" domain = "[('cd_chapitre_id', '=', cd_chapitre_id)]" options="{'no_create': True}"/>
+                    <field name="cd_paragraphe_id" style = "width:100%" domain = "[('cd_article_id', '=', cd_article_id)]" options="{'no_create': True}"/>
+                    <field name="cd_rubrique_id" style = "width:100%" options="{'no_create': True}"/>
+                </group>
+                <group>
+                    <field name="credit_dispo" style = "width:50%" options="{'no_create': True}"/>
+                    <field name="mnt_eng" style = "width:50%" options="{'no_create': True}"/>
+                    <field name="mod_reg_id" style = "width:50%" options="{'no_create': True}"/>
+                </group>
+                <group string="Bénéficiaire">
+                    <field name="type_beneficiaire_id" style = "width:75%" options="{'no_create': True}"/>
+                    <field name="no_beneficiaire" style = "width:75%"/>
+                    <field name="ref_mp" style = "width:75%"/>
+                </group>
+                    <label for="lb_obj"/><field name="lb_obj"/>
+            </group>
+        </sheet>    
+        </form>
+    </field>
+</record>
+
+<record model="ir.ui.view" id="view_id_approbation_engagement_tree">
+    <field name="name">view.appro_engagement.tree</field>
+    <field name="model">budg_approbation_engagement</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">
+        <tree string="Engagement" create = "false" edit = "false">
+            <field name="no_eng"/>  
+            <field name="type_engagement_id"/>
+            <field name="cd_type_depense"/>
+            <field name="cd_nature_depense"/>   
+            <field name="mnt_eng"/>
+            <field name="et_doss" />
+        </tree>
+    </field>
+</record>
+
+
+<record id="act_approbation_engagement" model="ir.actions.act_window">
+    <field name="name">Approbation engagement</field>
+    <field name="res_model">budg_approbation_engagement</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="view_mode">tree,form</field>
+    <field name="view_id" ref="view_id_approbation_engagement_tree">
+            
+        </field>
+</record>
+
+
+
+<menuitem id="menu_approbation_engagement" parent="menu_gestion_engagement" sequence="3" name="Approbation engagement" 
+    action="act_approbation_engagement"/>
+
+</odoo>

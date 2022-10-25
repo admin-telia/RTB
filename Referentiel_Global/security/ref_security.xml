@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<record model="ir.module.category" id="module_ref">
+  <field name="name">REFERENTIEL GLOBAL</field>
+  <field name="description">User access level for this module</field>
+</record>
+ 
+  
+	
+	<record id="group_agent" model="res.groups">
+        <field name="name">AGENT</field>
+        <field name="category_id" ref="Referentiel_Global.module_ref"/>    
+    </record>
+	
+	<record id="group_admin" model="res.groups">
+        <field name="name">ADMINISTRATEUR GENERAL</field>
+        <field name="category_id" ref="Referentiel_Global.module_ref"/>    
+    </record>
+	
+	
+	<record id="group_admin_epe" model="res.groups">
+        <field name="name">ADMINISTRATEUR EPE</field>
+        <field name="category_id" ref="Referentiel_Global.module_ref"/>    
+    </record>
+
+
+</odoo>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+          
+        <!-- Donnees de bases continents -->
+       
+        <record id="AFRI" model="ref_continent">
+            <field name="name">AFRIQUE</field>
+            <field name="libcourt">AFRIQUE</field>
+            <field name="code_continent">AFRI</field>
+        </record>
+        
+        <record id="amq" model="ref_continent">
+            <field name="name">AMERIQUE</field>
+            <field name="libcourt">AMERIQUE</field>
+            <field name="code_continent">AMER</field>
+        </record>
+        
+        <record id="EU" model="ref_continent">
+            <field name="name">EUROPE</field>
+            <field name="libcourt">EUROPE</field>
+            <field name="code_continent">EU</field>
+        </record>
+        
+        <record id="AS" model="ref_continent">
+            <field name="name">ASIE</field>
+            <field name="libcourt">ASIE</field>
+            <field name="code_continent">AS</field>
+        </record>
+        
+        <record id="OC" model="ref_continent">
+            <field name="name">OCEANIE</field>
+            <field name="libcourt">OCEANIE</field>
+            <field name="code_continent">OC</field>
+        </record>
+        
+
+    </data>
+</odoo>

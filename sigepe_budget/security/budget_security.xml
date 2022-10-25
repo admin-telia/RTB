@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+ 
+	 <record id="sigepe_budget_category" model="ir.module.category">
+        <field name="name">SIGEPE BUDGET</field>
+    </record>
+	
+	<record id="sigepe_budget_ac" model="res.groups">
+        <field name="name">DFC/AGENT COMPTABLE</field>
+        <field name="category_id" ref="sigepe_budget_category"/>    
+    </record>
+	
+	<record id="sigepe_budget_agent" model="res.groups">
+        <field name="name">ACCES BUDGET</field>
+        <field name="category_id" ref="sigepe_budget_category"/>    
+    </record>
+	
+	 <record id="sigepe_budget_consultation" model="res.groups">
+        <field name="name">CONSULTATIONS</field>
+        <field name="category_id" ref="sigepe_budget_category"/>    
+    </record>
+	
+	<record id="agent_budget_depense" model="res.groups">
+        <field name="name">SERVICE-DEPENSE</field>
+		<field name="implied_ids" eval="[(4,ref('sigepe_budget.sigepe_budget_consultation')),
+		(4,ref('sigepe_budget.sigepe_budget_agent'))]"/>
+        <field name="category_id" ref="sigepe_budget_category"/>    
+    </record>
+	
+	<record id="agent_budget_recette" model="res.groups">
+        <field name="name">SERVICE-RECETTE</field>
+		<field name="implied_ids" eval="[(4,ref('sigepe_budget.sigepe_budget_consultation')),
+		(4,ref('sigepe_budget.sigepe_budget_agent'))]"/>
+        <field name="category_id" ref="sigepe_budget_category"/>    
+    </record>
+	
+	<record id="sigepe_budget_chef_recette" model="res.groups">
+        <field name="name">CHEF SERVICE-RECETTE</field>
+		<field name="implied_ids" eval="[(4,ref('sigepe_budget.agent_budget_recette'))]"/>
+        <field name="category_id" ref="sigepe_budget_category"/>    
+    </record>
+	
+	<record id="sigepe_budget_chef_depenses" model="res.groups">
+        <field name="name">CHEF SERVICE-DEPENSE</field>
+		<field name="implied_ids" eval="[(4,ref('sigepe_budget.agent_budget_depense'))]"/>
+        <field name="category_id" ref="sigepe_budget_category"/>    
+    </record>
+    
+    <record id="sigepe_budget_user" model="res.groups">
+        <field name="name">CHEF BUDGET</field>
+		<field name="implied_ids" eval="[(4, ref('sigepe_budget.sigepe_budget_chef_recette')),
+		(4,ref('sigepe_budget.sigepe_budget_chef_depenses'))]"/>
+        <field name="category_id" ref="sigepe_budget_category"/>    
+    </record>
+	
+	<record id="sigepe_budget_manager_daf" model="res.groups">
+        <field name="name">DAF/DFC</field>
+		<field name="implied_ids" eval="[(4, ref('sigepe_budget.sigepe_budget_user'))]"/>
+        <field name="category_id" ref="sigepe_budget_category"/>    
+    </record>
+	
+	<record id="sigepe_budget_manager_dcmcef" model="res.groups">
+        <field name="name">DCMEF / CG</field>
+		<field name="implied_ids" eval="[(4,ref('sigepe_budget.sigepe_budget_agent')),(4,ref('sigepe_budget.sigepe_budget_consultation'))]"/>
+        <field name="category_id" ref="sigepe_budget_category"/>    
+    </record>
+
+</odoo>

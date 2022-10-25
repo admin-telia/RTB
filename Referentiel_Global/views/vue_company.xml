@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<!--Definition de la vue-->
+<record model="ir.ui.view" id="res_bank_form">
+	<field name="name">res.company.form</field>
+	<field name="model">res.company</field>
+    <field name="inherit_id" ref="base.view_company_form"/>
+	<field name="arch" type="xml">	
+        <notebook>
+                  <page string = "Détails Structure">
+		      <group col = "6" string="Détails Structure">
+				<field name="ref_type_struct_id"/>
+				<field name="ref_cat_struct_id" />
+				<field name="ref_localite_id"/>
+				<field name="code_struct"/>	
+		      </group>		   
+		</page>
+        </notebook>
+	<xpath expr="//field[@name='nomenclature_id']" position="attributes">
+	     <attribute name = "invisible">True</attribute>
+	</xpath>
+	</field>
+</record>
+
+<!-- Action Company -->
+<record model="ir.actions.act_window" id="act_list_company">
+		<field name="name">Structure</field>
+		<field name="res_model">res.company</field>
+		<field name="view_mode">tree,form</field>
+</record>
+
+<!--Definition du menu-->
+<menuitem id="main_menu" name ="Reférentiel Global" sequence="1"/>
+<menuitem id="main_menu_financ" name ="Données Financières" sequence="40" action="" parent="main_menu"/>
+<menuitem id="main_menu_banque" name ="Banque" sequence="41" action="act_list_banque" parent="main_menu_financ"/>
+
+
+	
+</odoo>
+
+
+

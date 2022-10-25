@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+    
+    <record id="EN" model="compta_data">
+            <field name="cd_data">E</field>
+            <field name="type_operation">ENCAISSEMENT</field>          
+        </record>
+        
+     <record id="DE" model="compta_data">
+            <field name="cd_data">D</field>
+            <field name="type_operation">DECAISSEMENT</field>          
+        </record>
+        
+        
+       <record id="JCA" model="compta_type_journal">
+       	<field name="type_journal">JC</field>
+            <field name="lb_court">Journal de caisse</field>
+            <field name="lb_long">Journal de caisse</field>          
+        </record>
+    
+    	<record id="JCB" model="compta_type_journal">
+       	<field name="type_journal">JB</field>
+            <field name="lb_court">Journal de banque</field>
+            <field name="lb_long">Journal de banque</field>          
+        </record>
+        
+        <record id="JCR" model="compta_type_journal">
+       	<field name="type_journal">JR</field>
+            <field name="lb_court">Journal de recettes</field>
+            <field name="lb_long">Journal de recettes</field>          
+        </record>
+        
+        <record id="JO" model="compta_type_journal">
+       	<field name="type_journal">JO</field>
+            <field name="lb_court">Journal des opérations diverses</field>
+            <field name="lb_long">Journal des opérations diverses</field>          
+        </record>
+    
+    	<record id="JD" model="compta_type_journal">
+       	<field name="type_journal">JD</field>
+            <field name="lb_court">Journal des dépenses</field>
+            <field name="lb_long">Journal des dépenses</field>          
+        </record>
+        
+        
+        <record id="TQ" model="compta_type_quittance">
+       	<field name="ty_quittance">Q</field>
+            <field name="lb_court"> Quittance en numéraires </field>
+            <field name="lb_long">Quittance en numéraires</field>          
+        </record>
+        
+        <record id="TR" model="compta_type_quittance">
+       	<field name="ty_quittance">R</field>
+            <field name="lb_court">Quittance d'ordre</field>
+            <field name="lb_long">Quittance d'ordre</field>          
+        </record>
+        
+        <record id="TC" model="compta_type_quittance">
+       	<field name="ty_quittance">C</field>
+            <field name="lb_court">Quittance par chèque</field>
+            <field name="lb_long">Quittance par chèque</field>          
+        </record>
+        
+        <record id="TP" model="compta_type_billetage">
+       	<field name="type_billetage">1</field>
+            <field name="lb_court">Pièces</field>
+            <field name="lb_long">Pièces</field>          
+        </record>
+        
+        <record id="TB" model="compta_type_billetage">
+       	<field name="type_billetage">2</field>
+            <field name="lb_court">Billets</field>
+            <field name="lb_long">Billets</field>          
+        </record>
+        
+        <record id="period1" model="compta_type_periode">
+       	<field name="ty_periode">01</field>
+            <field name="lb_court">Hebdomadaire</field>
+            <field name="lb_long">Hebdomadaire</field>          
+        </record>
+        
+        <record id="period2" model="compta_type_periode">
+       	<field name="ty_periode">02</field>
+            <field name="lb_court">Décadaire</field>
+            <field name="lb_long">Décadaire</field>          
+        </record>
+        
+        <record id="period3" model="compta_type_periode">
+       	<field name="ty_periode">03</field>
+            <field name="lb_court">Mensuel</field>
+            <field name="lb_long">Mensuel</field>          
+        </record>
+        
+        
+        <record id="period4" model="compta_type_periode">
+       	<field name="ty_periode">04</field>
+            <field name="lb_court">Bimensuel</field>
+            <field name="lb_long">Bimensuel</field>          
+        </record>
+        
+        <record id="period5" model="compta_type_periode">
+       	<field name="ty_periode">05</field>
+            <field name="lb_court">Trimestre</field>
+            <field name="lb_long">Trimestriel</field>          
+        </record>
+        
+        <record id="period6" model="compta_type_periode">
+       	<field name="ty_periode">06</field>
+            <field name="lb_court">Semestre</field>
+            <field name="lb_long">Semestriel</field>          
+        </record>
+        
+        <record id="period7" model="compta_type_periode">
+       	<field name="ty_periode">07</field>
+            <field name="lb_court">Annuel</field>
+            <field name="lb_long">Annuel</field>          
+        </record>
+        
+        <record id="mt1" model="compta_montant">
+            <field name="montant">10000</field>
+        </record>
+        
+        <record id="mt2" model="compta_montant">
+            <field name="montant">5000</field>
+        </record>
+        
+        <record id="mt3" model="compta_montant">
+            <field name="montant">2000</field>
+        </record>
+        
+        <record id="mt4" model="compta_montant">
+            <field name="montant">1000</field>
+        </record>
+        
+        <record id="mt5" model="compta_montant">
+            <field name="montant">500</field>
+        </record>
+        
+        <record id="mt6" model="compta_montant">
+            <field name="montant">500</field>
+        </record>
+        
+        <record id="mt7" model="compta_montant">
+            <field name="montant">250</field>
+        </record>
+        
+        <record id="mt8" model="compta_montant">
+            <field name="montant">200</field>
+        </record>
+        
+        <record id="mt9" model="compta_montant">
+            <field name="montant">100</field>
+        </record>
+        
+        <record id="mt10" model="compta_montant">
+            <field name="montant">50</field>
+        </record>
+        
+        <record id="mt11" model="compta_montant">
+            <field name="montant">25</field>
+        </record>
+        
+        <record id="mt12" model="compta_montant">
+            <field name="montant">10</field>
+        </record>
+        
+        <record id="mt13" model="compta_montant">
+            <field name="montant">5</field>
+        </record>
+        
+        <record id="mt14" model="compta_montant">
+            <field name="montant">1</field>
+        </record>
+        
+        <record id="1" model="compta_type_op_banque">
+            <field name="type_opbq">01</field>
+            <field name="lb_court">DEPENSES INVEST</field>
+			<field name="lb_long">DEPENSES D'INVESTISSEMENT</field>
+        </record>
+		
+		<record id="2" model="compta_type_op_banque">
+            <field name="type_opbq">02</field>
+            <field name="lb_court">DEPENSES FONCT</field>
+			<field name="lb_long">DEPENSES DE FONCTIONNEMENTS</field>
+        </record>
+		
+		<record id="3" model="compta_type_op_banque">
+            <field name="type_opbq">03</field>
+            <field name="lb_court">DEPENSES PERSONNELS</field>
+			<field name="lb_long">DEPENSES DE PERSONNELS</field>
+        </record>
+		
+		<record id="4" model="compta_type_op_banque">
+            <field name="type_opbq">04</field>
+            <field name="lb_court">DEPENSES CLASS</field>
+			<field name="lb_long">DEPENSES A CLASSER ET A REGULARISER</field>
+        </record>
+		
+		<record id="5" model="compta_type_op_banque">
+            <field name="type_opbq">05</field>
+            <field name="lb_court">VIREMENT BANCAIRE</field>
+			<field name="lb_long">VIREMENT BANCAIRE</field>
+        </record>
+		
+		<record id="6" model="compta_type_op_banque">
+            <field name="type_opbq">06</field>
+            <field name="lb_court">REJET VIREMENET BANQ</field>
+			<field name="lb_long">REJET VIREMENET BANCAIRE</field>
+        </record>
+		
+		<record id="7" model="compta_type_op_banque">
+            <field name="type_opbq">07</field>
+            <field name="lb_court">CH PORTEFEUILLE</field>
+			<field name="lb_long">MISE EN PORTEFEUILLE CHEQUES REÇUS GUICHET</field>
+        </record>
+		
+		<record id="8" model="compta_type_op_banque">
+            <field name="type_opbq">08</field>
+            <field name="lb_court">TR PORTEFEUILLE</field>
+			<field name="lb_long">MISE EN PORTEFEUILLE TRAITES REÇUS GUICHET</field>
+        </record>
+		
+		<record id="9" model="compta_type_op_banque">
+            <field name="type_opbq">09</field>
+            <field name="lb_court">CH - CCP ENV ENCAISSEMENT</field>
+			<field name="lb_long">ENVOI A L'ENCAISSEMENT CCP</field>
+        </record>
+		
+		<record id="10" model="compta_type_op_banque">
+            <field name="type_opbq">10</field>
+            <field name="lb_court">CH ENVOI REMISE</field>
+			<field name="lb_long">ENVOI REMISE CHEQUES</field>
+        </record>
+		
+		<record id="11" model="compta_type_op_banque">
+            <field name="type_opbq">11</field>
+            <field name="lb_court">TR ENVOI REMISE</field>
+			<field name="lb_long">ENVOI REMISE TRAITES</field>
+        </record>
+		
+		<record id="12" model="compta_type_op_banque">
+            <field name="type_opbq">12</field>
+            <field name="lb_court">ENVOI TRSF TR</field>
+			<field name="lb_long">ENVOIE TRANSFERT TRAITE</field>
+        </record>
+		
+		<record id="13" model="compta_type_op_banque">
+            <field name="type_opbq">13</field>
+            <field name="lb_court">COUV TRSF TRAITE</field>
+			<field name="lb_long">RECEPTION TRANSFERT TRAITE</field>
+        </record>
+		
+		<record id="14" model="compta_type_op_banque">
+            <field name="type_opbq">14</field>
+            <field name="lb_court">MI PENSION</field>
+			<field name="lb_long">MISE EN PENSION</field>
+        </record>
+		
+		<record id="15" model="compta_type_op_banque">
+            <field name="type_opbq">15</field>
+            <field name="lb_court">MI ESCOMPTE</field>
+			<field name="lb_long">MISE A L'ESCOMPTE</field>
+        </record>
+		
+		<record id="16" model="compta_type_op_banque">
+            <field name="type_opbq">16</field>
+            <field name="lb_court">ENCAISS PENSION</field>
+			<field name="lb_long">ENCAISSEMENT PENSION</field>
+        </record>
+		
+		<record id="17" model="compta_type_op_banque">
+            <field name="type_opbq">17</field>
+            <field name="lb_court">REMBOURS PR PENSION</field>
+			<field name="lb_long">REMBOURSEMENT PENSION PRINCIPE</field>
+        </record>
+		
+		<record id="18" model="compta_type_op_banque">
+            <field name="type_opbq">18</field>
+            <field name="lb_court">RETOUR PENSION</field>
+			<field name="lb_long">RETOUR DE PENSION</field>
+        </record>
+		
+		<record id="19" model="compta_type_op_banque">
+            <field name="type_opbq">19</field>
+            <field name="lb_court">CH REJET REMISE</field>
+			<field name="lb_long">REJET REMISE CHEQUE</field>
+        </record>
+		
+		<record id="20" model="compta_type_op_banque">
+            <field name="type_opbq">20</field>
+            <field name="lb_court">REGUL CH REJETE</field>
+			<field name="lb_long">REGULARISATION DE CHEQUE REJETE</field>
+        </record>
+		
+		<record id="21" model="compta_type_op_banque">
+            <field name="type_opbq">21</field>
+            <field name="lb_court">CH CCP REJETE</field>
+			<field name="lb_long">CHEQUES CCP REJETES</field>
+        </record>
+		
+		<record id="22" model="compta_type_op_banque">
+            <field name="type_opbq">22</field>
+            <field name="lb_court">CH MA ENCAISS</field>
+			<field name="lb_long">MISE A L'ENCAISSEMENT CHEQUES</field>
+        </record>
+		
+		<record id="23" model="compta_type_op_banque">
+            <field name="type_opbq">23</field>
+            <field name="lb_court">TR MA ENCAISS</field>
+			<field name="lb_long">MISE A L'ENCAISSEMENT TRAITES</field>
+        </record>
+		
+		<record id="24" model="compta_type_op_banque">
+            <field name="type_opbq">24</field>
+            <field name="lb_court">CH REJ RETOUR CENTR</field>
+			<field name="lb_long">RETOUR PAR CENTRAL/CH REJETES</field>
+        </record>
+		
+		<record id="25" model="compta_type_op_banque">
+            <field name="type_opbq">25</field>
+            <field name="lb_court">TR REJ RETOUR CENTR</field>
+			<field name="lb_long">RETOUR PAR CENTRAL/TR REJETEES</field>
+        </record>
+		
+		<record id="26" model="compta_type_op_banque">
+            <field name="type_opbq">26</field>
+            <field name="lb_court">CH HORS PLACES REJETES</field>
+			<field name="lb_long">CHEQUES HORS PLACE REJETES</field>
+        </record>
+		
+		<record id="27" model="compta_type_op_banque">
+            <field name="type_opbq">27</field>
+            <field name="lb_court">ENVOI ENC CH DEPIAC</field>
+			<field name="lb_long">ENVOI A L'ENCAISSEMENT AUTRES</field>
+        </record>
+		
+		<record id="28" model="compta_type_op_banque">
+            <field name="type_opbq">28</field>
+            <field name="lb_court">COUV TRSF CH</field>
+			<field name="lb_long">RECEPTION TRANSFERT CHEQUE</field>
+        </record>
+		
+		<record id="29" model="compta_type_op_banque">
+            <field name="type_opbq">29</field>
+            <field name="lb_court">REMBOURS INT PERSIO</field>
+			<field name="lb_long">REMBOURSEMENT PENSION INTERET</field>
+        </record>
+		
+		<record id="30" model="compta_type_op_banque">
+            <field name="type_opbq">30</field>
+            <field name="lb_court">ENCAISS PENSION</field>
+			<field name="lb_long">ENCAISSEMENT DE PENSION</field>
+        </record>
+		
+		<record id="31" model="compta_type_op_banque">
+            <field name="type_opbq">31</field>
+            <field name="lb_court">TR REJET REMISE</field>
+			<field name="lb_long">REJET REMISE TRAITE</field>
+        </record>
+		
+		<record id="32" model="compta_type_op_banque">
+            <field name="type_opbq">32</field>
+            <field name="lb_court">REGU TR REJETES</field>
+			<field name="lb_long">REGULARISATION DE TR REJETE</field>
+        </record>
+		
+		<record id="33" model="compta_type_op_banque">
+            <field name="type_opbq">33</field>
+            <field name="lb_court">VIREMENT BANQUE</field>
+			<field name="lb_long">VIREMENT BANQUE</field>
+        </record>
+		
+		<record id="34" model="compta_type_op_banque">
+            <field name="type_opbq">34</field>
+            <field name="lb_court">DEPENSE D'INVESTISS</field>
+			<field name="lb_long">DEPENSES D'INVESTISSEMENTS</field>
+        </record>
+		
+		<record id="35" model="compta_type_op_banque">
+            <field name="type_opbq">35</field>
+            <field name="lb_court">FRAIS DE TENUE CPTE</field>
+			<field name="lb_long">FRAIS DE TENUE DE COMPTE</field>
+        </record>
+		
+		<record id="36" model="compta_type_op_banque">
+            <field name="type_opbq">36</field>
+            <field name="lb_court">FRAIS DE TELEX</field>
+			<field name="lb_long">FRAIS DE TELEX</field>
+        </record>
+		
+		<record id="37" model="compta_type_op_banque">
+            <field name="type_opbq">37</field>
+            <field name="lb_court">REJET VIREMENT</field>
+			<field name="lb_long">REJET VIREMENT</field>
+        </record>
+		
+		<record id="38" model="compta_type_op_banque">
+            <field name="type_opbq">38</field>
+            <field name="lb_court">SALAIRES FONCTIONNAIRE</field>
+			<field name="lb_long">SALAIRES FONCTIONNAIRES</field>
+        </record>
+		
+		<record id="39" model="compta_type_op_banque">
+            <field name="type_opbq">39</field>
+            <field name="lb_court">CH PORTEFEUILLE VI</field>
+			<field name="lb_long">MISE EN PORTEFEUILLE CH VIR INTERNE</field>
+        </record>
+		
+		<record id="40" model="compta_type_op_banque">
+            <field name="type_opbq">40</field>
+            <field name="lb_court">TR PORTEFEUILLE VI</field>
+			<field name="lb_long">MISE EN PORTEFEUILLE TR VIR INTERNE</field>
+        </record>
+		
+		<record id="41" model="compta_type_op_banque">
+            <field name="type_opbq">41</field>
+            <field name="lb_court">CH HORS REMISE</field>
+			<field name="lb_long">CHEQUE NON ADMISE A LA REMISE</field>
+        </record>
+		
+		<record id="42" model="compta_type_op_banque">
+            <field name="type_opbq">42</field>
+            <field name="lb_court">CHDEPOT</field>
+			<field name="lb_long">CHDEPOT</field>
+        </record>
+		<record id="43" model="compta_type_op_banque">
+            <field name="type_opbq">43</field>
+            <field name="lb_court">CHDEPOT TRSF</field>
+			<field name="lb_long">CHDEPOT A TRANSFERER</field>
+        </record>
+		
+		<record id="44" model="compta_type_op_banque">
+            <field name="type_opbq">44</field>
+            <field name="lb_court">TR HORS REMISE</field>
+			<field name="lb_long">TRAITE NON ADMISE A LA COMPENSE</field>
+        </record>
+		
+		<record id="45" model="compta_type_op_banque">
+            <field name="type_opbq">45</field>
+            <field name="lb_court">AUTRE</field>
+			<field name="lb_long">AUTRE</field>
+        </record>
+		
+		<record id="46" model="compta_type_op_banque">
+            <field name="type_opbq">46</field>
+            <field name="lb_court">REJET CH HORS REMISE</field>
+			<field name="lb_long">REJET CHQ HORS COMPENSASSION</field>
+        </record>
+		
+		<record id="47" model="compta_type_op_banque">
+            <field name="type_opbq">47</field>
+            <field name="lb_court">ENCAISS CH DEPLA CCP</field>
+			<field name="lb_long">ENCAISSENT CHQS DEPLACES PAR CHQ DEPLAC</field>
+        </record>
+		
+		<record id="48" model="compta_type_op_banque">
+            <field name="type_opbq">48</field>
+            <field name="lb_court">REJET TR HORS REMISE</field>
+			<field name="lb_long">REJET TR HORS COMPENSATION</field>
+        </record>
+		
+		<record id="49" model="compta_type_op_banque">
+            <field name="type_opbq">49</field>
+            <field name="lb_court">CH PORTEFEUILLE PERS</field>
+			<field name="lb_long">MISE EN PORTEFEUILLE CHEQUES PERSONNEL</field>
+        </record>
+		
+		<record id="50" model="compta_type_op_banque">
+            <field name="type_opbq">50</field>
+            <field name="lb_court">RETOUR ENC CH DEPLA</field>
+			<field name="lb_long">RETOUR ENCAISSEMENT CHQ AVT DELAI</field>
+        </record>
+		
+		<record id="51" model="compta_type_op_banque">
+            <field name="type_opbq">51</field>
+            <field name="lb_court">ENVOI TRSF CH</field>
+			<field name="lb_long">ENVOI TRSFERT CHEQUE</field>
+        </record>
+		
+		<record id="52" model="compta_type_op_banque">
+            <field name="type_opbq">52</field>
+            <field name="lb_court">ENCAIS CH EN DEVISE</field>
+			<field name="lb_long">ENCAISSEMENT CHEQUE EN DEVISE</field>
+        </record>
+		
+		<record id="53" model="compta_type_op_banque">
+            <field name="type_opbq">53</field>
+            <field name="lb_court">CH DEVISE REJETE</field>
+			<field name="lb_long">CHEQUE EN DEVISE REJETE</field>
+        </record>
+		
+		<record id="54" model="compta_type_op_banque">
+            <field name="type_opbq">54</field>
+            <field name="lb_court">REUGU CH/T PAR RENVOI</field>
+			<field name="lb_long">REGULARISATION CH/T PAR RENVOI</field>
+        </record>
+		
+		
+		<record id="55" model="compta_type_op_banque">
+            <field name="type_opbq">55</field>
+            <field name="lb_court">ENCAISS CH EN PROVINC</field>
+			<field name="lb_long">ENCAISSEMENT DE CHEQUE BIB EN PROVINCE</field>
+        </record>
+        
+        
+        <record id="1" model="compta_type1_op_cpta">
+            <field name="type1_opcpta">BI1</field>
+            <field name="lb_court">DECAISSE - VIREMENT</field>
+			<field name="lb_long">DECAISSEMENT VIREMENT</field>
+        </record>
+		
+		<record id="2" model="compta_type1_op_cpta">
+            <field name="type1_opcpta">E04</field>
+            <field name="lb_court">SUBVENTION</field>
+			<field name="lb_long">ENCAISSEMENT SUBVENTION</field>
+        </record>
+
+		
+		<record id="3" model="compta_type1_op_cpta">
+            <field name="type1_opcpta">E03</field>
+            <field name="lb_court">ENCAIS PRESTAT SPECIALE</field>
+			<field name="lb_long">ENCAISSEMENT PRESTATION SPECIALE</field>
+        </record>
+	
+	
+		<record id="4" model="compta_type1_op_cpta">
+            <field name="type1_opcpta">E05</field>
+            <field name="lb_court">ENCAIS LOCATION</field>
+			<field name="lb_long">ENCAISSEMENT LOCATIONS</field>
+        </record>
+
+		
+		<record id="5" model="compta_type1_op_cpta">
+            <field name="type1_opcpta">E25</field>
+            <field name="lb_court">REC PRODUITS ACCESOIRES</field>
+			<field name="lb_long">ENCAISSEMENT PRODUITS ACCESOIRES</field>
+        </record>
+		
+		<record id="6" model="compta_type1_op_cpta">
+            <field name="type1_opcpta">D02</field>
+            <field name="lb_court">REMBOURSEMENT</field>
+			<field name="lb_long">DECAISSEMENT REMBOURSEMENT</field>
+        </record>
+		
+		<record id="7" model="compta_type1_op_cpta">
+            <field name="type1_opcpta">BR1</field>
+            <field name="lb_court">ENCAIS CHEQUES</field>
+			<field name="lb_long">ENCAISSEMENT CHEQUES/TRAITES REÇUS</field>
+        </record>
+		
+		<record id="8" model="compta_type1_op_cpta">
+            <field name="type1_opcpta">BR2</field>
+            <field name="lb_court">REMISE CHEQUES</field>
+			<field name="lb_long">REMISE CHEQUES/TRAITES REÇUS</field>
+        </record>
+		
+		<record id="9" model="compta_type1_op_cpta">
+            <field name="type1_opcpta">BR3</field>
+            <field name="lb_court">TRANSFERT CHEQUES</field>
+			<field name="lb_long">TRANSFERT CHEQUES/RAITES REÇUS</field>
+        </record>
+		
+		<record id="10" model="compta_type1_op_cpta">
+            <field name="type1_opcpta">BE1</field>
+            <field name="lb_court">DECAIS CHEQUES</field>
+			<field name="lb_long">DECAISSEMENT CHEQUES/TRANSFERT</field>
+        </record>
+		
+		<record id="11" model="compta_type1_op_cpta">
+            <field name="type1_opcpta">BR4</field>
+            <field name="lb_court">PENSION ESC</field>
+			<field name="lb_long">PENSION/ESCOMPTE TRAITES REÇUS</field>
+        </record>
+		
+		<record id="12" model="compta_type1_op_cpta">
+            <field name="type1_opcpta">BR9</field>
+            <field name="lb_court">REGUL REJET</field>
+			<field name="lb_long">REGULARISATION REJET CH/TR REÇUS</field>
+        </record>
+		
+		<record id="13" model="compta_type1_op_cpta">
+            <field name="type1_opcpta">D33</field>
+            <field name="lb_court">A CLASSER REGUL</field>
+			<field name="lb_long">DEPENSE A CLASSER ET A REGULARISER</field>
+        </record>
+		
+		<record id="14" model="compta_type1_op_cpta">
+            <field name="type1_opcpta">D55</field>
+            <field name="lb_court">OPERATIONS TRESORERIE</field>
+			<field name="lb_long">OPERATION DE TRESORERIE</field>
+        </record>
+		
+		<record id="15" model="compta_type1_op_cpta">
+            <field name="type1_opcpta">D00</field>
+            <field name="lb_court">OP DE TRESORERIE</field>
+			<field name="lb_long">OPERATION DE TRESORERIE</field>
+        </record>
+		
+		<record id="16" model="compta_type1_op_cpta">
+            <field name="type1_opcpta">D01</field>
+            <field name="lb_court">DEPENSE BUDGET</field>
+			<field name="lb_long">DECAISSEMENT DEPENSE BUDGETAIRE</field>
+        </record>
+		
+		<record id="17" model="compta_type1_op_cpta">
+            <field name="type1_opcpta">D02</field>
+            <field name="lb_court">AVANCE REGIES</field>
+			<field name="lb_long">DECAISSEMENT POUR AVANCE REGIES</field>
+        </record>
+		
+		<record id="18" model="compta_type1_op_cpta">
+            <field name="type1_opcpta">E30</field>
+            <field name="lb_court">APPROVIS CAISS</field>
+			<field name="lb_long">APPROVISIONNEMENT DE LA CAISSE</field>
+        </record>
+		
+		<record id="19" model="compta_type1_op_cpta">
+            <field name="type1_opcpta">E20</field>
+            <field name="lb_court">REC A CAISSER</field>
+			<field name="lb_long">RECETTE A CAISSER ET A REGULARISER</field>
+        </record>
+		
+		<record id="20" model="compta_type1_op_cpta">
+            <field name="type1_opcpta">E00</field>
+            <field name="lb_court">RECETTE BUDGET</field>
+			<field name="lb_long">ENCAISSEMENT RECETTE BUDGETAIRE</field>
+        </record>
+		
+		<record id="21" model="compta_type1_op_cpta">
+            <field name="type1_opcpta">E06</field>
+            <field name="lb_court">REVERSEMENT</field>
+			<field name="lb_long">ENCAISSEMENT REVERSEMENT </field>
+        </record>
+
+		
+		<record id="22" model="compta_type1_op_cpta">
+            <field name="type1_opcpta">D05</field>
+            <field name="lb_court">B ANNEXE</field>
+			<field name="lb_long">DECAISSEMENT BUDGETS ANNEXES</field>
+        </record>
+		
+		<record id="23" model="compta_type1_op_cpta">
+            <field name="type1_opcpta">D06</field>
+            <field name="lb_court">COMPTES SPECIAUX</field>
+			<field name="lb_long">DECAISSEMENT COMPTES SPECIAUX </field>
+        </record>
+
+		
+		<record id="24" model="compta_type1_op_cpta">
+            <field name="type1_opcpta">D07</field>
+            <field name="lb_court">FONDS DIVERS</field>
+			<field name="lb_long">DECAISSEMENT, FC FE, RET, GARANTE, CONSIGN </field>
+        </record>
+        
+	
+    
+    </data>
+</odoo>

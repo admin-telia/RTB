@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<!--Definition de la vue-->
+<!--<record model="ir.ui.view" id="res_bank_form">
+	<field name="name">res.partner.bank.form</field>
+	<field name="model">res.partner.bank</field>
+    <field name="inherit_id" ref="base.view_partner_bank_form"/>
+	<field name="arch" type="xml">	
+	<xpath expr="//field[@name='state']" position="attributes">
+	     <attribute name = "invisible">True</attribute>
+	</xpath>
+	</field>
+</record>-->
+
+<!-- Action Banque 
+<record model="ir.actions.act_window" id="act_list_banque">
+		<field name="name">Banque</field>
+		<field name="res_model">res.partner.bank</field>
+		<field name="view_mode">tree,form,kanban</field>
+</record>-->
+
+<!--Definition du menu
+<menuitem id="main_menu" name ="Reférentiel Global" sequence="1"/>
+
+<menuitem id="main_menu_financ" name ="Données Financières" sequence="40" action="" parent="main_menu"/>
+<menuitem id="main_menu_banque" name ="Banque" sequence="41" action="act_list_banque" parent="main_menu_financ"/>-->
+
+
+	
+</odoo>
+
+
+

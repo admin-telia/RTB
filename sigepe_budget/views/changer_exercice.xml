@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<record model="ir.ui.view" id="changerexercice_view_form">
+        <field name="name">changerexercice.view.form</field>
+        <field name="model">budg_changer_exercice</field>
+        <field name="arch" type="xml">
+            <form string="Type accompte" create="false" edit="false">
+                <sheet>
+                    
+                     <field name="x_exercice" style = "width:10%" options="{'no_create': True}" />
+               
+                </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record id="act_exercice" model="ir.actions.act_window">
+    <field name="name">Changer exercice</field>
+    <field name="res_model">budg_changer_exercice</field>
+    <field name="view_mode">form</field>
+</record>
+
+</odoo>

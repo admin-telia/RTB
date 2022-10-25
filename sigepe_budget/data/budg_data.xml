@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+    
+   <record id="1" model="budg_typeaccompte">
+        <field name="cd_type_accompte">AU</field>
+        <field name="name">ACCOMPTE UNIQUE</field> 
+        <field name="lb_long">ACCOMPTE UNIQUE</field>          
+    </record>
+        
+    <record id="2" model="budg_typeaccompte">
+        <field name="cd_type_accompte">PA</field>
+        <field name="name">PREMIER ACCOMPTE</field> 
+        <field name="lb_long">PREMIER ACCOMPTE</field>          
+    </record> 
+    
+    <record id="3" model="budg_typeaccompte">
+        <field name="cd_type_accompte">AI</field>
+        <field name="name">ACCOMPTE INTERMEDIAIRE</field> 
+        <field name="lb_long">ACCOMPTE INTERMEDIAIRE</field>          
+    </record>
+        
+    <record id="4" model="budg_typeaccompte">
+        <field name="cd_type_accompte">DA</field>
+        <field name="name">DERNIER ACCOMPTE</field> 
+        <field name="lb_long">DERNIER ACCOMPTE</field>          
+    </record>
+    
+    <record id="5" model="budg_typeaccompte">
+        <field name="cd_type_accompte">AV</field>
+        <field name="name">AVANCE DE DEMARRAGE</field> 
+        <field name="lb_long">AVANCE DE DEMARRAGE</field>          
+    </record>
+    
+    <record id="1" model="budg_typebudget">
+        <field name="cd_type_budget">BI</field>
+        <field name="name">BUDGET INITIAL</field> 
+        <field name="lb_long">BUDGET INITIAL</field>          
+    </record>
+    
+    <record id="2" model="budg_typebudget">
+        <field name="cd_type_budget">BM</field>
+        <field name="name">BUDGET MODIFIE</field> 
+        <field name="lb_long">BUDGET MODIFIE</field>          
+    </record>
+    
+	<record id="1" model="budg_typedossierbudg">
+        <field name="code">ENG</field>
+        <field name="name">ENGAGEMENT</field> 
+        <field name="lb_long">ENGAGEMENT</field>          
+    </record>    
+
+	<record id="2" model="budg_typedossierbudg">
+        <field name="code">LIQ</field>
+        <field name="name">LIQ/ORD</field> 
+        <field name="lb_long">LIQUIDATION/ORDONNACEMENT</field>          
+    </record>
+    
+    
+    <record id="1" model="budg_typeprocedure">
+        <field name="name">PROCEDURE NORMALE</field> 
+        <field name="lb_long">PROCEDURE NORMALE</field>          
+    </record>
+    
+    <record id="2" model="budg_typeprocedure">
+        <field name="name">PROCEDURE SIMPLIFIEE</field> 
+        <field name="lb_long">PROCEDURE SIMPLIFIEE</field>          
+    </record>
+    
+    <record id="1" model="budg_typepiecebudget">
+        <field name="name">DECISION</field> 
+        <field name="lb_long">DECISION </field>          
+    </record>
+    
+    <record id="3" model="budg_typepiecebudget">
+        <field name="name">DELIBERATION</field> 
+        <field name="lb_long">DELIBERATION</field>          
+    </record>
+    
+    <record id="1" model="budg_typeordrepaiement">
+        <field name="name">PAIEMENT NORMAL</field> 
+        <field name="lb_long">PAIEMENT NORMAL </field>          
+    </record>
+    
+    <record id="2" model="budg_typeordrepaiement">
+        <field name="name">PAIEMENT ANTICIPE</field> 
+        <field name="lb_long">PAIEMENT ANTICIPE</field>          
+    </record>
+       
+    </data>
+</odoo>

@@ -1,0 +1,2388 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+
+
+<report id = "report_consults"
+    string = "Etat Détails Opérations"
+    model = "compta_consultation"
+    report_type = "qweb-html"
+    file = "sigepe_compta.report_consults"
+    name = "sigepe_compta.report_consults_view"
+    menu = "True"/>
+
+
+    <template id="report_consults_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                    <h3>ETAT DETAILLE DES OPERATIONS</h3>
+                        
+                        <head>
+                        
+                   <style type="text/css">
+                        
+                        th,
+                        td {
+                            border : 1px solid black;
+                        }
+
+                        table {
+                            border-collapse : collapse;
+                        }
+
+                        td {
+                            padding : 6px;
+                        }
+
+                        h3 {
+                            text-align : center;
+                            color : black;
+                            border : 2px solid;
+                            background-color: grey;
+                        }
+
+                        h1 {
+                            text-align : center;
+                        }
+                        
+                    </style>
+               </head>
+                        <table>
+                        <thead style ="border : 2px solid #000000;">
+                                <th style ="border : 2px solid #000000;">Date</th>
+								<th style ="border : 2px solid #000000;">Catégorie Op.</th>
+                                <th style ="border : 2px solid #000000;">Type Op.</th>
+								<th style ="border : 2px solid #000000;">Mode Reg.</th>
+								<th style ="border : 2px solid #000000;">Client</th>
+								<th style ="border : 2px solid #000000;">Ref. Fact (2022)</th>
+								<th style ="border : 2px solid #000000;">Ref. Fact.</th>
+								<th style ="border : 2px solid #000000;">Ref. Chèq.</th>
+								<th style ="border : 2px solid #000000;">Année</th>
+								<th style ="border : 2px solid #000000;">Encaissé</th>
+								<th style ="border : 2px solid #000000;">Etat</th>
+                                
+                        </thead>
+                        
+                         <tbody>
+                         
+                            <tr t-foreach="o.ferme_guichet_line" t-as="ligne">
+                          
+                                <td style = "border:1px solid;  width:10%;">
+                                    <span t-esc="ligne.dte"/>
+                                </td>
+                                <td style = "border:1px solid;">
+                                    <span t-esc="ligne.categop.typebase.lb_long"/>
+                                </td>
+                                <td style = "border:1px solid;">
+                                    <span t-esc="ligne.typeop.name"/>
+                                </td>
+								
+								<td style = "border:1px solid;">
+                                    <span t-esc="ligne.modreg.name.lb_long"/>
+                                </td>
+								<td style = "border:1px solid;">
+                                    <span t-esc="ligne.intervenant"/>
+                                </td>
+								
+								<td style = "border:1px solid;">
+                                    <span t-esc="ligne.typepiece"/>
+                                </td>
+								
+								<td style = "border:1px solid;">
+                                    <span t-esc="ligne.ref_f"/>
+                                </td>
+								
+								<td style = "border:1px solid;  width:20%;">
+                                    <span t-esc="ligne.refp"/>
+                                </td>
+								<td style = "border:1px solid;">
+                                    <span t-esc="ligne.annee.no_ex"/>
+                                </td>
+								<td style = "border:1px solid; width:12%;">
+									<span t-esc="'{:,}'.format(int(ligne.mt_encaisse)).replace(',', ' ')"/>
+                                </td>
+
+								<td style = "border:2px solid;">
+                                    <span t-esc="ligne.etat"/>
+                                </td>								
+                             </tr>
+							 <tr>
+							<th >
+                            <td style ="border : 2px solid #000000; font-family : times new roman;" colspan="8">
+                            Total
+                            <td style = "border:2px solid; text-align:right; font-family : times new roman;"><span t-esc="'{:,}'.format(int(sum([ligne.mt_encaisse for ligne in o.ferme_guichet_line]))).replace(',', ' ')"/></td>
+                            </td>
+                            </th>
+							</tr>
+                        </tbody>  
+                </table>
+            </div>
+            
+        </t>
+    </t>
+</t>
+</template>
+
+
+<report id = "report_quittance1"
+    string = "Quittance"
+    model = "compta_quittance_unique"
+    report_type = "qweb-pdf"
+    file = "sigepe_compta.report_compta"
+    name = "sigepe_compta.report_quittance_view1"
+	paperformat="quittance_id_format_portrait"
+    menu = "True"/>
+
+
+    <template id="report_quittance_view1">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+					<div class="page"> 
+					
+                     <h4><FONT color="GREEN"></FONT>QUITTANCE N° <span t-field="o.x_exercice_id"/>/<span t-field="o.no_quittance"/> du <span t-field="o.dte_jour"/></h4>                
+                        <head>                     
+                   <style type="text/css">
+                        
+                        td, span {
+                            font-family : times new roman;
+                        }
+                        
+                        th
+                           {
+                            font-style : italic;
+                            font-family : times new roman;
+                        }
+
+                        table {
+                            border-collapse : collapse;
+                        }
+
+                        td {
+                            padding : 6px;
+                        }
+                        
+								
+                        h4,h1 {
+                            text-align : center;
+                            color : green;
+                            border : 2px solid;
+                            font-family : times new roman !important;
+                        }
+                        
+                        h6{
+                            font-family : times new roman !important;
+                        }
+                        
+                        
+                        
+                        .g {
+                        	font-family : times new roman !important;
+                        }
+                        
+                        .vertical-line{
+							border-left: 2px solid #000;
+							border-color:  green;
+							display: inline-block;
+							height: 130px;
+							width: 50%;
+							margin-left: 40%;						
+    					}
+    							
+    					#hori {
+    							height: 1px;
+    							border: 1px solid;
+    							border-color:  #09500B;
+    					}
+    					
+    					body{
+    						background-image : url("/sigepe_compta/static/src/img/Quittance2.jpg") !important;
+							background-size:cover;
+    						background-repeat : no-repeat;
+    						background-position-x : left 10px;
+							background-position-y : top 10px;
+    					}
+    					
+				   		#wrapper_1 {
+				    
+				    		float: left;
+						}
+						#wrapper_1:after {
+						     content: "";
+						     background-color: #000;
+						     position: relative;
+						     width: 5px;
+						     height: 130px;
+						     top: 10px;
+						     left: 50%;
+						     display: block;
+						}
+						#wrapper_2 {
+						     float: right;
+						}
+      							
+                        
+                    </style>
+               </head>
+               <body>
+                 <div>
+	               	   <div  style="float:left; width:50%;">
+	                      <h6><strong class='g'>Objet : </strong><span t-field="o.objet"/></h6>
+	                      <h6><strong class='g'>Montant : </strong><span t-field="o.text_amount"/> (<span t-field="o.mnt_op_gui"/>) F CFA</h6>
+						  <h6><strong class='g'>Reste à payer : </strong><span t-field="o.mnt_rests"/> F CFA</h6>						  
+						  <t t-if ="o.facture_id"><h6><strong class='g'>Ref facture : </strong><span t-field="o.facture_id"/> du <span t-field="o.dte_f"/></h6></t>
+						  <t t-if ="o.facture"><h6><strong class='g'>Ref facture : </strong><span t-field="o.facture"/></h6></t>
+	                  
+	                   </div>
+	                   
+	                 	<div  style="float:right; width:50%;">
+	                      <h6><strong class='g'>Partie versante : </strong><span t-field="o.nom_intervenant"/></h6>
+	                      <h6><strong class='g'>Contact : </strong><span t-field="o.tel_benef"/></h6>	                      
+	                      <h6><strong class='g'>Mode de règlement : </strong><span t-field="o.mode_reg"/> </h6>
+						  <h6><strong class='g'>Ref chèque : </strong><span t-field="o.numero"/></h6>
+               	          
+               	            </div>
+                 </div><br/><br/><br/><br/><br/>
+                 
+                 
+                 <div>
+                    <div style="float:left; width:50%;">
+                      	<table>
+                       		<tr t-foreach="o.operation_line" t-as="l">
+                        		<td style="width:400px; font-size:small;">-<span t-field="l.type2"/></td>
+								<td>        </td>
+                        		<td style = "text-align:right; font-size:small;"><span t-field="l.mnt_actuel"/></td>
+                           	</tr>
+                         </table>
+                    </div> 
+                    
+                    <span class='vertical-line'></span>
+                    
+	              
+					<div style='float:left; margin-top:-150px; margin-left:100px;'>                       
+                      	<h6>La caisse</h6>
+	                </div>						
+	             </div>
+	           
+                      
+                      <!-- Affichage du code barre dans le report -->
+                      <div style="Border-top:4px solid green; width:100%; margin-bottom=150px;" >
+		                 <div style="width:300px; float:left; margin-bottom:50px;">
+		                    	<img t-att-src="'/report/barcode/EAN13/%s' % (o.no_quittance)" style = "width:200px;height:30px;" alt="Barcode"/><br/>
+		                    	<p><span  style="margin-left:50px;" t-field="o.company_id.code_struct"/>-<span t-field="o.x_exercice_id"/>-<span t-field="o.no_op"/>-<span t-field="o.no_quittance"/></p>
+		                 </div>
+						 
+						  <div style='width:450px; float:left; margin_left:2% '>
+                       
+                       	<p>Ouagadougou, le <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d-%m-%Y %H:%M')" /> par <span t-esc="user.name"></span></p>
+	                </div>
+					 </div>
+
+	               </body>
+            </div>
+        </t>
+    </t>
+</t>
+</template>
+
+
+
+
+<record id="quittance_id_format_portrait" model="report.paperformat">
+	<field name="name">Quittance</field>
+	<field name="default" eval="True"/>
+	<field name="format">A5</field>
+	<field name="page_height">0</field>
+	<field name="page_width">0</field>
+	<field name="orientation">Landscape</field>
+	<field name="margin_top">35</field>
+	<field name="margin_bottom">0</field>
+	<field name="margin_left">7</field>
+	<field name="margin_right">7</field>
+	<field name="header_line" eval="False"/>
+	<field name="header_spacing">25</field>
+	<field name="dpi">90</field>
+</record>
+
+<!--
+<report id = "report_quittances"
+    string = "Quittance"
+    model = "compta_quittance_unique"
+    report_type = "qweb-html"
+    file = "sigepe_compta.report_compta"
+    name = "sigepe_compta.report_quittances_view"
+    paperformat="quittance_id_format_portrait"
+    menu = "True"/>
+
+
+    <template id="report_quittances_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">  
+                   		
+                     <h3><FONT color="GREEN"></FONT>QUITTANCE N° <span t-field="o.x_exercice_id"/>/<span t-field="o.no_quittance"/> du <span t-field="o.dte_jour"/></h3>                  
+                        <head>                     
+                   <style type="text/css">
+                        
+                        td {
+                            font-family : times new roman;
+                            font-size : 65%;
+                        }
+                        
+                        th
+                           {
+                           	border : 1px solid black;
+                            font-style : italic;
+                            font-family : times new roman;
+                        }
+
+                        table {
+                            border-collapse : collapse;
+                        }
+
+                        td {
+                            padding : 6px;
+                        }
+                        
+                        body {
+                        		background-image : url("/sigepe_compta/static/src/img/Quittance2.jpg");
+								}
+								
+                        h3,h1 {
+                            text-align : center;
+                            color : green;
+                            border : 2px solid;
+                            font-family : times new roman;
+                        }
+                        
+                        .g {
+                        	font-family : times new roman;
+                        }
+
+                        
+                    </style>
+               </head>
+               	<table>
+                  <thead style ="border : 1px solid #000000;">
+                      <th style = "border:1px solid;">Ref facture</th>
+                      <th style = "border:1px solid;">Reçue de</th>
+                      <th style = "border:1px solid;">Contact</th>
+                      <th style = "border:1px solid;">Objet</th>
+                  </thead>
+                  
+                  <tbody>
+                      <td style = "border:1px solid;"><span t-field="o.facture"/></td>
+                      <td style = "border:1px solid;"><span t-field="o.nom_intervenant"/></td>
+                      <td style = "border:1px solid;"><span t-field="o.tel_benef"/></td>
+                      <td style = "border:1px solid;"><span t-field="o.objet"/></td>
+                 </tbody>                            
+                </table>
+                  <br/>   
+                		<table class="table table-sm mb32">
+                        <thead style = "border : 1px solid #000000;">
+                            <th style = "border:1px solid;">Nature opération</th>
+                            <th style = "border:1px solid;">Nature détaillée</th>
+                            <th style = "border:1px solid;">Montant</th>
+                        </thead>
+                        
+                         <tbody>
+                        	<tr t-foreach="o.operation_line" t-as="l">
+	                        	<td style = "border:1px solid;"><span t-field="l.type2"/></td>
+	                        	<td style = "border:1px solid;"><span t-field="l.id_tlv"/></td>
+	                        	<td style = "text-align:right; border:1px solid;"><span t-field="l.mnt_actuel"/></td> 	                        	                                      
+                            </tr>
+							<tr>
+	                            <th colspan='2'>
+	                            Total
+	                            <td style = "text-align:right; border:1px solid;"><span t-esc="sum([l.mnt_actuel for l in o.operation_line])"/></td>
+	                            </th>
+                            </tr>   
+                        </tbody>  
+                		</table>
+                
+                <strong class='g'>Arrêté la présente quittance à la somme de : <span t-field="o.text_amount"/> (<span t-field="o.mnt_op_gui"/>) F CFA TTC </strong><br/>
+                <strong class='g'>Reste à payer :<span t-field="o.mnt_rests"/> F CFA</strong>
+                        
+                        <br/>
+                        <div style="float:right">
+	                        <strong class='g'>La caisse</strong>
+	                  </div>
+	                  <div style="float:left">
+	                    	<img t-att-src="'/report/barcode/EAN13/%s' % (o.no_quittance)" style = "width:200px;height:40px;" alt="Barcode"/><br/>
+	                    	<span t-field="o.company_id.code_struct"/>-<span t-field="o.x_exercice_id"/>-<span t-field="o.no_op"/>-<span t-field="o.no_quittance"/>
+	                    </div>
+            </div> 
+
+        </t>
+    </t>
+</t>
+</template>-->
+
+
+<report id = "report_balance"
+    string = "Balance"
+    model = "compta_balance"
+    report_type = "qweb-html"
+    file = "sigepe_compta.report_balance"
+    name = "sigepe_compta.report_balance_view"
+    menu = "True"/>
+
+
+    <template id="report_balance_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                    <h1>BALANCE DES COMPTES</h1>
+                        <h2>Exercice <span t-field="o.x_exercice_id.no_ex"/></h2> 
+                        <head>
+                        
+                   <style type="text/css">
+                        
+                        th,
+                        td {
+                            border : 1px solid black;
+                        }
+
+                        table {
+                            border-collapse : collapse;
+                        }
+
+                        td {
+                            padding : 6px;
+                        }
+
+                        h2 {
+                            text-align : center;
+                            color : black;
+                            border : 2px solid;
+                            background-color: grey;
+                        }
+
+                        h1 {
+                            text-align : center;
+                        }
+                        
+                    </style>
+               </head>
+                        <table class="table table-sm mb32">
+                        <thead style ="border : 2px solid #000000;">
+                                <th style ="border : 2px solid #000000;">NUMERO ET INTITULE DE COMPTES</th>
+                                <th style ="border : 2px solid #000000;">DEBITEURS</th>
+                                <th style ="border : 2px solid #000000;">CREDITEURS</th>
+                                
+                        </thead>
+                        
+                         <tbody>
+                         
+                            <tr t-foreach="o.balance_lines" t-as="ligne">
+                          
+                                <td style = "border:2px solid;">
+                                    <span t-esc="ligne.numero_compte"/>
+                                </td>
+                                <td style = "border:2px solid;">
+                                    <span t-esc="ligne.crediteur"/>
+                                </td>
+                                <td style = "border:2px solid;">
+                                    <span t-esc="ligne.debiteur"/>
+                                </td>                               
+                             </tr>
+                        </tbody>  
+                </table>
+            </div>
+            
+        </t>
+    </t>
+</t>
+</template>
+
+
+
+
+<report id = "report_balance"
+    string = "Balance en temps réel"
+    model = "compta_balance_reel"
+    report_type = "qweb-html"
+    file = "sigepe_compta.report_balancereel"
+    name = "sigepe_compta.report_balancereel_view"
+    menu = "True"/>
+
+
+    <template id="report_balancereel_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                    <h3>BALANCE EN TEMPS REEL DU <span t-field="o.periode_deb"/> AU <span t-field="o.periode_fin"/></h3>
+                    
+                        <head>
+                        
+                   <style type="text/css">
+                        
+                        th,
+                        td {
+                            border : 1px solid black;
+                        }
+
+                        table {
+                            border-collapse : collapse;
+                        }
+
+                        td {
+                            padding : 6px;
+                        }
+
+                        h3 {
+                            text-align : center;
+                            color : black;
+                            border : 2px solid;
+                            background-color: grey;
+                            font-family : times new roman;
+                        }
+
+                        h1 {
+                            text-align : center;
+                        }
+                        
+                    </style>
+               </head>
+                        <table class="table table-sm mb32">
+                        <thead style ="border : 2px solid #000000;">
+                                <th style ="border : 2px solid #000000; font-family : times new roman;">NUMERO ET INTITULE DE COMPTES</th>
+                                <th style ="border : 2px solid #000000; font-family : times new roman;">DEBITEURS</th>
+                                <th style ="border : 2px solid #000000; font-family : times new roman;">CREDITEURS</th>
+                                
+                        </thead>
+                        
+                         <tbody>
+                         
+                            <tr t-foreach="o.balance_lines" t-as="ligne">
+                          
+                                <td style = "border:1px solid; font-family : times new roman;">
+                                    <span t-esc="ligne.numero_compte"/>
+                                </td>
+                                <td style = "border:1px solid; text-align:right; font-family : times new roman;">
+                                    <span t-esc="ligne.crediteur"/>
+                                </td>
+                                <td style = "border:1px solid; text-align:right; font-family : times new roman;">
+                                    <span t-esc="ligne.debiteur"/>
+                                </td>                               
+                             </tr>
+                             <tr>
+                            <th style ="border : 2px solid #000000; font-family : times new roman;">
+                            Total
+                            <td style = "border:2px solid; text-align:right; font-family : times new roman;"> <span t-esc="sum([ligne.debiteur for ligne in o.balance_lines])"/></td>
+                            <td style = "border:2px solid; text-align:right; font-family : times new roman;"><span t-esc="sum([ligne.crediteur for ligne in o.balance_lines])"/></td>
+                            </th>
+                            </tr>
+                        </tbody>  
+                </table>
+            </div>
+            
+        </t>
+    </t>
+</t>
+</template>
+
+
+<report id = "report_jrnldep"
+    string = "Journal des dépense"
+    model = "compta_journal_depense"
+    report_type = "qweb-html"
+    file = "sigepe_compta.report_jrnldep"
+    name = "sigepe_compta.report_jrnldep_view"
+    menu = "True"/>
+
+
+    <template id="report_jrnldep_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                    <h1>JOURNAL DES DEPENSES</h1>
+                    
+                        <h2>DU <span t-field="o.dte_deb"/> AU <span t-field="o.dte_fin"/></h2> 
+                        <head>
+                        
+                   <style type="text/css">
+                        
+                        th,
+                        td {
+                            border : 1px solid black;
+                        }
+
+                        table {
+                            border-collapse : collapse;
+                        }
+
+                        td {
+                            padding : 6px;
+                        }
+
+                        h2 {
+                            text-align : center;
+                            color : black;
+                            border : 2px solid;
+                            background-color: grey;
+                        }
+
+                        h1 {
+                            text-align : center;
+                        }
+                        
+                    </style>
+               </head>
+                        <table class="table table-sm mb32">
+                        <thead style ="border : 2px solid #000000;">
+                                <th style ="border : 2px solid #000000;">Date</th>
+                                <th style ="border : 2px solid #000000;">N° Mandat</th>
+                                <th style ="border : 2px solid #000000;">N° Bord</th>
+                                <th style ="border : 2px solid #000000;">Nature de la dépense</th>
+                                <th style ="border : 2px solid #000000;">Compte débit</th>
+                                <th style ="border : 2px solid #000000;">Compte crédit</th>
+                                <th style ="border : 2px solid #000000;">Montant débit</th>
+                                <th style ="border : 2px solid #000000;">Montant crédit</th>
+                        </thead>
+                        
+                         <tbody>
+                         
+                            <tr t-foreach="o.depense_lines" t-as="ligne">
+                          
+                                <td style = "border:2px solid;">
+                                    <span t-esc="ligne.dte"/>
+                                </td>
+                                <td style = "border:2px solid;">
+                                    <span t-esc="ligne.mandat"/>
+                                </td>
+                                <td style = "border:2px solid;">
+                                    <span t-esc="ligne.bord"/>
+                                </td>
+                                <td style = "border:2px solid;">
+                                    <span t-esc="ligne.nature"/>
+                                </td>  
+                                <td style = "border:2px solid;">
+                                    <span t-esc="ligne.cpte_deb"/>
+                                </td>
+                                <td style = "border:2px solid;">
+                                    <span t-esc="ligne.cpte_cred"/>
+                                </td>
+                                <td style = "border:2px solid;">
+                                    <span t-esc="ligne.mnt_deb"/>
+                                </td>
+                                <td style = "border:2px solid;">
+                                    <span t-esc="ligne.mnt_cred"/>
+                                </td>
+                             </tr>
+                        </tbody>  
+                </table>
+            </div>
+            
+        </t>
+    </t>
+</t>
+</template>
+
+
+<report id = "report_jrnlrec"
+    string = "Journal des recettes"
+    model = "compta_journal_recette"
+    report_type = "qweb-html"
+    file = "sigepe_compta.report_jrnlrec"
+    name = "sigepe_compta.report_jrnlrec_view"
+    menu = "True"/>
+
+
+    <template id="report_jrnlrec_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                    <h1>JOURNAL DES RECETTES</h1>
+                    
+                        <h2>DU <span t-field="o.dte_deb"/> AU <span t-field="o.dte_fin"/></h2> 
+                        <head>
+                        
+                   <style type="text/css">
+                        
+                        th,
+                        td {
+                            border : 1px solid black;
+                        }
+
+                        table {
+                            border-collapse : collapse;
+                        }
+
+                        td {
+                            padding : 6px;
+                        }
+
+                        h2 {
+                            text-align : center;
+                            color : black;
+                            border : 2px solid;
+                            background-color: grey;
+                        }
+
+                        h1 {
+                            text-align : center;
+                        }
+                        
+                    </style>
+               </head>
+                        <table class="table table-sm mb32">
+                        <thead style ="border : 2px solid #000000;">
+                                <th style ="border : 2px solid #000000;">Date</th>
+                                <th style ="border : 2px solid #000000;">N° Titre</th>
+                                <th style ="border : 2px solid #000000;">N° Bord</th>
+                                <th style ="border : 2px solid #000000;">Nature de la recette</th>
+                                <th style ="border : 2px solid #000000;">Compte débit</th>
+                                <th style ="border : 2px solid #000000;">Compte crédit</th>
+                                <th style ="border : 2px solid #000000;">Montant débit</th>
+                                <th style ="border : 2px solid #000000;">Montant crédit</th>
+                        </thead>
+                        
+                         <tbody>
+                         
+                            <tr t-foreach="o.recette_lines" t-as="ligne">
+                          
+                                <td style = "border:2px solid;">
+                                    <span t-esc="ligne.dte"/>
+                                </td>
+                                <td style = "border:2px solid;">
+                                    <span t-esc="ligne.titre"/>
+                                </td>
+                                <td style = "border:2px solid;">
+                                    <span t-esc="ligne.bord"/>
+                                </td>
+                                <td style = "border:2px solid;">
+                                    <span t-esc="ligne.nature"/>
+                                </td>  
+                                <td style = "border:2px solid;">
+                                    <span t-esc="ligne.cpte_deb"/>
+                                </td>
+                                <td style = "border:2px solid;">
+                                    <span t-esc="ligne.cpte_cred"/>
+                                </td>
+                                <td style = "border:2px solid;">
+                                    <span t-esc="ligne.mnt_deb"/>
+                                </td>
+                                <td style = "border:2px solid;">
+                                    <span t-esc="ligne.mnt_cred"/>
+                                </td>
+                             </tr>
+                        </tbody>  
+                </table>
+            </div>
+            
+        </t>
+    </t>
+</t>
+</template>
+
+
+<report id = "report_jrnlop"
+    string = "Journal des opérations diverses"
+    model = "compta_journal_operation"
+    report_type = "qweb-html"
+    file = "sigepe_compta.report_jrnlop"
+    name = "sigepe_compta.report_jrnlop_view"
+    menu = "True"/>
+
+
+    <template id="report_jrnldop_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                    <h1>JOURNAL DES OPERATIONS DIVERSES</h1>
+                    
+                        <h2>DU <span t-field="o.dte_deb"/> AU <span t-field="o.dte_fin"/></h2> 
+                        <head>
+                        
+                   <style type="text/css">
+                        
+                        th,
+                        td {
+                            border : 1px solid black;
+                        }
+
+                        table {
+                            border-collapse : collapse;
+                        }
+
+                        td {
+                            padding : 6px;
+                        }
+
+                        h2 {
+                            text-align : center;
+                            color : black;
+                            border : 2px solid;
+                            background-color: grey;
+                        }
+
+                        h1 {
+                            text-align : center;
+                        }
+                        
+                    </style>
+               </head>
+                        <table class="table table-sm mb32">
+                        <thead style ="border : 2px solid #000000;">
+                                <th style ="border : 2px solid #000000;">Date</th>
+                                <th style ="border : 2px solid #000000;">Nature de la recette</th>
+                                <th style ="border : 2px solid #000000;">Ref. pièce</th>
+                                <th style ="border : 2px solid #000000;">Compte débit</th>
+                                <th style ="border : 2px solid #000000;">Compte crédit</th>
+                                <th style ="border : 2px solid #000000;">Montant débit</th>
+                                <th style ="border : 2px solid #000000;">Montant crédit</th>
+                        </thead>
+                        
+                         <tbody>
+                         
+                            <tr t-foreach="o.operation_lines" t-as="ligne">
+                          
+                                <td style = "border:2px solid;">
+                                    <span t-esc="ligne.dte"/>
+                                </td>
+                                <td style = "border:2px solid;">
+                                    <span t-esc="ligne.mandat"/>
+                                </td>
+                                <td style = "border:2px solid;">
+                                    <span t-esc="ligne.bord"/>
+                                </td>
+                                <td style = "border:2px solid;">
+                                    <span t-esc="ligne.nature"/>
+                                </td>  
+                                <td style = "border:2px solid;">
+                                    <span t-esc="ligne.cpte_deb"/>
+                                </td>
+                                <td style = "border:2px solid;">
+                                    <span t-esc="ligne.cpte_cred"/>
+                                </td>
+                                <td style = "border:2px solid;">
+                                    <span t-esc="ligne.mnt_deb"/>
+                                </td>
+                                <td style = "border:2px solid;">
+                                    <span t-esc="ligne.mnt_cred"/>
+                                </td>
+                             </tr>
+                        </tbody>  
+                </table>
+            </div>
+            
+        </t>
+    </t>
+</t>
+</template>
+
+
+<report id = "report_bgle"
+    string = "Balance générale des opérations"
+    model = "compta_balance_generale"
+    report_type = "qweb-html"
+    file = "sigepe_compta.report_bgle"
+    name = "sigepe_compta.report_bgle_view"
+    menu = "True"/>
+
+
+    <template id="report_bgle_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                    <h3>BALANCE GENERALE DES OPERATIONS EXERCICE <span t-field="o.x_exercice_id"/></h3>
+                    
+                        <head>
+                        
+                   <style type="text/css">
+                        
+                        th,
+                        td {
+                            border : 1px solid black;
+                        }
+
+                        table {
+                            border-collapse : collapse;
+                        }
+
+                        td {
+                            padding : 6px;
+                        }
+
+                        h3 {
+                            text-align : center;
+                            color : black;
+                            border : 2px solid;
+                            background-color: grey;
+                        }
+
+                        h1 {
+                            text-align : center;
+                        }
+                        
+                    </style>
+               </head>
+                        <table class="table table-sm mb32">
+                        <thead style ="border : 2px solid #000000;">
+                        	<tr>
+                                <th style ="border : 2px solid #000000; text-align:center; font-family:times new roman;" rowspan="2">N° compte</th>
+                                <th style ="border : 2px solid #000000; text-align:center; font-family:times new roman;" rowspan="2">Intitulé compte</th>
+                                <th style ="border : 2px solid #000000; text-align:center; font-family:times new roman;" colspan="2">Soldes d'ouverture</th>
+                                <th style ="border : 2px solid #000000; text-align:center; font-family:times new roman;" colspan="2">Mouvements de la période</th>
+                                <th style ="border : 2px solid #000000; text-align:center; font-family:times new roman;" colspan="2">Totaux</th>
+                                <th style ="border : 2px solid #000000; text-align:center; font-family:times new roman;" colspan="2">Soldes</th>
+                        	</tr>
+                        	<tr>
+                        		<!--<th style = "border:2px solid; text-align:center;"></th>-->
+                                <th style = "border:2px solid; text-align:center; font-family:times new roman;">Débiteurs</th>
+                                <th style = "border:2px solid; text-align:center; font-family:times new roman;">Créditeurs</th>
+                                <th style = "border:2px solid; text-align:center; font-family:times new roman;">Débits</th>
+                                <th style = "border:2px solid; text-align:center; font-family:times new roman;">Crédits</th>
+                                <th style = "border:2px solid; text-align:center; font-family:times new roman;">Débiteurs</th>
+                                <th style = "border:2px solid; text-align:center; font-family:times new roman;">Créditeurs</th>
+                                <th style = "border:2px solid; text-align:center; font-family:times new roman;">Débiteurs</th>
+                                <th style = "border:2px solid; text-align:center; font-family:times new roman;">Créditeurs</th>
+                            </tr>
+                        </thead>
+                        
+                         <tbody>
+                         
+                            <tr t-foreach="o.balance_generale_line" t-as="l">
+                          		<td style = "border:1px solid; text-align:left; font-family:times new roman;"><span t-field="l.souscpte"/></td>
+                          		<td style = "border:1px solid; text-align:left; font-family:times new roman;"><span t-field="l.libelle"/></td>
+                          		<td style = "border:1px solid; text-align:right; font-family:times new roman;"><span t-field="l.entre_debit"/></td>
+                              	<td style = "border:1px solid; text-align:right; font-family:times new roman;"><span t-field="l.entre_credit"/></td>
+                            	<td style = "border:1px solid; text-align:right; font-family:times new roman;"><span t-field="l.mvt_debit"/></td>
+                              	<td style = "border:1px solid; text-align:right; font-family:times new roman;"><span t-field="l.mvt_credit"/></td>
+                            	<td style = "border:1px solid; text-align:right; font-family:times new roman;"><span t-field="l.tot_mvt_debit"/></td>
+                              	<td style = "border:1px solid; text-align:right; font-family:times new roman;"><span t-field="l.tot_mvt_credit"/></td>
+                            	<td style = "border:1px solid; text-align:right; font-family:times new roman;"><span t-field="l.solde_debit"/></td>
+                              	<td style = "border:1px solid; text-align:right; font-family:times new roman;"><span t-field="l.solde_credit"/></td>
+                            </tr>
+                            <tr>
+                            <th style ="border : 2px solid #000000;">
+                            Total
+                            <td style = "border:2px solid; text-align:right;"> <span t-esc="sum([l.entre_debit for l in o.balance_generale_line])"/></td>
+                            <td style = "border:2px solid; text-align:right;"><span t-esc="sum([l.entre_credit for l in o.balance_generale_line])"/></td>
+                            <td style = "border:2px solid; text-align:right;"><span t-esc="sum([l.mvt_debit for l in o.balance_generale_line])"/></td>
+                            <td style = "border:2px solid; text-align:right;"><span t-esc="sum([l.mvt_credit for l in o.balance_generale_line])"/></td>
+                            <td style = "border:2px solid; text-align:right;"><span t-esc="sum([l.tot_mvt_debit for l in o.balance_generale_line])"/></td>
+                            <td style = "border:2px solid; text-align:right;"><span t-esc="sum([l.tot_mvt_credit for l in o.balance_generale_line])"/></td>
+                            <td style = "border:2px solid; text-align:right;"><span t-esc="sum([l.solde_debit for l in o.balance_generale_line])"/></td>
+                            <td style = "border:2px solid; text-align:right;"><span t-esc="sum([l.solde_credit for l in o.balance_generale_line])"/></td>
+                            </th>
+                            </tr>
+                        </tbody>  
+                </table>
+                
+              		<div>
+                       <div style="float:right;">
+                      	  <strong>L'Agent Comptable</strong>
+                       </div>
+                    </div>
+            </div>
+        </t>
+    </t>
+</t>
+</template>
+
+
+<report id = "report_cgd"
+    string = "Compte de gestion des dépenses"
+    model = "compta_cg_dep"
+    report_type = "qweb-html"
+    file = "sigepe_compta.report_cgd"
+    name = "sigepe_compta.report_cgd_view"
+    menu = "True"/>
+
+
+    <template id="report_cgd_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                    <h3>COMPTE DE GESTION DES DEPENSES <span t-field="o.x_exercice_id"/></h3>
+                    
+                        <head>
+                        
+                   <style type="text/css">
+                        
+                        th,
+                         {
+                            border : 1px solid black;
+                            font-family:times new roman;
+                        }
+
+                        table {
+                            border-collapse : collapse;
+                        }
+
+                        td {
+                            padding : 6px;
+                        }
+
+                        h3 {
+                            text-align : center;
+                            color : black;
+                            border : 2px solid;
+                            background-color: grey;
+                            font-family:times new roman;
+                        }
+
+                        h1 {
+                            text-align : center;
+                        }
+                        
+                    </style>
+               </head>
+                        <table class="table table-sm mb32">
+                        <thead style ="border : 2px solid #000000;">
+                        	<tr>
+                                <th style ="border : 2px solid #000000; text-align:center;">Section</th>
+                                <th style ="border : 2px solid #000000; text-align:center;">Chapitre</th>
+                                <th style ="border : 2px solid #000000; text-align:center;">Article</th>
+                                <th style ="border : 2px solid #000000; text-align:center;">Paragraphe</th>
+                                <th style ="border : 2px solid #000000; text-align:center;">Rubrique</th>
+                                <th style ="border : 2px solid #000000; text-align:center;">Dotation initiale</th>
+                                <th style ="border : 2px solid #000000; text-align:center;">Dotation corrigée</th>
+                                <th style ="border : 2px solid #000000; text-align:center;">Pris en charge</th>
+                                <th style ="border : 2px solid #000000; text-align:center;">Paiement</th>
+                                <th style ="border : 2px solid #000000; text-align:center;">Taux d'exécution</th>
+                                <th style ="border : 2px solid #000000; text-align:center;">Reste à payer</th>
+                        	</tr>
+                        </thead>
+                        
+                         <tbody>
+                         
+                            <tr t-foreach="o.cg_lines" t-as="l">
+                          		<td style = "border:2px solid; text-align:left; font-family:times new roman"><span t-field="l.cd_section_id"/></td>
+                          		<td style = "border:2px solid; text-align:left; font-family:times new roman"><span t-field="l.cd_chapitre_id"/></td>
+                              	<td style = "border:2px solid; text-align:left; font-family:times new roman"><span t-field="l.cd_art_id"/></td>
+                            	<td style = "border:2px solid; text-align:left; font-family:times new roman"><span t-field="l.cd_paragraphe_id"/></td>
+                              	<td style = "border:2px solid; text-align:left; font-family:times new roman"><span t-field="l.cd_rubrique_id"/></td>
+                            	<td style = "border:2px solid; text-align:right; font-family:times new roman"><span t-esc="'{:,}'.format(int(l.mnt_budgetise)).replace(',', ' ')"/></td>
+                              	<td style = "border:2px solid; text-align:right; font-family:times new roman"><span t-esc="'{:,}'.format(int(l.mnt_corrige)).replace(',', ' ')"/></td>
+                            	<td style = "border:2px solid; text-align:right; font-family:times new roman"><span t-esc="'{:,}'.format(int(l.mnt_pc)).replace(',', ' ')"/></td>
+                              	<td style = "border:2px solid; text-align:right; font-family:times new roman"><span t-esc="'{:,}'.format(int(l.mnt_paye)).replace(',', ' ')"/></td>
+                              	<td style = "border:2px solid; text-align:right; font-family:times new roman"><span t-field="l.taux"/></td>
+                              	<td style = "border:2px solid; text-align:right; font-family:times new roman"><span t-esc="'{:,}'.format(int(l.rest_payer)).replace(',', ' ')"/></td>
+                            </tr>
+                        </tbody>  
+                </table>
+                
+              		<div>
+                       <div style="float:right;">
+                      	  <strong>L'Agent Comptable</strong>
+                       </div>
+                    </div>
+            </div>
+        </t>
+    </t>
+</t>
+</template>
+
+
+<report id = "report_cgr"
+    string = "Compte de gestion des recettes"
+    model = "compta_cg_rec"
+    report_type = "qweb-html"
+    file = "sigepe_compta.report_cgr"
+    name = "sigepe_compta.report_cgr_view"
+    menu = "True"/>
+
+
+    <template id="report_cgr_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                    <h3>COMPTE DE GESTION DES RECETTES <span t-field="o.x_exercice_id"/></h3>
+                    
+                        <head>
+                        
+                   <style type="text/css">
+                        
+                        th,
+                        td {
+                            border : 1px solid black;
+                        }
+
+                        table {
+                            border-collapse : collapse;
+                        }
+
+                        td {
+                            padding : 6px;
+                        }
+
+                        h3 {
+                            text-align : center;
+                            font-family:times new roman;
+                            color : black;
+                            border : 2px solid;
+                            background-color: grey;
+                        }
+
+                        
+                        
+                    </style>
+               </head>
+                        <table class="table table-sm mb32">
+                        <thead style ="border : 2px solid #000000;">
+                        	<tr>
+                                <th style ="border : 2px solid #000000; text-align:center;; font-family:times new roman">Section</th>
+                                <th style ="border : 2px solid #000000; text-align:center;; font-family:times new roman">Chapitre</th>
+                                <th style ="border : 2px solid #000000; text-align:center;; font-family:times new roman">Article</th>
+                                <th style ="border : 2px solid #000000; text-align:center;; font-family:times new roman">Paragraphe</th>
+                                <th style ="border : 2px solid #000000; text-align:center;; font-family:times new roman">Rubrique</th>
+                                <th style ="border : 2px solid #000000; text-align:center;; font-family:times new roman">Dotation initiale</th>
+                                <th style ="border : 2px solid #000000; text-align:center;; font-family:times new roman">Dotation corrigée</th>
+                                <th style ="border : 2px solid #000000; text-align:center;; font-family:times new roman">Pris en charge</th>
+                                <th style ="border : 2px solid #000000; text-align:center;; font-family:times new roman">Recouvrement</th>
+                                <th style ="border : 2px solid #000000; text-align:center;; font-family:times new roman">Taux d'exécution</th>
+                                <th style ="border : 2px solid #000000; text-align:center;; font-family:times new roman">Reste à recouvrer</th>
+                        	</tr>
+                        </thead>
+                        
+                         <tbody>
+                         
+                            <tr t-foreach="o.cg_lines" t-as="l">
+                          		<td style = "border:2px solid; text-align:left; font-family:times new roman"><span t-field="l.cd_section_id"/></td>
+                          		<td style = "border:2px solid; text-align:left; font-family:times new roman"><span t-field="l.cd_chapitre_id"/></td>
+                              	<td style = "border:2px solid; text-align:left; font-family:times new roman"><span t-field="l.cd_art_id"/></td>
+                            	<td style = "border:2px solid; text-align:left; font-family:times new roman"><span t-field="l.cd_paragraphe_id"/></td>
+                              	<td style = "border:2px solid; text-align:left; font-family:times new roman"><span t-field="l.cd_rubrique_id"/></td>
+                            	<td style = "border:2px solid; text-align:right; font-family:times new roman"><span t-esc="'{:,}'.format(int(l.mnt_budgetise)).replace(',', ' ')"/></td>
+                            	<td style = "border:2px solid; text-align:right; font-family:times new roman"><span t-esc="'{:,}'.format(int(l.mnt_corrige)).replace(',', ' ')"/></td>
+                              	<td style = "border:2px solid; text-align:right; font-family:times new roman"><span t-esc="'{:,}'.format(int(l.mnt_pc)).replace(',', ' ')"/></td>
+                              	<td style = "border:2px solid; text-align:right; font-family:times new roman"><span t-esc="'{:,}'.format(int(l.mnt_recouvrer)).replace(',', ' ')"/></td>
+                              	<td style = "border:2px solid; text-align:right; font-family:times new roman"><span t-field="l.taux"/></td>
+                              	<td style = "border:2px solid; text-align:right; font-family:times new roman"><span t-esc="'{:,}'.format(int(l.rest_recouvrer)).replace(',', ' ')"/></td>
+                            </tr>
+                        </tbody>  
+                </table>
+                
+              		<div>
+                       <div style="float:right;">
+                      	  <strong>L'Agent Comptable</strong>
+                       </div>
+                    </div>
+            </div>
+        </t>
+    </t>
+</t>
+</template>
+
+
+<report id = "report_etat_rest"
+    string = "Etat des restes à payer"
+    model = "compta_etat_reste_payer"
+    report_type = "qweb-html"
+    file = "sigepe_compta.report_etat_rest"
+    name = "sigepe_compta.report_etat_rest_view"
+    menu = "True"/>
+
+
+    <template id="report_etat_rest_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                    <h3>ETAT DES RESTES A PAYER DU <span t-field="o.dte_deb"/> AU <span t-field="o.dte_fin"/> </h3>
+                    
+                        <head>
+                        
+                   <style type="text/css">
+                        
+                        th,
+                        td {
+                            border : 1px solid black;
+                        }
+
+                        table {
+                            border-collapse : collapse;
+                        }
+
+                        td {
+                            padding : 6px;
+                        }
+
+                        h3 {
+                            text-align : center;
+                            color : black;
+                            border : 2px solid;
+                            background-color: grey;
+                        }
+
+                        h1 {
+                            text-align : center;
+                        }
+                        
+                    </style>
+               </head>
+                        <table class="table table-sm mb32">
+                        <thead style ="border : 2px solid #000000;">
+                        	<tr>
+                        		<th style ="border : 2px solid #000000; text-align:center;">N° Ordre</th>
+                                <th style ="border : 2px solid #000000; text-align:center;">Créancier</th>
+                                <th style ="border : 2px solid #000000; text-align:center;">N° Mandat</th>
+                                <th style ="border : 2px solid #000000; text-align:center;">Date d'émission</th>
+                                <!-- <th style ="border : 2px solid #000000; text-align:center;">Montant payé</th>
+                                <th style ="border : 2px solid #000000; text-align:center;">Montant dû</th>-->
+                                <th style ="border : 2px solid #000000; text-align:center;">Montant</th>
+                                <th style ="border : 2px solid #000000; text-align:center;">Observation</th>
+                        	</tr>
+                        </thead>
+                        
+                         <tbody>                        
+                            <tr t-foreach="o.reste_lines" t-as="l">
+                          		<td style = "border:2px solid; text-align:left;"><span t-field="l.ordre"/></td>                            
+                          		<td style = "border:2px solid; text-align:left;"><span t-field="l.creancier"/></td>
+                          		<td style = "border:2px solid; text-align:right;"><span t-field="l.titre"/></td>
+                              	<td style = "border:2px solid; text-align:right;"><span t-field="l.dte"/></td>
+                            	<!-- <td style = "border:2px solid; text-align:right;"><span t-field="l.mnt_rec"/></td>
+                              	<td style = "border:2px solid; text-align:right;"><span t-field="l.mnt_du"/></td>-->
+                            	<td style = "border:2px solid; text-align:right;"><span t-field="l.reste"/></td>
+                              	<td style = "border:2px solid; text-align:right;"><span t-field="l.observation"/></td>
+                            </tr>
+                            <tr>
+                            <th style ="border : 2px solid #000000;" colspan="2">
+                            Total
+                            <td style = "border:2px solid; text-align:right;"></td>
+                            <td style = "border:2px solid; text-align:right;"></td>
+                            <td style = "border:2px solid; text-align:right;"><span t-esc="sum([l.reste for l in o.reste_lines])"/></td>
+                            <td style = "border:2px solid; text-align:right;"></td>
+                            </th>
+                            </tr>
+                        </tbody>  
+                </table>
+                
+              		<div>
+                       <div style="float:right;">
+                      	  <strong>L'Agent Comptable</strong>
+                       </div>
+                    </div>
+            </div>
+        </t>
+    </t>
+</t>
+</template>
+
+<report id = "report_etat_rest_rec"
+    string = "Etat des restes à recouvrer"
+    model = "compta_etat_reste_recouvrer"
+    report_type = "qweb-html"
+    file = "sigepe_compta.report_etat_rest_rec"
+    name = "sigepe_compta.report_etat_rest_rec_view"
+    menu = "True"/>
+
+
+    <template id="report_etat_rest_rec_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                    <h3>ETAT DES RESTES A RECOUVRER DU <span t-field="o.dte_deb"/> AU <span t-field="o.dte_fin"/> </h3>
+                    
+                        <head>
+                        
+                   <style type="text/css">
+                        
+                        th,
+                        td {
+                            border : 1px solid black;
+                        }
+
+                        table {
+                            border-collapse : collapse;
+                        }
+
+                        td {
+                            padding : 6px;
+                        }
+
+                        h3 {
+                            text-align : center;
+                            color : black;
+                            border : 2px solid;
+                            background-color: grey;
+                        }
+
+                        h1 {
+                            text-align : center;
+                        }
+                        
+                    </style>
+               </head>
+                        <table class="table table-sm mb32">
+                        <thead style ="border : 2px solid #000000;">
+                        	<tr>
+                                <th style ="border : 2px solid #000000; text-align:center;">N° Ordre</th>                        		
+                                <th style ="border : 2px solid #000000; text-align:center;">Débiteur</th>
+                                <th style ="border : 2px solid #000000; text-align:center;">Date d'émission</th>
+                                <th style ="border : 2px solid #000000; text-align:center;">N° Titre</th>
+                                <th style ="border : 2px solid #000000; text-align:center;">Montant dû</th>
+                                <th style ="border : 2px solid #000000; text-align:center;">Montant recouvré</th>
+                                <th style ="border : 2px solid #000000; text-align:center;">Reste à recouvrer</th>
+                                <th style ="border : 2px solid #000000; text-align:center;">Observation</th>
+                        	</tr>
+                        </thead>
+                        
+                         <tbody>
+                         
+                            <tr t-foreach="o.reste_lines" t-as="l">
+                            	<td style = "border:2px solid; text-align:right;"><span t-field="l.ordre"/></td>
+                          		<td style = "border:2px solid; text-align:left;"><span t-field="l.debiteur"/></td>
+                          		<td style = "border:2px solid; text-align:right;"><span t-field="l.dte"/></td>
+                              	<td style = "border:2px solid; text-align:right;"><span t-field="l.titre"/></td>
+                            	<td style = "border:2px solid; text-align:right;"><span t-field="l.mnt_du"/></td>
+                              	<td style = "border:2px solid; text-align:right;"><span t-field="l.mnt_rec"/></td>
+                            	<td style = "border:2px solid; text-align:right;"><span t-field="l.reste"/></td>
+                              	<td style = "border:2px solid; text-align:right;"><span t-field="l.observation"/></td>
+                            </tr>
+                            <tr>
+                            <th style ="border : 2px solid #000000;" colspan="2">
+                            Total
+                            <td style = "border:2px solid; text-align:right;"></td>
+                            <td style = "border:2px solid; text-align:right;"></td>
+                            <td style = "border:2px solid; text-align:right;"><span t-esc="sum([l.mnt_du for l in o.reste_lines])"/></td>
+                            <td style = "border:2px solid; text-align:right;"><span t-esc="sum([l.mnt_rec for l in o.reste_lines])"/></td>
+                            <td style = "border:2px solid; text-align:right;"><span t-esc="sum([l.reste for l in o.reste_lines])"/></td>
+                            <td style = "border:2px solid; text-align:right;"></td>
+                            </th>
+                            </tr>
+                        </tbody>  
+                </table>
+                
+              		<div>
+                       <div style="float:right;">
+                      	  <strong>L'Agent Comptable</strong>
+                       </div>
+                    </div>
+            </div>
+        </t>
+    </t>
+</t>
+</template>
+
+
+
+<report id = "report_bord"
+    string = "Bordreau de versement"
+    model = "compta_suivi_encaissement"
+    report_type = "qweb-html"
+    file = "sigepe_compta.report_bord"
+    name = "sigepe_compta.report_bord_view"
+    menu = "True"/>
+
+
+    <template id="report_bord_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                    <h1>BORDEREAU DE VERSEMENT</h1>
+                    
+                        <head>
+                        
+                   <style type="text/css">
+                        
+                        th,
+                        td {
+                            border : 1px solid black;
+                        }
+
+                        table {
+                            border-collapse : collapse;
+                        }
+
+                        td {
+                            padding : 6px;
+                        }
+
+                        h2 {
+                            text-align : center;
+                            color : black;
+                            border : 2px solid;
+                            background-color: grey;
+                        }
+
+                        h1 {
+                            text-align : center;
+                        }
+                        
+                    </style>
+               </head>
+                        <table class="table table-sm mb32">
+                        <thead style ="border : 2px solid #000000;">
+                        	<tr>
+                                <th style ="border : 2px solid #000000; text-align:center;">Agence</th>
+                                <th style ="border : 2px solid #000000; text-align:center;">N° Chèque</th>
+                                <th style ="border : 2px solid #000000; text-align:center;">Date de reception</th>
+                                <th style ="border : 2px solid #000000; text-align:center;">Emetteur</th>
+                                <th style ="border : 2px solid #000000; text-align:center;">Montant</th>
+                        	</tr>
+                        </thead>
+                        
+                         <tbody>
+                         
+                            <tr t-foreach="o.suivi_ids" t-as="l">
+                          		<td style = "border:2px solid; text-align:left;"><span t-field="l.agence"/></td>
+                          		<td style = "border:2px solid; text-align:right;"><span t-field="l.ref_cheq"/></td>
+                              	<td style = "border:2px solid; text-align:right;"><span t-field="l.dt_effet"/></td>
+                            	<td style = "border:2px solid; text-align:right;"><span t-field="l.emetteur"/></td>
+                              	<td style = "border:2px solid; text-align:right;"><span t-field="l.montant"/></td>
+                            </tr>
+                        </tbody>  
+                </table>
+                
+              		<div>
+                       <div style="float:right;">
+                      	  <strong>L'Agent Comptable</strong>
+                       </div>
+                    </div>
+            </div>
+        </t>
+    </t>
+</t>
+</template>
+
+
+<report id = "report_cr"
+    string = "Compte de résultat"
+    model = "compta_compte_resultat"
+    report_type = "qweb-html"
+    file = "sigepe_compta.report_cr"
+    name = "sigepe_compta.report_cr_view"
+    menu = "True"/>
+
+
+    <template id="report_cr_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                    <h3>COMPTE DE RESULTAT AU 31 DECEMBRE</h3>
+                    
+                    <head>
+                        
+                   <style type="text/css">
+                        
+                        th,
+                        td {
+                            border : 1px solid black;
+                        }
+
+                        table {
+                            border-collapse : collapse;
+                        }
+
+                        td {
+                            padding : 6px;
+                        }
+
+                        h3 {
+                            text-align : center;
+                            color : black;
+                            border : 2px solid;
+                            background-color: grey;
+                        }
+
+                        
+                    </style>
+               </head>
+                        <table class="table table-sm mb32">
+                        <thead style ="border : 2px solid #000000;">
+                        	<tr>
+                                <th style ="border : 2px solid #000000; text-align:center; font-size:mall;">REF</th>
+                                <th style ="border : 2px solid #000000; text-align:center; font-size:mall;">LIBELLES</th>
+                                <th style ="border : 2px solid #000000; text-align:center; font-size:mall;"></th>
+                                <th style ="border : 2px solid #000000; text-align:center; font-size:mall;">NOTE</th>
+                                <th style ="border : 2px solid #000000; text-align:center; font-size:mall;">31/12/N (Net)</th>
+                                <th style ="border : 2px solid #000000; text-align:center; font-size:mall;">31/12/N-1 (Net)</th>
+                        	</tr>
+                        </thead>
+                        
+                         <tbody>
+                         
+                            <tr t-foreach="o.cr_ids" t-as="l">
+                          		<td style = "border:1px solid; text-align:left; font-size:x-small;"><span t-field="l.ref"/></td>
+                          		<td style = "border:1px solid; text-align:left; font-size:x-small;"><span t-field="l.libelle"/></td>
+                                <td style = "border:1px solid; text-align:center; font-size:x-small;"><span t-field="l.signe"/></td>
+                                <td style = "border:1px solid; text-align:center; font-size:x-small;"><span t-field="l.note"/></td>
+                              	<td style = "border:1px solid; text-align:right; font-size:x-small;"><span t-field="l.exo_n"/></td>
+                            	<td style = "border:1px solid; text-align:right; font-size:x-small;"><span t-field="l.exo_n1"/></td>
+                            </tr>
+                        </tbody>  
+                </table>
+            </div>
+        </t>
+    </t>
+</t>
+</template>
+
+
+<report id = "report_bilan"
+    string = "Bilan"
+    model = "compta_bilan"
+    report_type = "qweb-html"
+    file = "sigepe_compta.report_bilan"
+    name = "sigepe_compta.report_bilan_view"
+    menu = "True"/>
+    <!--paperformat="bilan_id_format_paysage"-->
+
+
+    <template id="report_bilan_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                    <h4>BILAN</h4>
+                    
+                        <head>
+                        
+                   <style type="text/css">
+                        
+                        th,
+                        td {
+                            border : 1px solid black;
+                        }
+
+                        table {
+                            border-collapse : collapse;
+                        }
+
+                        td {
+                            padding : 6px;
+                        }
+                        
+                        .taille {
+                        	font-size : x-small;
+                        }
+                        
+                        .taille1 {
+                        	font-size : small;
+                        }
+
+                        h4 {
+                            text-align : center;
+                            color : black;
+                            border : 2px solid;
+                            background-color: grey;
+                        }
+
+                        h1 {
+                            text-align : center;
+                        }
+                        .d1 {
+                        	float : left;
+                        }
+                        
+                        .d2 {
+                        	float : right;
+                        }
+                        
+                    </style>
+               </head>
+               
+               			<div>
+	               			<div class='d1'>
+	                            <h5>Désignation de l'entité : <span t-field="o.company_id"/></h5>
+	                            <h5>Numéro d'identification : -----------</h5>
+	                        </div>
+	                        <div class='d2'>
+	                            <h5>Exercice clos le : -----------</h5>
+	                            <h5>Durée (mois) : </h5>
+	                                                                          
+	                        </div>
+                        </div> 
+                        <table class="table table-sm mb32">
+                        <thead class = 'taille1' style ="border : 1px solid #000000;">
+                        	<tr>
+                                <th style ="border : 1px solid #000000; text-align:center;">REF</th>
+                                <th style ="border : 1px solid #000000; text-align:center;">ACTIF</th>
+                                <th style ="border : 1px solid #000000; text-align:center;">NOTE</th>
+                                <th style ="border : 1px solid #000000; text-align:center;">BRUT</th>
+                                <th style ="border : 1px solid #000000; text-align:center;">AMORT. ET DEPREC.</th>
+                                <th style ="border : 1px solid #000000; text-align:center;">NET</th>
+                                <th style ="border : 1px solid #000000; text-align:center;">NET EX N-1</th>
+                        	</tr>
+                        </thead>
+                        
+                         <tbody class = 'taille'>
+                            <tr t-foreach="o.actif_ids" t-as="l">
+                          		<td style = "border:1px solid; text-align:left;"><span t-field="l.ref"/></td>
+                          		<td style = "border:1px solid; text-align:left;"><span t-field="l.actif"/></td>
+                              	<td style = "border:1px solid; text-align:center;"><span t-field="l.note"/></td>
+                              	<td style = "border:1px solid; text-align:right;"><span t-field="l.brut"/></td>
+                              	<td style = "border:1px solid; text-align:right;"><span t-field="l.amort"/></td>
+                            	<td style = "border:1px solid; text-align:right;"><span t-field="l.net_exo_n"/></td>
+                              	<td style = "border:1px solid; text-align:right;"><span t-field="l.net_exo_n1"/></td>
+                            </tr>
+                        </tbody>  
+                </table>
+
+                <br/><br/><br/><br/><br/>
+                <table class="table table-sm mb32">
+                        <thead class = 'taille1' style ="border : 1px solid #000000;">
+                        	<tr>
+                                <th style ="border : 1px solid #000000; text-align:center;">REF</th>
+                                <th style ="border : 1px solid #000000; text-align:center;">PASSIF</th>
+                                <th style ="border : 1px solid #000000; text-align:center;">NOTE</th>
+                                <th style ="border : 1px solid #000000; text-align:center;">31/12/N (NET)</th>
+                                <th style ="border : 1px solid #000000; text-align:center;">31/12/N-1 (NET)</th>
+                        	</tr>
+                        </thead>
+                        
+                         <tbody class = 'taille'>
+                            <tr t-foreach="o.passif_ids" t-as="l">
+                          		<td style = "border:1px solid; text-align:left;"><span t-field="l.ref"/></td>
+                          		<td style = "border:1px solid; text-align:left;"><span t-field="l.passif"/></td>
+                              	<td style = "border:1px solid; text-align:center;"><span t-field="l.note"/></td>
+                            	<td style = "border:1px solid; text-align:right;"><span t-field="l.net_exo_n"/></td>
+                              	<td style = "border:1px solid; text-align:right;"><span t-field="l.net_exo_n1"/></td>
+                            </tr>
+                        </tbody>  
+                </table>
+            </div>
+        </t>
+    </t>
+</t>
+</template>
+
+
+
+<report id = "report_ecriture"
+    string = "Editer Ecriture"
+    model = "compta_edition_ecriture"
+    report_type = "qweb-html"
+    file = "sigepe_compta.compta_edition_ecriture"
+    name = "sigepe_compta.report_ecriture_view"
+    menu = "True"/>
+
+
+    <template id="report_ecriture_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                    <h3>Ecriture N° <span t-field="o.ecr"/></h3>
+
+                        <head>
+
+                   <style type="text/css">
+
+                        th,
+                        td {
+                            border : 1px solid black;
+                        }
+
+                        h3 {
+                            text-align : center;
+                            color : black;
+                            border : 2px solid;
+                            background-color: grey;
+                        }
+
+                    </style>
+               </head>
+
+                        <table class="table table-sm mb32">
+                        <thead style ="border : 1px solid #000000;">
+                        	<tr>
+                                <th style ="border : 1px solid #000000; text-align:left;">N° Ligne</th>
+                                <th style ="border : 1px solid #000000; text-align:left;">Compte</th>
+                                <th style ="border : 1px solid #000000; text-align:left;">Pièce Just.</th>
+                                <th style ="border : 1px solid #000000; text-align:left;">Sens</th>
+                                <th style ="border : 1px solid #000000; text-align:right;">Montant.</th>
+                                <th style ="border : 1px solid #000000; text-align:center;">Etat</th>
+
+                        	</tr>
+                        </thead>
+
+                         <tbody>
+                            <tr t-foreach="o.edition_ecriture_line" t-as="l">
+                          		<td style = "border:0px solid; text-align:left;"><span t-field="l.noligne"/></td>
+                          		<td style = "border:0px solid; text-align:left;"><span t-field="l.cpte"/></td>
+                              	<td style = "border:0px solid; text-align:left;"><span t-field="l.type_pj"/></td>
+                              	<td style = "border:0px solid; text-align:left;"><span t-field="l.fg_sens"/></td>
+                              	<td style = "border:0px solid; text-align:right;"><span t-field="l.montant"/></td>
+                            	<td style = "border:0px solid; text-align:center;"><span t-field="l.etat"/></td>
+                            </tr>
+                        </tbody>
+                </table>
+
+
+            </div>
+        </t>
+    </t>
+</t>
+</template>
+
+
+<report id = "report_compte"
+    string = "Editer Compte"
+    model = "compta_edition_compte"
+    report_type = "qweb-html"
+    file = "sigepe_compta.compta_edition_compte"
+    name = "sigepe_compta.report_compte_view"
+    menu = "True"/>
+
+
+    <template id="report_compte_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+
+                        <t t-if ="o.tout_compte == True"><h3>Comptes mouvementés</h3></t>
+                        <t t-if ="o.compte"><h3>Compte N° <span t-field="o.compte"/></h3></t>
+
+                        <head>
+
+                   <style type="text/css">
+
+                        th,
+                        td {
+                            border : 1px solid black;
+                        }
+
+                        h3 {
+                            text-align : center;
+                            color : black;
+                            border : 2px solid;
+                            background-color: grey;
+                        }
+
+                    </style>
+               </head>
+
+                        <table class="table table-sm mb32">
+                        <thead style ="border : 1px solid #000000;">
+                        	<tr>
+                                <th style ="border : 1px solid #000000; text-align:left;">N° Ecriture</th>
+                                <th style ="border : 1px solid #000000; text-align:left;">N° Ligne</th>
+                                <th style ="border : 1px solid #000000; text-align:left;">Date</th>
+                                <th style ="border : 1px solid #000000; text-align:left;">Sens</th>
+                                <th style ="border : 1px solid #000000; text-align:left;">Montant</th>
+                                <th style ="border : 1px solid #000000; text-align:right;">Etat</th>
+                                <th style ="border : 1px solid #000000; text-align:right;">Dt Vérif.</th>
+                                <th style ="border : 1px solid #000000; text-align:center;">Dt Valid.</th>
+
+                        	</tr>
+                        </thead>
+
+                         <tbody>
+                            <tr t-foreach="o.editon_compte_lines" t-as="l">
+                          		<td style = "border:0px solid; text-align:left;"><span t-field="l.no_ecr"/></td>
+                                <td style = "border:0px solid; text-align:left;"><span t-field="l.num_ligne"/></td>
+                          		<td style = "border:0px solid; text-align:left;"><span t-field="l.date_ligne"/></td>
+                              	<td style = "border:0px solid; text-align:left;"><span t-field="l.sens"/></td>
+                              	<td style = "border:0px solid; text-align:right;"><span t-field="l.montant"/></td>
+                              	<td style = "border:0px solid; text-align:right;"><span t-field="l.etat"/></td>
+                            	<td style = "border:0px solid; text-align:center;"><span t-field="l.verif"/></td>
+                                <td style = "border:0px solid; text-align:center;"><span t-field="l.valid"/></td>
+                            </tr>
+                        </tbody>
+                </table>
+            </div>
+        </t>
+    </t>
+</t>
+</template>
+
+
+<report id = "report_tenue_compte"
+    string = "Tenue de Compte"
+    model = "compta_tenue_compte"
+    report_type = "qweb-html"
+    file = "sigepe_compta.compta_tenue_compte"
+    name = "sigepe_compta.report_tenue_compte_view"
+    menu = "True"/>
+
+
+    <template id="report_tenue_compte_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+
+                        <h3>TENUE DE COMPTE DU <span t-field="o.dt_debut"/> AU <span t-field="o.dt_fin"/></h3>
+                        <h6>Teneur de compte : <span t-field="o.teneur"/></h6>
+
+                        <head>
+
+                   <style type="text/css">
+
+                        th,
+                        td {
+                            border : 1px solid black;
+                        }
+
+                        h3 {
+                            text-align : center;
+                            color : black;
+                            border : 2px solid;
+                            background-color: grey;
+                        }
+
+                    </style>
+               </head>
+
+                        <table class="table table-sm mb32">
+                        <thead style ="border : 1px solid #000000;">
+                        	<tr>
+                                <th style ="border : 1px solid #000000; text-align:left;">Compte</th>
+                                <th style ="border : 1px solid #000000; text-align:left;">Sens</th>
+                                <th style ="border : 1px solid #000000; text-align:right;">Vérifiée</th>
+                                <th style ="border : 1px solid #000000; text-align:right;">Provisoire</th>
+                                <th style ="border : 1px solid #000000; text-align:right;">Rejet</th>
+                                <th style ="border : 1px solid #000000; text-align:right;">Mnt Débit</th>
+                                <th style ="border : 1px solid #000000; text-align:right;">Mnt Crédit</th>
+                        	</tr>
+                        </thead>
+
+                         <tbody>
+                            <tr t-foreach="o.tenue_compte_line" t-as="l">
+                          		<td style = "border:0px solid; text-align:left;"><span t-field="l.cpte"/></td>
+                                <td style = "border:0px solid; text-align:left;"><span t-field="l.sens"/></td>
+                          		<td style = "border:0px solid; text-align:right;"><span t-field="l.verifie"/></td>
+                              	<td style = "border:0px solid; text-align:right;"><span t-field="l.provisoire"/></td>
+                              	<td style = "border:0px solid; text-align:right;"><span t-field="l.rejet"/></td>
+                              	<td style = "border:0px solid; text-align:right;"><span t-field="l.mnt_debit"/></td>
+                            	<td style = "border:0px solid; text-align:right;"><span t-field="l.mnt_credit"/></td>
+                            </tr>
+                        </tbody>
+                </table>
+            </div>
+        </t>
+    </t>
+</t>
+</template>
+
+
+
+<record id="facture_format_portrait" model="report.paperformat">
+	<field name="name">FACTURE</field>
+	<field name="default" eval="True"/>
+	<field name="format">A4</field>
+	<field name="page_height">0</field>
+	<field name="page_width">0</field>
+	<field name="orientation">Portrait</field>
+	<field name="margin_top">35</field>
+	<field name="margin_bottom">0</field>
+	<field name="margin_left">15</field>
+	<field name="margin_right">15</field>
+	<field name="header_line" eval="False"/>
+	<field name="header_spacing">35</field>
+	<field name="dpi">90</field>
+</record>
+
+
+
+<report id = "report_fac_pro"
+    string = "Facture proforma"
+    model = "compta_facturation_prof"
+    report_type = "qweb-html"
+    file = "sigepe_compta.report_fac_pro"
+    name = "sigepe_compta.report_fac_pro_view"
+	paperformat="facture_format_portrait"
+    menu = "True"/>
+
+<template id="report_fac_pro_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <!--<t t-call="web.external_layout">-->
+                    <div class="page">
+						<br/><br/>
+                        <h2>DIRECTION COMMERCIALE ET DU MARKETING</h2>
+                        
+                        <h3 >FACTURE PRO FORMA N° <span t-esc="o.x_exercice_id.no_ex"/>-<span t-field="o.num_facture"/>-<span t-field="o.structure_id.name"/> </h3>
+                                                <td style="text-align:right;">Date : <span t-esc="o.dte"/></td> <br/>
+                        
+                        
+							<div class="wrapper">
+		                        <table>
+				                        <tr>
+				                           <th style="text-align:left;">DOIT</th>
+				                           <th style="text-align:left;">TELEPHONE</th>				                           			                           				                           
+			                      		</tr>
+
+			                      		<tr>
+			                      			<td style="width:75%;"><span t-esc="o.client_id.nm_rs"/></td> 			                            
+				                            <td style="width:25%;"><span t-esc="o.telephone"/></td> 				                             
+				                        </tr> 
+                                                                   
+		                        </table>
+	                        </div>
+
+	                        <br/>
+							
+							<div><span t-esc="o.client_id.no_ifu"/></div>
+							
+							<br/>
+                        
+							<div class="wrapper2">
+		               			<table>
+		               				<tr>
+			               				<th style="width:15%; text-align:left;">OBJET</th>	
+										<td><span t-esc="o.objet"/></td> 
+		               				</tr>
+		                        </table>
+		                    </div>
+      
+	                        <br/>
+	                        
+	                        
+                        <head>
+
+                   <style type="text/css">
+
+                        th,
+                        td,tr {
+                            border : 1px solid #CCCCCC;
+                        }
+                        
+                        h2 {
+                            text-align : center;
+                            }
+
+                        h3 {
+                            text-align : center;
+                            color : black;
+                            border : 2px solid;
+                            background-color: #dddddd;
+                        }
+
+
+						.wrapper {
+							overflow : auto;						
+							border-radius : 10px;
+							border : 1px solid black;
+						}
+						
+						.wrapper1 {
+							overflow : auto;						
+							border-radius : 10px;
+							border : 1px solid black;
+							margin-bottom : 180px;
+						}
+						
+						.wrapper2 {
+							overflow : auto;						
+							border-radius : 10px;
+							border : 1px solid black;
+							width : 100%;
+						}
+						
+						.droite{
+							left : 70%;
+							position : absolute;
+							bottom : 50px;
+							width : 50px
+						
+						}
+						
+						.wrappers {
+							overflow : auto;						
+							border-radius : 10px;
+							border : 1px solid black;
+							width : 300px;
+							float : right;
+							margin-bottom : 20px;
+							margin-top : 1px;
+						}
+						
+						table{
+							border-spacing : 0;
+							border-collapse : 10px;
+							border-style : hidden ;
+							
+							width : 100%;
+							max-width : 100%;
+
+							
+						}
+						
+						.madiv {
+							margin-bottom:175px;
+						}
+						
+						.haut{
+						margin-top : 50px
+						}
+						
+						
+						
+
+                    </style>
+               </head>
+               <body>
+					<div class="wrapper1">
+                        <table>
+                        <thead>
+                        	<tr>
+                                <th style ="border : 1px solid #000000; text-align:left; font-size:small; width:5%;">N°</th>
+                                <th style ="border : 1px solid #000000; text-align:left; font-size:small; width:45%;">Désignation</th>
+                                <th style ="border : 1px solid #000000; text-align:right; font-size:small; width:12%;">Prix unitaire</th>
+                                <th style ="border : 1px solid #000000; text-align:right; font-size:small; width:5%;">Qté</th>
+                                <th style ="border : 1px solid #000000; text-align:right; font-size:small; width:12%;">Montant</th>
+								<th style ="border : 1px solid #000000; text-align:right; font-size:small; width:17%;">Mt Après Remise</th>
+                        	</tr>
+                        </thead>
+
+                         <tbody>
+                            <tr t-foreach="o.facture_ids" t-as="l">
+                          		<td style = "border:1px solid; text-align:left; font-size:small;"><span t-esc="l_index + 1"/></td>                            
+                          		<td style = "border:1px solid; text-align:left; font-size:small;"><span t-field="l.type2"/></td>
+                                <td style = "border:1px solid; text-align:right; font-size:small;"><span t-field="l.prix_unitaire"/></td>
+                          		<td style = "border:1px solid; text-align:right; font-size:small;"><span t-field="l.qte"/></td>
+                              	<td style = "border:1px solid; text-align:right; font-size:small;"><span t-field="l.prix_total"/></td>
+								<td style = "border:1px solid; text-align:right; font-size:small;"><span t-field="l.prix"/></td>
+                            </tr>
+                        </tbody>
+                </table>
+                </div>
+                
+                	<div>
+               			<div class="wrappers">
+                			<table>
+	                			<tr>
+		                			<th style="text-align:left; width:10px;">Montant total</th>
+		                			<td style="text-align:right; width:60px;"><span t-esc="'{:,}'.format(int(o.ht)).replace(',', ' ')"/></td>
+		                		</tr>
+		                		<tr>
+		                			<th style="text-align:left; width:10px;">Remise</th>
+		                			<td style="text-align:right; width:60px;"><span t-esc="'{:,}'.format(int(o.remise)).replace(',', ' ')"/></td>
+		                		</tr>
+		                		<tr>
+		                			<th style="text-align:left; width:10px;">Montant HT</th>
+		                			<td style="text-align:right; width:60px;"><span t-esc="'{:,}'.format(int(o.total_ht)).replace(',', ' ')"/></td>
+		                		</tr>
+		                		<tr>
+		                			<th style="text-align:left; width:10px;">Montant TVA</th>
+		                			<td style="text-align:right; width:60px;"><span t-esc="'{:,}'.format(int(o.tva)).replace(',', ' ')"/></td>
+		                		</tr>
+		                		<tr>			                			
+		                			<th style="text-align:left; width:10px;">Montant TTC</th>
+		                			<td style="text-align:right; width:60px;"><span t-esc="'{:,}'.format(int(o.ttc)).replace(',', ' ')"/></td>               		
+	                			</tr>
+                			</table>
+                		</div>
+                		
+                		<div style='float:left;'>
+                			<strong>Arrêtée la présente facture pro forma à la somme de : </strong><span t-field="o.text_amount"/> francs CFA 
+                        </div><br/>
+					</div>
+					<table style="border:none; width:100%">
+						<tr style="border:none">
+							<td style=' border:none;'></td>
+						</tr>
+					</table>
+					
+					<table style='border-spacing : 0; margin-top:10px; border-collapse : 10px; border-style : hidden ; width : 100%;
+							max-width : 100%;'> 
+						<tr>
+							<td style='float:left; border:none;'> 
+								<strong>Le Chef de Service Commercial </strong><br/><br/><br/><br/><br/>
+		                        <strong>
+								  <span style="text-align:center;text-decoration:underline;" t-field="o.signataire_csc"/>
+								</strong><br/>
+								<span style="font-size:x-small; font-style:italic;" t-field="o.signataire_csc.distinction"/>
+							</td>
+							<td style='float:right; border:none;'> 
+								<strong>Le Directeur Commercial et du Marketing </strong><br/><br/><br/><br/><br/>
+		                        <strong>
+								  <span style="margin-left:50px; text-align:center; text-decoration:underline;"  t-field="o.signataire_dcm"/>
+								 </strong><br/>	                       
+		                        <span style="font-size:x-small; font-style:italic;" t-field="o.signataire_dcm.distinction"/>
+							</td>
+						</tr>
+					
+					</table>
+	                                  
+           					<!--<div class="madiv">
+							
+								<div style='float:left;'>
+		                            <strong>Le Chef de Service Commercial </strong><br/><br/><br/><br/>
+		                            <strong><td><span style="text-align:center;text-decoration:underline;" t-field="o.signataire_csc"/></td></strong><br/>
+									<td><span style="font-size:x-small; font-style:italic;" t-field="o.signataire_csc.distinction"/></td>
+		                        </div>
+
+		                        
+		                        <div style='float:right'>
+		                            <strong>Le Directeur Commercial et du Marketing </strong><br/><br/><br/><br/>
+		                            <strong><td><span style="margin-left:50px; text-align:center; text-decoration:underline;"  t-field="o.signataire_dcm"/></td></strong><br/>	                       
+		                        	<td><span style="font-size:x-small; font-style:italic;" t-field="o.signataire_dcm.distinction"/></td>
+								</div><br/><br/><br/>
+								
+								
+		                    </div>-->
+
+						
+		                    </body> 
+								
+            </div>
+        <!--</t>-->
+    </t>
+</t>
+</template>
+
+
+
+<report id = "report_fac_def"
+    string = "Facture"
+    model = "compta_facturation"
+    report_type = "qweb-html"
+    file = "sigepe_compta.report_fac_def"
+    name = "sigepe_compta.report_fac_def_view"
+	paperformat="facture_format_portrait"
+    menu = "True"/>
+
+
+    <template id="report_fac_def_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <!--<t t-call="web.external_layout">-->
+                    <div class="page">
+						<br/><br/>
+                        <h2>DIRECTION COMMERCIALE ET DU MARKETING</h2>
+                        
+                        <h3 >FACTURE N° <span t-esc="o.x_exercice_id.no_ex"/>-<span t-field="o.num_facture"/>-<span t-field="o.structure_id.name"/> </h3>
+                        <td style="text-align:right;">Date : <span t-esc="o.dte"/></td> <br/>
+                        
+                        <div class="wrapper">
+		                        <table>
+				                        <tr>
+				                           <th style="text-align:left;">DOIT</th>
+				                           <th style="text-align:left;">TELEPHONE</th>				                           			                           				                           
+			                      		</tr>
+
+			                      		<tr>
+			                      			<td style="width:75%;"><span t-esc="o.client_id.nm_rs"/></td> 			                            
+				                            <td style="width:25%;"><span t-esc="o.telephone"/></td> 				                             
+				                        </tr> 
+                                                                   
+		                        </table>
+	                        </div>
+
+	                        <br/>
+							
+							<div><span t-esc="o.client_id.no_ifu"/></div>
+							
+							<br/>
+                        
+                        <div>
+							<div class="wrapper2">
+		               			<table>
+		               				<tr>
+			               				<th style="width:15%; text-align:left;">OBJET</th>
+			               				<td><span t-esc="o.objet"/></td> 		
+		               				</tr>                         
+		                        </table>
+		                    </div>
+		                    
+	                    </div>          
+	                        <br/>
+	                        
+	                        
+                        <head>
+
+                   <style type="text/css">
+
+                        th,
+                        td,tr {
+                            border : 1px solid #CCCCCC;
+                        }
+                        
+                        h2 {
+                            text-align : center;
+                            }
+
+                        h3 {
+                            text-align : center;
+                            color : black;
+                            border : 2px solid;
+                            background-color: #dddddd;
+                        }
+
+
+						.wrapper {
+							overflow : auto;						
+							border-radius : 10px;
+							border : 1px solid black;
+						}
+						
+						.wrapper1 {
+							overflow : auto;						
+							border-radius : 10px;
+							border : 1px solid black;
+							margin-bottom : 180px;
+						}
+						
+						.wrapper2 {
+							overflow : auto;						
+							border-radius : 10px;
+							border : 1px solid black;
+							width : 100%;
+						}
+						
+						.droite{
+							left : 70%;
+							position : absolute;
+							bottom : 50px;
+							width : 50px
+						
+						}
+						
+						.wrappers {
+							overflow : auto;						
+							border-radius : 10px;
+							border : 1px solid black;
+							width : 300px;
+							float : right;
+							margin-bottom : 50px;
+							margin-top : 1px;
+						}
+						
+						table{
+							border-spacing : 0;
+							border-collapse : 10px;
+							border-style : hidden ;
+							
+							width : 100%;
+							max-width : 100%;
+							
+						}
+						
+						.madiv {
+							margin-bottom:175px;
+						}
+						
+
+
+                    </style>
+               </head>
+               <body>
+					<div class="wrapper1">
+                        <table>
+                        <thead>
+                        	<tr>
+                                <th style ="border : 1px solid #000000; text-align:left; font-size:small; width:5%;">N°</th>
+                                <th style ="border : 1px solid #000000; text-align:left; font-size:small; width:40%;">Désignation</th>
+                                <th style ="border : 1px solid #000000; text-align:right;font-size:small; width:12%;">P.U</th>
+                                <th style ="border : 1px solid #000000; text-align:right; font-size:small; width:5%;">Qté</th>
+                                <th style ="border : 1px solid #000000; text-align:right; font-size:small; width:12%;">Montant</th>
+								<th style ="border : 1px solid #000000; text-align:right; font-size:small; width:18%;">Mt Après Remise</th>
+                        	</tr>
+                        </thead>
+
+                         <tbody>
+                            <tr t-foreach="o.facture_ids" t-as="l">
+                                <td style = "border:1px solid; text-align:left; font-size:small;"><span t-esc="l_index + 1"/></td>                            
+                          		<td style = "border:1px solid; text-align:left; font-size:small;"><span t-field="l.type2"/></td>
+                                <td style = "border:1px solid; text-align:right; font-size:small;"><span t-field="l.prix_unitaire"/></td>
+                          		<td style = "border:1px solid; text-align:right; font-size:small;"><span t-field="l.qte"/></td>
+                              	<td style = "border:1px solid; text-align:right; font-size:small;"><span t-field="l.prix_total"/></td>
+								<td style = "border:1px solid; text-align:right; font-size:small;"><span t-field="l.prix"/></td>
+                            </tr>
+                        </tbody>
+                </table>
+                </div>
+                
+                	<div>
+                	
+                	<!--<div style='float:left'>
+	                        	<img t-att-src="'/report/barcode/QR/%s' % (o.qr_code)" style = "width:200px;height:200px;"/><br/>
+	                        </div>-->
+               			<div class="wrappers">
+                			<table>
+	                			<tr>
+		                			<th style="text-align:left; width:10px;">Montant total</th>
+		                			<td style="text-align:right; width:60px;"><span t-esc="'{:,}'.format(int(o.ht)).replace(',', ' ')"/></td>
+		                		</tr>
+		                		<tr>
+		                			<th style="text-align:left; width:10px;">Remise</th>
+		                			<td style="text-align:right; width:60px;"><span t-esc="'{:,}'.format(int(o.remise)).replace(',', ' ')"/></td>
+		                		</tr>
+		                		<tr>
+		                			<th style="text-align:left; width:10px;">Montant HT</th>
+		                			<td style="text-align:right; width:60px;"><span t-esc="'{:,}'.format(int(o.total_ht)).replace(',', ' ')"/></td>
+		                		</tr>
+		                		<tr>
+		                			<th style="text-align:left; width:10px;">Montant TVA</th>
+		                			<td style="text-align:right; width:60px;"><span t-esc="'{:,}'.format(int(o.tva)).replace(',', ' ')"/></td>
+		                		</tr>
+		                		<tr>			                			
+		                			<th style="text-align:left; width:10px;">Montant TTC</th>
+		                			<td style="text-align:right; width:60px;"><span t-esc="'{:,}'.format(int(o.ttc)).replace(',', ' ')"/></td>               		
+	                			</tr>
+                			</table>
+                		</div>
+                		
+                		<div style='float:left;'>
+                			<strong>Arrêtée la présente facture à la somme de : </strong><span t-field="o.text_amount"/> francs CFA 
+                        </div> <br/>
+					</div>
+					<table style="border:none; width:100%">
+						<tr style="border:none">
+							<td style=' border:none;'></td>
+						</tr>
+					</table>
+
+					
+					<table style='border-spacing : 0; margin-top:10px; border-collapse : 10px; border-style : hidden ; width : 100%;
+							max-width : 100%; margin-bottom:10px;'> 
+						<tr>
+							
+							
+							<td style='float:left; border:none;'> 
+								<strong>Le Directeur Commercial et du Marketing </strong><br/><br/><br/><br/><br/>
+								<strong><span style="margin-left:50px; text-align:center; text-decoration:underline;" t-field="o.signataire_dcm"/></strong><br/>	                       
+		                        <span style="font-size:x-small; font-style:italic;" t-field="o.signataire_dcm.distinction"/>
+							</td>
+							
+							<td style='float:right; border:none;'>
+								<strong>Le Directeur Général </strong><br/><br/><br/><br/><br/>
+								<strong><span style="text-align:center;text-decoration:underline;" t-field="o.signataire_dg"/></strong><br/>
+								<span style="font-size:x-small; font-style:italic;" t-field="o.signataire_dg.distinction"/>
+							</td>
+						</tr>
+						
+					</table>
+					
+	                                  
+           					<!--<div class="madiv">
+		                        <div style='float:right;'>
+		                            <strong>Le Directeur Général </strong><br/><br/><br/><br/>
+		                            <strong><td><span style="text-align:center;text-decoration:underline;" t-field="o.signataire_dg"/></td></strong><br/>
+								<td><span style="font-size:x-small; font-style:italic;" t-field="o.signataire_dg.distinction"/></td>
+		                        </div>
+		                        
+		                        <div style='float:left'>
+		                            <strong>Le Directeur Commercial et du Marketing </strong><br/><br/><br/><br/>
+		                            <strong><td><span style="margin-left:80px; text-decoration:underline;"  t-field="o.signataire_dcm"/></td></strong><br/>	                       
+		                        	<td><span style="font-size:x-small; font-style:italic;" t-field="o.signataire_dcm.distinction"/></td>
+								</div>
+		                    </div>-->
+							
+		                    </body> 
+
+							
+            </div>
+        <!--</t>-->
+    </t>
+</t>
+</template>
+
+
+
+
+
+</odoo>

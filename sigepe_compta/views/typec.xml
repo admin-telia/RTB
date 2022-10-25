@@ -1,0 +1,1508 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+<!-- En attendant la solution alternative -->
+<record model="ir.ui.view" id="opguichet_view_form">
+        <field name="name">opguichet.view.form</field>
+        <field name="model">compta_type_op_cpta</field>
+        <field name="arch" type="xml">
+            <form string="Opération de guichet">
+                <sheet>
+                <group>
+                    <field name = "type_opcpta1" style = "width:10%"/>
+                    <field name = "lb_court" style = "width:50%"/>
+                    <field name = "name" style = "width:75%"/>
+                    <field name = "col_id" style = "width:75%"/>
+                </group>
+                </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="opguichet_view_tree">
+        <field name="name">opguichet.view.tree</field>
+        <field name="model">compta_type_op_cpta</field>
+        <field name="arch" type="xml">
+            <tree string="Opération de guichet">
+            		<field name = "type_opcpta1"/>
+                    <field name = "lb_court"/>
+                    <field name = "name"/>  
+                    <field name = "col_id"/>               
+            </tree>
+        </field>
+</record>
+
+<!-- En attendant la solution alternative -->
+<record model="ir.ui.view" id="opbanq_view_form">
+        <field name="name">opbanq.view.form</field>
+        <field name="model">compta_type_op_banque</field>
+        <field name="arch" type="xml">
+            <form string="Opération de banque">
+                <sheet>
+                <group>
+                    <field name = "type_opbq" style = "width:10%"/>
+                    <field name = "lb_court" style = "width:50%"/>
+                    <field name = "lb_long" style = "width:75%"/>
+                    <field name = "type_journal_id" style = "width:50%"/>
+                </group>
+                </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="opbanq_view_tree">
+        <field name="name">opbanqt.view.tree</field>
+        <field name="model">compta_type_op_banque</field>
+        <field name="arch" type="xml">
+            <tree string="Opération de banque">
+                    <field name = "type_opbq"/>
+                    <field name = "lb_court"/>
+                    <field name = "lb_long"/>
+                    <field name = "type_journal_id"/>
+            </tree>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="view_modereg_form">
+        <field name="name">.mode.reg.form</field>
+        <field name="model">compta_mode_regularisation</field>
+        <field name="arch" type="xml">
+            <form string="Mode de regularisation">
+                <sheet>
+                <group>
+                    <field name = "lb_court" style = "width:50%"/>
+                    <field name = "name" style = "width:75%"/>
+                </group>
+                </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="view_modereg_tree">
+        <field name="name">mode.reg.tree</field>
+        <field name="model">compta_mode_regularisation</field>
+        <field name="arch" type="xml">
+            <tree string="Mode de regularisation">
+                    <field name = "lb_court"/>
+                    <field name = "name"/>
+            </tree>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="view_compta_structure_tree">
+        <field name="name">compta_structure.tree</field>
+        <field name="model">compta_structure</field>
+        <field name="arch" type="xml">
+            <tree string="Mode de regularisation">        
+				<field name = "name"/>
+				<field name = "description"/>
+            </tree>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="compta_structure_form">
+        <field name="name">compta_structure.view.form</field>
+        <field name="model">compta_structure</field>
+        <field name="arch" type="xml">
+            <form string="Type d'opération de base">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                    <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                     <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                    </button>
+                </div>
+                <group>               	
+                    <field name = "name" style = "width:50%"/>
+                    <field name = "description" style = "width:50%"/>
+                </group>
+                </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="type1opcpta_view_form">
+        <field name="name">type1opcpta.view.form</field>
+        <field name="model">compta_type1_op_cpta</field>
+        <field name="arch" type="xml">
+            <form string="Type d'opération de base">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                    <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                     <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                    </button>
+                </div>
+                <group>
+                	
+                    <field name = "type1_opcpta" style = "width:10%"/>
+                    <field name = "lb_court" style = "width:50%"/>
+                    <field name = "lb_long" style = "width:75%"/>
+                    <!--<field name = "data_id" style = "width:75%"/>-->
+                </group>
+                </sheet>
+            </form>
+        </field>
+</record>
+
+<record model="ir.ui.view" id="type1opcpta_view_tree">
+        <field name="name">type1opcpta.view.tree</field>
+        <field name="model">compta_type1_op_cpta</field>
+        <field name="arch" type="xml">
+            <tree string="Type d'opération de base">
+                    <field name = "type1_opcpta"/>
+                    <field name = "lb_court"/>
+                    <field name = "lb_long"/>
+                    <!--<field name = "data_id"/>-->
+            </tree>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="view_id_typeopguichet_form">
+    <field name="name">view.opguichet.form</field>
+    <field name="model">compta_type_op_cpta_line</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">
+        <form string="Type d'opération de guichet">
+        <sheet>
+        <group>
+            <field name="type1_opcpta" style = "width:50%"/>
+        </group>
+            <group>
+                <field name="type_opguichet_ids" nolabel = "1">
+                    <tree string="Types d'opération de guichet" editable = "bottom">
+                        <field name="fg_guichet"/>
+                        <field name="fg_ch_emis"/>
+                        <field name="fg_op_relev"/>
+                        <field name="fg_retenue" />
+                        <field name="type_opcpta1"/>
+                        <field name="lb_court"/>
+                        <field name="name"/>
+                        <field name="col_id"/>
+                        <field name="fg_grant_ac"/>
+                        <field name="fg_grant_ord"/>
+                    </tree>
+                </field>
+            </group>        
+   </sheet>
+  </form>
+ </field>
+</record>
+
+<record model="ir.ui.view" id="view_id_typeopguichet_tree">
+    <field name="name">view.opguichet.tree</field>
+    <field name="model">compta_type_op_cpta_line</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">
+        <tree string="Type d'opération de guichet">
+            <field name="type1_opcpta"/>
+        </tree>
+    </field>
+</record>
+
+
+
+<record model="ir.ui.view" id="view_id_typeopbanque_form">
+    <field name="name">view.typeopbanque.form</field>
+    <field name="model">compta_type_op_banque_line</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">
+        <form string="Type d'Opération de banque">
+        <sheet>
+        <group>
+            <field name="type1_opcpta_id" style = "width:50%"/>
+        </group>
+    <notebook>
+        <page string="Types d'opération de banque">
+            <group>
+                <field name="type_opbq_ids" nolabel = "1">
+                    <tree string="Types d'opération de banque" editable = "bottom">
+                        <field name="type_opbq"/>
+                        <field name="lb_court"/>
+                        <field name="lb_long"/>
+                        <field name="type_journal_id"/>
+                    </tree>
+                </field>
+            </group>        
+        </page>
+     </notebook>
+   </sheet>
+  </form>
+ </field>
+</record>
+
+
+<record model="ir.ui.view" id="view_id_typeopbanque_tree">
+    <field name="name">view.typeopbanque.tree</field>
+    <field name="model">compta_type_op_banque_line</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">
+        <tree string="Type d'opération de banque">
+            <field name="type1_opcpta_id" />
+        </tree>
+    </field>
+</record>
+
+
+
+<record model="ir.ui.view" id="view_typeecriture_view_form">
+        <field name="name">view.typecriture.form</field>
+        <field name="model">compta_type_ecriture</field>
+        <field name="arch" type="xml">
+            <form string="Type d'écriture">
+                <sheet>
+                 <div class="oe_button_box" name="button_box">
+                    <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                     <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                    </button>
+                </div>
+                <group>
+                    <field name = "type_ecriture" style = "width:10%"/>
+                    <field name = "lb_court" style = "width:50%"/>
+                    <field name = "lb_long" style = "width:75%"/>
+                </group>
+                </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="view_typeecriture_view_tree">
+    <field name="name">view.typecriture.tree</field>
+    <field name="model">compta_type_ecriture</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">
+        <tree string="Type d'écriture">
+        	<field name = "type_ecriture"/>
+            <field name="lb_court" />
+            <field name="lb_long" />
+        </tree>
+    </field>
+</record>
+
+
+<record model="ir.ui.view" id="view_typeoriginecriture_view_form">
+        <field name="name">view.typeoriginecriture.form</field>
+        <field name="model">compta_type_op_ecriture</field>
+        <field name="arch" type="xml">
+            <form string="Type d'origine d'écriture">
+                <sheet>
+                 <div class="oe_button_box" name="button_box">
+                    <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                     <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                    </button>
+                </div>
+                <group>
+                    <field name = "type_op_ecr" style = "width:10%"/>
+                    <field name = "lb_court" style = "width:50%"/>
+                    <field name = "lb_long" style = "width:75%"/>
+                </group>
+                </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="view_typeoriginecriture_view_tree">
+    <field name="name">view.typeoriginecriture.tree</field>
+    <field name="model">compta_type_op_ecriture</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">
+        <tree string="Type d'origine d'écriture">
+        	<field name = "type_op_ecr"/>
+            <field name="lb_court" />
+            <field name="lb_long" />
+        </tree>
+    </field>
+</record>
+
+
+<record model="ir.ui.view" id="view_typelbecriture_view_form">
+        <field name="name">view.typelblecriture.form</field>
+        <field name="model">compta_typelblecriture</field>
+        <field name="arch" type="xml">
+            <form string="Type libellé ligne">
+                <sheet>
+                 <div class="oe_button_box" name="button_box">
+                    <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                     <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                    </button>
+                </div>
+                <group>
+                    <field name = "type_lblecriture" style = "width:10%"/>
+                    <field name = "lb_court" style = "width:50%"/>
+                    <field name = "lb_long" style = "width:75%"/>
+                </group>
+                </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="view_typelbecriture_view_tree">
+    <field name="name">view.typelblecriture.tree</field>
+    <field name="model">compta_typelblecriture</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">
+        <tree string="Type libellé ligne">
+        	<field name = "type_lblecriture"/>
+            <field name="lb_court" />
+            <field name="lb_long" />
+        </tree>
+    </field>
+</record>
+
+<record model="ir.ui.view" id="view_typejournal_view_form">
+        <field name="name">view.typejournal.form</field>
+        <field name="model">compta_type_journal</field>
+        <field name="arch" type="xml">
+            <form string="Type de journal">
+                <sheet>
+                 <div class="oe_button_box" name="button_box">
+                    <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                     <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                    </button>
+                </div>
+                <group>
+                    <field name = "type_journal" style = "width:10%"/>
+                    <field name = "lb_court" style = "width:50%"/>
+                    <field name = "lb_long" style = "width:75%"/>
+                </group>
+                </sheet>
+            </form>
+        </field>
+</record>
+
+<record model="ir.ui.view" id="view_typejournal_view_tree">
+    <field name="name">view.typejournal.tree</field>
+    <field name="model">compta_type_journal</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">
+        <tree string="Type de journal">
+        	<field name = "type_journal"/>
+            <field name="lb_court" />
+            <field name="lb_long" />
+        </tree>
+    </field>
+</record>
+
+<record model="ir.ui.view" id="view_typequittance_view_form">
+        <field name="name">view.typequittance.form</field>
+        <field name="model">compta_type_quittance</field>
+        <field name="arch" type="xml">
+            <form string="Type de quittance">
+                <sheet>
+                 <div class="oe_button_box" name="button_box">
+                    <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                     <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                    </button>
+                </div>
+                <group>
+                    <field name = "ty_quittance" style = "width:10%"/>
+                    <field name = "lb_court" style = "width:50%"/>
+                    <field name = "lb_long" style = "width:75%"/>
+                </group>
+                </sheet>
+            </form>
+        </field>
+</record>
+
+<record model="ir.ui.view" id="view_typequittance_view_tree">
+    <field name="name">view.typequittance.tree</field>
+    <field name="model">compta_type_quittance</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">
+        <tree string="Type de quittance">
+        	<field name = "ty_quittance"/>
+            <field name="lb_court" />
+            <field name="lb_long" />
+        </tree>
+    </field>
+</record>
+
+<record model="ir.ui.view" id="view_typebilletage_view_form">
+        <field name="name">view.typebilletage.form</field>
+        <field name="model">compta_type_billetage</field>
+        <field name="arch" type="xml">
+            <form string="Type de billetage">
+                <sheet>
+                 <div class="oe_button_box" name="button_box">
+                    <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                     <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                    </button>
+                </div>
+                <group>
+                    <field name = "type_billetage" style = "width:10%"/>
+                    <field name = "lb_court" style = "width:50%"/>
+                    <field name = "lb_long" style = "width:75%"/>
+                </group>
+                </sheet>
+            </form>
+        </field>
+</record>
+
+<record model="ir.ui.view" id="view_typebilletage_view_tree">
+    <field name="name">view.typebilletage.tree</field>
+    <field name="model">compta_type_billetage</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">
+        <tree string="Type de billetage">
+        	<field name = "type_billetage"/>
+            <field name="lb_court" />
+            <field name="lb_long" />
+        </tree>
+    </field>
+</record>
+
+<record model="ir.ui.view" id="view_typeperiode_view_form">
+        <field name="name">view.typeperiode.form</field>
+        <field name="model">compta_type_periode</field>
+        <field name="arch" type="xml">
+            <form string="Type de période">
+                <sheet>
+                 <div class="oe_button_box" name="button_box">
+                    <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                     <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                    </button>
+                </div>
+                <group>
+                    <field name = "ty_periode" style = "width:10%"/>
+                    <field name = "lb_court" style = "width:50%"/>
+                    <field name = "lb_long" style = "width:75%"/>
+                </group>
+                </sheet>
+            </form>
+        </field>
+</record>
+
+<record model="ir.ui.view" id="view_typeperiode_view_tree">
+    <field name="name">view.typeperiode.tree</field>
+    <field name="model">compta_type_periode</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">
+        <tree string="Type de période">
+        	<field name = "ty_periode"/>
+            <field name="lb_court" />
+            <field name="lb_long" />
+        </tree>
+    </field>
+</record>
+
+
+
+
+<record model="ir.ui.view" id="view_colonne_view_form">
+        <field name="name">view.colonne.form</field>
+        <field name="model">compta_colonne_caisse</field>
+        <field name="arch" type="xml">
+            <form string="Type d'opération de base">
+                <sheet>
+                     <div class="oe_button_box" name="button_box">
+                    <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                     <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                    </button>
+                </div>
+                <group>
+                    <field name = "cd_col_caise" style = "width:10%"/>
+                    <field name = "lb_court" style = "width:50%"/>
+                    <field name = "lb_long" style = "width:75%"/>
+                    <!--<field name = "test" style = "width:75%"/> -->
+                </group>
+                </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="view_colonne_view_tree">
+    <field name="name">view.colonne.tree</field>
+    <field name="model">compta_colonne_caisse</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">
+        <tree string="Type d'opération de base">
+        	<field name = "cd_col_caise"/>
+            <field name="lb_court" />
+            <field name="lb_long" />
+        </tree>
+    </field>
+</record>
+ 
+<record model="ir.ui.view" id="typeinterext_view_form">
+        <field name="name">typeinterext.view.form</field>
+        <field name="model">compta_type_interv_ext</field>
+        <field name="arch" type="xml">
+            <form string="Type d'intervenant">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                    <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                     <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                    </button>
+                </div>
+                <group>
+                    <field name = "type_ivext" style = "width:10%"/>
+                    <field name = "lb_court" style = "width:50%"/>
+                    <field name = "lb_long" style = "width:75%"/>
+                    <field name = "fg_dec"/>
+                    <field name = "fg_enc"/>
+                </group>
+                </sheet>
+            </form>
+        </field>
+</record>
+
+<record model="ir.ui.view" id="typeinterext_view_tree">
+        <field name="name">typeinterext.view.tree</field>
+        <field name="model">compta_type_interv_ext</field>
+        <field name="arch" type="xml">
+            <tree string="Type d'intervenant">
+                    <field name = "type_ivext"/>
+                    <field name = "lb_court"/>
+                    <field name = "lb_long"/>
+                    <field name = "fg_dec"/>
+                    <field name = "fg_enc"/>
+            </tree>
+        </field>
+</record>
+
+<record model="ir.ui.view" id="view_id_bordereau_form">
+    <field name="name">view.fictif.form</field>
+    <field name="model">budg_typebordtrans</field>
+    <field name="inherit_id" ref="sigepe_budget.typebordtrans_view_form"/>
+     <field name="arch" type="xml">
+     	<xpath expr="//field[@name='lb_long']" position="after">
+     	<field name="fictif" invisible="1"/>
+     	</xpath>
+     </field>
+</record>
+
+
+<record model="ir.ui.view" id="view_etat_form">
+        <field name="name">etat.form</field>
+        <field name="model">compta_type_etat_financier</field>
+        <field name="arch" type="xml">
+        <form string="Type état financier">
+        <sheet>
+            <div class="oe_button_box" name="button_box">
+	            <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+	             <field name="active" widget="boolean_button" options='{"terminology": "Terminal"}'/>
+	            </button>
+            </div>           
+            <group>
+               <field name ="cd_type_financier" style="width:35%"/>
+               <field name="lb_court" style="width:50%"/>
+               <field name="lb_long" style="width:100%"/> 
+            </group>                        
+            </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="view_etat_tree">
+        <field name="name">etat.tree</field>
+        <field name="model">compta_type_etat_financier</field>
+        <field name="arch" type="xml">
+            <tree string="Type état financier">
+               <field name ="cd_type_financier"/>
+               <field name="lb_court"/>
+               <field name="lb_long"/>
+               <field name="active"/>             
+            </tree>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="view_colonne_form">
+        <field name="name">view.colonne.form</field>
+        <field name="model">compta_type_colonne_etat_financier</field>
+        <field name="arch" type="xml">
+        <form string="Type de colonne état financier">
+        <sheet>
+            <div class="oe_button_box" name="button_box">
+	            <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+	             <field name="active" widget="boolean_button" options='{"terminology": "Terminal"}'/>
+	            </button>
+            </div>
+            
+            <group>
+               <field name ="cd_colonne_financier" style="width:35%"/>
+               <field name="lb_court" style="width:50%"/>
+               <field name="lb_long" style="width:100%"/> 
+            </group>       
+            </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="view_colonne_tree">
+        <field name="name">view.colonne.tree</field>
+        <field name="model">compta_type_colonne_etat_financier</field>
+        <field name="arch" type="xml">
+            <tree string="Type de colonne état financier">
+               <field name ="cd_colonne_financier"/>
+               <field name="lb_court"/>
+               <field name="lb_long"/>
+               <field name="active"/>             
+            </tree>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="view_partie_form">
+        <field name="name">view.partie.form</field>
+        <field name="model">compta_partie_etat_financier</field>
+        <field name="arch" type="xml">
+        <form string="Partie état financier">
+        <sheet>
+            <div class="oe_button_box" name="button_box">
+	            <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+	             <field name="active" widget="boolean_button" options='{"terminology": "Terminal"}'/>
+	            </button>
+            </div>
+            
+            <group>
+               <field name ="cd_categorie_financier" style="width:35%"/>
+               <field name="lb_court" style="width:50%"/>
+               <field name="lb_long" style="width:100%"/> 
+            </group>       
+            </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="view_partie_tree">
+        <field name="name">view.partie.tree</field>
+        <field name="model">compta_partie_etat_financier</field>
+        <field name="arch" type="xml">
+            <tree string="Partie état financier">
+               <field name ="cd_categorie_financier"/>
+               <field name="lb_court"/>
+               <field name="lb_long"/>
+               <field name="active"/>             
+            </tree>
+        </field>
+</record>
+
+
+
+<record model="ir.ui.view" id="view_operation_form">
+    <field name="name">view.opeation.guichet.form</field>
+    <field name="model">compta_operation_guichet</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">  	
+	    <form string="Opération de guichet">
+	    <sheet>
+	    		<group>
+	    			<field name="data_id" invisible="1" style= "width:25%" options="{'no_create': True}"/>
+	    		</group>
+		    	<group col='4'>
+		    		<field name="typebase" style= "width:75%" options="{'no_create': True}"/>
+		    		<field name="code" style= "width:25%" force_save="1"/>
+		    	</group>		    		
+	        <field name = "operation_guichet_ids" nolabel ="1">
+             	<tree string = "Opération de guihcet" editable = "bottom">
+             		<field name = "fg_guichet" />
+             		<field name = "fg_ch_emis"/>
+             		<field name = "fg_op_relev"/>
+             		<field name = "fg_retenue"/>
+             		<field name = "type_opcpta1"/>
+             		<!--<field name = "lb_court"/>-->
+             		<field name = "name"/>
+             		<field name = "col_id" options="{'no_create': True}"/>
+             	</tree>
+             </field>
+             </sheet> 
+	    </form>
+	</field>
+</record>
+
+
+<record model="ir.ui.view" id="view_operation_tree">
+        <field name="name">view.operation.guichet.tree</field>
+        <field name="model">compta_operation_guichet</field>
+        <field name="arch" type="xml">
+            <tree string="Libellé type de base">
+               <field name ="typebase"/>            
+            </tree>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="view_operation_banque_form">
+    <field name="name">view.opeation.banque.form</field>
+    <field name="model">compta_operation_banque</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">  	
+	    <form string="Opération de guichet">
+	    <sheet>
+		    	<group col='4'>
+		    		<field name="typebase" style= "width:75%" options="{'no_create': True}"/>
+		    		<field name="code" style= "width:25%" force_save="1"/>
+		    	</group>		    		
+	        <field name = "operation_banque_ids" nolabel ="1">
+             	<tree string = "Opération de banque" editable = "bottom">
+             		<field name = "type_opbq"/>
+             		<field name = "lb_court" />
+             		<field name = "lb_long"/>
+             		<field name = "type_journal_id"/>
+             	</tree>
+             </field>
+             </sheet> 
+	    </form>
+	</field>
+</record>
+
+
+<record model="ir.ui.view" id="view_operation_banque_tree">
+        <field name="name">view.operation.banque.tree</field>
+        <field name="model">compta_operation_banque</field>
+        <field name="arch" type="xml">
+            <tree string="Libellé type de base">
+               <field name ="typebase"/>            
+            </tree>
+        </field>
+</record>
+
+
+
+
+<!-- Définitions des différentes vues -->
+<record id="act_opbase" model="ir.actions.act_window">
+    <field name="name">Opération de base</field>
+    <field name="res_model">compta_type1_op_cpta</field>
+    <field name="view_mode">tree,form,kanban</field>
+    <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cliquer pour créer une opération de base.
+            </p>
+        </field>
+</record>
+
+<record id="act_opguichet" model="ir.actions.act_window">
+    <field name="name">Liste de opérations/prestations</field>
+    <field name="res_model">compta_operation_guichet</field>
+    <field name="view_mode">tree,form,kanban</field>
+</record>
+
+<record id="act_typeopbanque" model="ir.actions.act_window">
+    <field name="name">Type d'opération de banque</field>
+    <field name="res_model">compta_type_op_banque_line</field>
+    <field name="view_mode">tree,form,kanban</field>
+    <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cliquer pour créer un type d'opération de banque.
+            </p>
+        </field>
+</record>
+
+<record id="act_typeecriture" model="ir.actions.act_window">
+    <field name="name">Type d'écriture</field>
+    <field name="res_model">compta_type_ecriture</field>
+    <field name="view_mode">tree,form,kanban</field>
+    <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cliquer pour créer un type d'écriture.
+            </p>
+        </field>
+</record>
+
+<record id="act_typeoriginecriture" model="ir.actions.act_window">
+    <field name="name">Type d'origine d'écriture</field>
+    <field name="res_model">compta_type_op_ecriture</field>
+    <field name="view_mode">tree,form,kanban</field>
+    <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cliquer pour créer un type d'origine d'écriture.
+            </p>
+        </field>
+</record>
+
+<record id="act_typelbecriture" model="ir.actions.act_window">
+    <field name="name">Type libellé d'écriture</field>
+    <field name="res_model">compta_typelblecriture</field>
+    <field name="view_mode">tree,form,kanban</field>
+    <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cliquer pour créer un type de libellé d'écriture.
+            </p>
+        </field>
+</record>
+
+<record id="act_typejournal" model="ir.actions.act_window">
+    <field name="name">Type de journal comptable</field>
+    <field name="res_model">compta_type_journal</field>
+    <field name="view_mode">tree,form,kanban</field>
+    <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cliquer pour créer un type de journal comptable.
+            </p>
+        </field>
+</record>
+
+
+<record id="act_moderegul" model="ir.actions.act_window">
+    <field name="name">Mode de régularisation</field>
+    <field name="res_model">compta_mode_regularisation</field>
+    <field name="view_mode">tree,form,kanban</field>
+</record>
+
+<record id="act_typequittance" model="ir.actions.act_window">
+    <field name="name">Type de quittance</field>
+    <field name="res_model">compta_type_quittance</field>
+    <field name="view_mode">tree,form,kanban</field>
+    <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cliquer pour créer un type de quittance.
+            </p>
+        </field>
+</record>
+
+<record id="act_typebilletage" model="ir.actions.act_window">
+    <field name="name">Type de billetage</field>
+    <field name="res_model">compta_type_billetage</field>
+    <field name="view_mode">tree,form,kanban</field>
+    <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cliquer pour créer un type de billetage.
+            </p>
+        </field>
+</record>
+
+<record id="act_typeperiode" model="ir.actions.act_window">
+    <field name="name">Type de période</field>
+    <field name="res_model">compta_type_periode</field>
+    <field name="view_mode">tree,form,kanban</field>
+    <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cliquer pour créer un type de période.
+            </p>
+        </field>
+</record>
+
+
+<record id="act_colonnes" model="ir.actions.act_window">
+    <field name="name">Colonne brouillard de caisse</field>
+    <field name="res_model">compta_colonne_caisse</field>
+    <field name="view_mode">tree,form,kanban</field>
+    <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cliquer pour créer une colonne brouillard de caisse.
+            </p>
+        </field>
+</record>
+
+<record id="act_typeinter" model="ir.actions.act_window">
+    <field name="name">Type d'intervenant exterieur</field>
+    <field name="res_model">compta_type_interv_ext</field>
+    <field name="view_mode">tree,form,kanban</field>
+    <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cliquer pour créer un type d'intervenant d'extérieur.
+            </p>
+        </field>
+</record>
+
+<record id="act_bord" model="ir.actions.act_window">
+    <field name="name">Types de bordereau de transmission</field>
+    <field name="res_model">budg_typebordtrans</field>
+    <field name="view_mode">tree,form,kanban</field>
+</record>
+
+<record id="act_guichet" model="ir.actions.act_window">
+    <field name="name">Types d'opérations de guichet</field>
+    <field name="res_model">compta_type_op_cpta</field>
+    <field name="view_mode">tree,form,kanban</field>
+</record>
+
+<record id="act_bq" model="ir.actions.act_window">
+    <field name="name">Types d'opérations de banque</field>
+    <field name="res_model">compta_type_op_banque</field>
+    <field name="view_mode">tree,form,kanban</field>
+</record>
+
+
+<record id="act_etat_fin" model="ir.actions.act_window">
+    <field name="name">Type des états financiers</field>
+    <field name="res_model">compta_type_etat_financier</field>
+    <field name="view_mode">tree,form,kanban</field>
+</record>
+
+<record id="act_colonne" model="ir.actions.act_window">
+    <field name="name">Type de colonne des états financiers</field>
+    <field name="res_model">compta_type_colonne_etat_financier</field>
+    <field name="view_mode">tree,form,kanban</field>
+</record>
+
+
+<record id="act_cat" model="ir.actions.act_window">
+    <field name="name">Parties états financiers</field>
+    <field name="res_model">compta_partie_etat_financier</field>
+    <field name="view_mode">tree,form,kanban</field>
+</record>
+
+<record id="act_opbanque" model="ir.actions.act_window">
+    <field name="name">Opérations de banque</field>
+    <field name="res_model">compta_operation_banque</field>
+    <field name="view_mode">tree,form,kanban</field>
+</record>
+
+
+<record id="act_type_prestation" model="ir.actions.act_window">
+    <field name="name">Liste des types de prestation </field>
+    <field name="res_model">compta_type_prestation</field>
+    <field name="view_mode">tree,form,kanban</field>
+</record>
+
+
+<record model="ir.ui.view" id="type_view_form">
+        <field name="name">type.view.form</field>
+        <field name="model">compta_type_prestation</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                <group>
+                    <field name = "code" style = "width:10%"/>
+                    <field name = "name" style = "width:75%"/>
+                </group>
+                </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="type_view_tree">
+        <field name="name">type.view.tree</field>
+        <field name="model">compta_type_prestation</field>
+        <field name="arch" type="xml">
+            <tree string="Opération de guichet">
+            		<field name = "code"/>
+                    <field name = "name"/>  
+            </tree>
+        </field>
+</record>
+
+
+<record id="act_cat_prestation" model="ir.actions.act_window">
+    <field name="name">Liste des catégories de prestation </field>
+    <field name="res_model">compta_categorie</field>
+    <field name="view_mode">tree,form,kanban</field>
+</record>
+
+
+<record model="ir.ui.view" id="cat_view_form">
+        <field name="name">cat.view.form</field>
+        <field name="model">compta_categorie</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                <group>
+                    <field name = "code" style = "width:10%"/>
+                    <field name = "name" style = "width:75%"/>
+                </group>
+                </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="cat_view_tree">
+        <field name="name">cat.view.tree</field>
+        <field name="model">compta_categorie</field>
+        <field name="arch" type="xml">
+            <tree string="">
+            		<field name = "code"/>
+                    <field name = "name"/>  
+            </tree>
+        </field>
+</record>
+
+
+
+<record id="act_prestation" model="ir.actions.act_window">
+    <field name="name">Liste des prestations </field>
+    <field name="res_model">compta_prestation</field>
+    <field name="view_mode">tree,form,kanban</field>
+</record>
+
+
+<record model="ir.ui.view" id="prest_view_form">
+        <field name="name">prest.view.form</field>
+        <field name="model">compta_prestation</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                <group>
+                    <field name = "code" style = "width:10%"/>
+                    <field name = "name" style = "width:75%"/>
+                </group>
+                </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="prest_view_tree">
+        <field name="name">prest.view.tree</field>
+        <field name="model">compta_prestation</field>
+        <field name="arch" type="xml">
+            <tree string="">
+            		<field name = "code"/>
+                    <field name = "name"/>  
+            </tree>
+        </field>
+</record>
+
+
+<record id="act_horaire" model="ir.actions.act_window">
+    <field name="name">Liste des horaires </field>
+    <field name="res_model">compta_horaire</field>
+    <field name="view_mode">tree,form,kanban</field>
+</record>
+
+<record model="ir.ui.view" id="horaire_view_form">
+        <field name="name">horaire.view.form</field>
+        <field name="model">compta_horaire</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                <group>
+                    <field name = "code" style = "width:10%"/>
+                    <field name = "name" style = "width:75%"/>
+                </group>
+                </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="horaire_view_tree">
+        <field name="name">horaire.view.tree</field>
+        <field name="model">compta_horaire</field>
+        <field name="arch" type="xml">
+            <tree string="">
+            		<field name = "code"/>
+                    <field name = "name"/>  
+            </tree>
+        </field>
+</record>
+
+
+
+<record id="act_parametre" model="ir.actions.act_window">
+    <field name="name">Grille Tarifaire </field>
+    <field name="res_model">compta_parametre</field>
+    <field name="view_mode">tree,form,kanban</field>
+</record>
+
+<record model="ir.ui.view" id="param_view_form">
+        <field name="name">param.view.form</field>
+        <field name="model">compta_parametre</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                <group>
+                    <field name = "categorie_id" style = "width:50%"/>
+                    <field name = "type_id" style = "width:50%"/>
+                    <field name = "designation" style = "width:50%"/>
+                    <field name = "rtb" style = "width:50%"/>
+                    <field name = "support" style = "width:50%"/>
+                    <field name = "horaire" style = "width:50%"/>
+					<field name = "localite" style = "width:50%"/>
+					<field name = "duree" style = "width:50%"/>
+                    <field name = "prix_unitaire" style = "width:35%"/>
+                </group>
+                </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="param_view_tree">
+        <field name="name">param.view.tree</field>
+        <field name="model">compta_parametre</field>
+        <field name="arch" type="xml">
+            <tree string="Opération de guichet" editable = "bottom">
+           		<field name = "categorie_id"/>
+                <field name = "type_id"/>
+                <field name = "designation"/>
+                <field name = "rtb"/>
+                <field name = "support"/>
+                <field name = "horaire"/>
+				<field name = "localite"/>
+				<field name = "duree"/>
+                <field name = "prix_unitaire"/>
+            </tree>
+        </field>
+</record>
+
+
+<record id="act_facture_prof" model="ir.actions.act_window">
+    <field name="name">Liste des factures proforma </field>
+    <field name="res_model">compta_facturation_prof</field>
+    <field name="view_mode">tree,form</field>
+</record>  
+
+
+<record id="act_structure" model="ir.actions.act_window">
+    <field name="name">Liste des structures </field>
+    <field name="res_model">compta_structure</field>
+    <field name="view_mode">tree,form</field>
+</record>   
+    
+    <record model="ir.ui.view" id="facture_view_tree">
+        <field name="name">facture.view.tree</field>
+        <field name="model">compta_facturation_prof</field>
+        <field name="arch" type="xml">
+            <tree string="Opération de guichet" decoration-info="state == 'P'" decoration-success="state == 'T'">
+           		<field name = "num_facture"/>
+                <field name = "dte"/>
+                <field name = "objet"/>
+                <field name = "client_id"/>
+                <field name = "ttc"/> 
+				<field name = "structure_id"/>
+				<field name = "state"/> 				
+            </tree>
+        </field>
+</record>
+    
+
+<record model="ir.ui.view" id="vue_facture_operation_form">
+    <field name="name">facture.guichet.prof.form</field>
+    <field name="model">compta_facturation_prof</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">  	
+	    <form string="Opération de guichet">
+	    <header>
+		    <button string="Valider Pro Forma" name="valider" type="object" class="oe_highlight"
+	        attrs="{'invisible' : [('state', 'not in', ['N'])]}"/>
+	        <field name="state" widget = "statusbar"/>
+	    </header>
+	    <sheet>
+    		<group string="Informations facture" col="2" >
+    			<group>
+		    		<field name="client_id" style= "width:100%"/>
+		    		<field name="telephone" style= "width:50%" force_save="1"/>
+		    	</group>
+	    		<group>
+		    		<field name="dte" force_save="1" style= "width:25%"/>
+					<field name="structure_id" force_save="1" style= "width:50%" options="{'no_create': True}"/>
+		    		<field name="num_facture" style= "width:50%"/>
+	    		</group>
+    		</group>
+	    	<group>
+	    		<field name="objet" style= "width:100%" force_save="1"/>
+	    	</group>
+		    		<field name="x_exercice_id" invisible="1" force_save='1'/>
+		    		<field name="company_id" invisible="1"/>
+		    		<field name="signataire_dcm" invisible="1"/>
+					<field name="signataire_csc" invisible="1"/>					
+		    <group string="Détails facture"> 		
+	        <field name = "facture_ids" nolabel ="1">
+             	<tree string = "Opération de facture" editable = "bottom">
+             		<field name = "type1" options="{'no_create': True}"/>
+             		<field name = "type2" options="{'no_create': True}"/>
+             		<field name = "id_imput" invisible='1' force_save='1'/>
+             		<field name = "prix_unitaire" force_save="1" />
+					<field name = "qte" force_save="1"/>
+             		<field name = "prix_total" force_save="1" sum="Total"/>
+					<field name = "mnt_remise" force_save="1" sum="Total"/>
+             		<field name = "prix" force_save="1" sum="Total"  invisible="0"/>
+					<field name="x_exercice_id" invisible="1"/>
+		    		<field name="company_id" invisible="1"/>
+					<field name="code2" invisible="1"/>					
+             	</tree>
+             </field>
+             </group>
+             	<group col='4'>
+             	<group>
+		    		<button string="Calculer" name="calculer" type="object" class="oe_highlight"/>	           
+		    	</group> 
+             	<group>
+	             	<field name="ht" style= "width:100%" force_save="1"/>
+	             	<field name="remise" style= "width:100%" force_save="1"/>
+             	</group>          	
+             	<group>
+		    		<field name="tvaex" force_save="1"/>
+		    		<field name="tva" style= "width:100%" force_save="1"/>
+		    	</group>
+		    	<group>
+		    		<field name="total_ht" style= "width:100%" force_save="1"/>
+		    		<field name="ttc" style= "width:100%" force_save="1"/>
+		    	</group>
+		    	</group>
+             </sheet> 
+	    </form>
+	</field>
+</record>
+
+
+<record id="act_facture" model="ir.actions.act_window">
+    <field name="name">Liste des factures définitives </field>
+    <field name="res_model">compta_facturation</field>
+    <field name="view_mode">tree,form</field>
+</record>    
+    
+    <record model="ir.ui.view" id="facture_tree">
+        <field name="name">facture.view.tree</field>
+        <field name="model">compta_facturation</field>
+        <field name="arch" type="xml">
+            <tree string="Opération de guichet" decoration-warning="etat == 'V'" decoration-danger="etat == 'N'" decoration-info="etat == 'PP'" decoration-success="etat == 'P'">
+           		<field name = "num_facture"/>
+                <field name = "dte"/>
+                <field name = "objet"/>
+                <field name = "client_id"/>
+                <field name = "ttc"/>  
+				<field name = "reste"/>
+				<field name = "structure_id"/>				
+				<field name = "etat"/>  
+            </tree>
+        </field>
+</record>
+    
+
+<record model="ir.ui.view" id="facture_opera_form">
+    <field name="name">facture.guichet.form</field>
+    <field name="model">compta_facturation</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">  	
+	    <form string="Opération de guichet">
+	    <header>
+		    <button string="Valider facture" name="valider_facture" type="object" class="oe_highlight"
+	        attrs="{'invisible' : [('etat', 'not in', ['N']),('etat', 'in', ['V','PP'])]}"/>
+	        <field name="etat" widget = "statusbar"/>
+	    </header>
+	    <sheet>
+	    		<group>
+		    		<field name="num_facture" style= "width:50%"/>
+		    		<field name="qr_code" widget="image" class="oe_avatar" invisible="1"/>
+		    	</group>
+    			<group string="Informations facture" col="2" >  			
+		    		<group>
+			    		<field name="num_facture_prof" force_save="1" style= "width:50%"/>
+			    		<field name="dte" style= "width:50%" force_save='1'/>
+						<field name="structure_id" force_save="1"/>
+			    		<field name="reste" style= "width:50%" invisible="1" force_save='1'/>
+		    		</group>
+		    		<group>
+			    		<field name="client_id" style= "width:100%" force_save='1'/>
+			    		<field name="telephone" style= "width:50%" force_save="1"/>
+			    	</group>
+    			</group>
+	    	<group>
+	    		<field name="objet" style= "width:100%" force_save="1"/>
+	    	</group>
+		    		<field name="x_exercice_id" invisible="1"/>
+		    		<field name="company_id" invisible="1"/>
+		    		<field name="signataire_dcm" invisible="1"/> 
+		   <group string="Détails facture">   		
+	        <field name = "facture_ids" nolabel ="1" force_save='1'>
+             	<tree string = "Opération de facture" editable = "bottom">
+             		<field name = "type1"/>
+             		<field name = "type2"/>
+             		<field name = "id_imput" invisible='1' force_save='1'/>
+             		<field name = "prix_unitaire" force_save="1"/>
+					<field name = "qte" force_save="1"/>
+             		<field name = "prix_total" force_save="1" sum="Total"/>
+					<field name = "mnt_remise" force_save="1" sum="Total"/>
+					<field name = "prix" force_save="1" sum="Total"/>
+					<field name="x_exercice_id" invisible="1"/>
+		    		<field name="company_id" invisible="1"/> 
+             	</tree>
+             </field>
+            </group>
+             	<group col='3'>
+             	<group>
+	             	<field name="ht" style= "width:100%" force_save="1"/>
+	             	<field name="remise" style= "width:100%" force_save="1"/>
+             	</group>          	
+             	<group>
+		    		<field name="tvaex" force_save="1"/>
+		    		<field name="tva" style= "width:100%" force_save="1"/>
+		    	</group>
+		    	<group>
+		    		<field name="total_ht" style= "width:100%" force_save="1"/>
+		    		<field name="ttc" style= "width:100%" force_save="1"/>
+		    	</group>
+		    	</group>
+             </sheet> 
+	    </form>
+	</field>
+</record>
+
+
+<record id="act_facture_paie" model="ir.actions.act_window">
+    <field name="name">Liste des factures de paiement </field>
+    <field name="res_model">compta_facturation_paie</field>
+    <field name="view_mode">tree,form</field>
+</record>    
+    
+    <record model="ir.ui.view" id="facture_paie_tree">
+        <field name="name">facture.view.paie.tree</field>
+        <field name="model">compta_facturation_paie</field>
+        <field name="arch" type="xml">
+            <tree string="Opération de guichet">
+           		<field name = "num_facture"/>
+                <field name = "dte"/>
+                <field name = "objet"/>
+                <field name = "client_id"/>
+                <field name = "ttc"/>  				 
+				<field name = "etat"/> 				
+            </tree>
+        </field>
+</record>
+    
+
+<record model="ir.ui.view" id="facture_opera_paie_form">
+    <field name="name">facture.guichet.paie.form</field>
+    <field name="model">compta_facturation_paie</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">  	
+	    <form string="Opération de guichet">
+	    <header>
+		    <button string="Valider facture" name="valider_facture" type="object" class="oe_highlight"
+	        attrs="{'invisible' : [('etat', 'not in', ['N'])]}"/>
+	        <field name="etat" widget = "statusbar"/>
+	    </header>
+	    <sheet>
+	    		<group invisible='1'>
+		    		<field name="num_facture" style= "width:50%"/>
+		    		<field name="dte" style= "width:50%" />
+		    	</group>
+    			<group string="Informations facture" col="4" >  			
+		    		<group>
+			    		<field name="num_facture_def" force_save="1" style= "width:100%" options="{'no_create': True}"/>
+			    		<field name="paiement_total" style= "width:100%"/>
+			    		<field name="mt_souhaite" style= "width:100%" attrs="{'invisible' : [('paiement_total', '=', [True])]}"/>
+		    		</group>
+		    		<group>
+			    		<field name="client_id" style= "width:100%" force_save="1"/>
+			    		<field name="telephone" style= "width:100%" force_save="1"/>
+			    	</group>
+			    	
+			    	<group>
+			    		<field name="tvaex" force_save="1"/>
+			    		<field name="ht" style= "width:100%" force_save="1"/>
+			    	</group>
+			    	<group>
+			    		<field name="tva" style= "width:100%" force_save="1"/>
+			    		<field name="ttc" style= "width:100%" force_save="1"/>
+			    	</group>
+	             	
+		    	</group>
+    			
+	    	<group>
+	    		<field name="objet" style= "width:100%" force_save="1"/>
+	    	</group>
+		    		<field name="x_exercice_id" invisible="1"/>
+		    		<field name="company_id" invisible="1"/> 
+		   <group string="Détails facture"> 
+		   
+	        <field name = "facture_ids" nolabel ="1" force_save="1">
+             	<tree string = "Opération de facture" editable = "bottom">
+             		<field name = "type1" options="{'no_create': True}"/>
+             		<field name = "type2" options="{'no_create': True}"/>
+             		<field name = "id_imput" invisible='1' force_save='1'/>
+             		<field name = "prix_unitaire" force_save="1" sum="Total" invisible="1"/>
+             		<field name = "prix_total" force_save="1" sum="Total" invisible="1"/>
+             		<field name = "tva" force_save="1" invisible="1" sum="Total"/>
+					<field name = "prix_remise" force_save="1" sum="Total"/>
+					<field name = "prix" force_save="1" sum="Total"/>
+					<field name="x_exercice_id" invisible="1"/>
+		    		<field name="company_id" invisible="1"/> 
+             	</tree>
+             </field>
+            </group>
+             	
+             </sheet> 
+	    </form>
+	</field>
+</record>
+
+
+
+<record model="ir.ui.view" id="facture_annuler_form">
+    <field name="name">facture.annuler.form</field>
+    <field name="model">compta_annulation_facture</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">  	
+	    <form string="Annuler facture">
+	    <header>
+		    <button string="Annuler facture" name="annuler" type="object" class="oe_highlight"/>
+			<button string="Restaurer une facture" name="restaurer" type="object" class="oe_highlight"/>
+	        <field name="state" widget = "statusbar"/>
+	    </header>
+	    <sheet>
+			<group>
+				<field name="num_facture" style= "width:50%" options="{'no_create': True}"/>
+				<field name="montant" force_save="1" readonly="1"/>
+			</group>
+             </sheet> 
+	    </form>
+	</field>
+</record>
+
+<record id="act_annuler_facture" model="ir.actions.act_window">
+    <field name="name">Annuler facture</field>
+    <field name="res_model">compta_annulation_facture</field>
+    <field name="view_mode">form</field>
+</record>    
+
+
+
+<record id="act_facture_paie" model="ir.actions.act_window">
+    <field name="name">Liste des factures de paiement </field>
+    <field name="res_model">compta_facturation_paie</field>
+    <field name="view_mode">tree,form</field>
+</record>    
+
+
+
+
+<!-- Définitions des menus -->
+
+
+<menuitem id="main_menu" sequence="6" name="Gestion Comptable" groups="sigepe_compta.sigepe_compta_agent"/>
+<menuitem id="menu_cadre" parent="main_menu" sequence="19" name="Données de base" groups="sigepe_compta.sigepe_compta_acr"/>
+
+<menuitem id="menu_cadre_type_donnee" parent="menu_cadre" sequence="2" name="TYPES DE DONNEES COMPTABLES"/>
+<menuitem id="menu_opbase" parent="menu_cadre_type_donnee" sequence="2" name="Saisie/MàJ des opérations de base" action="act_opbase"/>
+<menuitem id="menu_guichet_uniq" parent="menu_cadre_type_donnee" sequence="3" name="Saisie/MàJ des opérations de guichet" action="act_opguichet"/> 
+<menuitem id="menu_bq" parent="menu_cadre_type_donnee" sequence="4" name="Saisie/MàJ des opérations de banque" action="act_opbanque"/>
+<menuitem id="menu_bq" parent="menu_cadre_type_donnee" sequence="5" name="Saisie/MàJ des natures détaillées des opérations " action="act_listnat"/>
+<menuitem id="menu_typecriture" parent="menu_cadre_type_donnee" sequence="6" name="Saisie/MàJ des types d'écritures" action="act_typeecriture"/>
+<menuitem id="menu_originecriture" parent="menu_cadre_type_donnee" sequence="7" name="Saisie/MàJ des origines d'écriture" action="act_typeoriginecriture"/>
+<menuitem id="menu_lbligne" parent="menu_cadre_type_donnee" sequence="8" name="Saisie/MàJ des types de libellé ligne" action="act_typelbecriture"/> 
+<menuitem id="menu_journal" parent="menu_cadre_type_donnee" sequence="9" name="Saisie/MàJ des types de journal" action="act_typejournal"/> 
+<menuitem id="menu_quittance" parent="menu_cadre_type_donnee" sequence="10" name="Saisie/MàJ des types de quittance" action="act_typequittance"/> 
+<menuitem id="menu_typebilletage" parent="menu_cadre_type_donnee" sequence="11" name="Saisie/MàJ des types de billetage" action="act_typebilletage"/> 
+<menuitem id="menu_typeperiode" parent="menu_cadre_type_donnee" sequence="12" name="Saisie/MàJ des types de période comptables" action="act_typeperiode"/> 
+<menuitem id="menu_colonnes" parent="menu_cadre_type_donnee" sequence="15" name="Saisie/MàJ des colonnes de brouillard" action="act_colonnes"/>
+<menuitem id="menu_trans" parent="menu_cadre_type_donnee" sequence="16" name="Saisie/MàJ des types de bordereau de transmission" action="act_bord"/>
+<menuitem id="menu_mode" parent="menu_cadre_type_donnee" sequence="18" name="Saisie/MàJ des modes de régularisation" action="act_moderegul"/>
+	
+
+<menuitem id="menu_cadre_etat" parent="menu_cadre" sequence="4" name="TYPES ELEMENTS ETATS FINANCIERS"/>
+<menuitem id="menu_etat_fin" parent="menu_cadre_etat" sequence="2" name="Saisie/MàJ Types Etats Financiers " action="act_etat_fin"/>
+<menuitem id="menu_colonne" parent="menu_cadre_etat" sequence="3" name="Saisie/MàJ Types Colonne Etats Financiers" action="act_colonne"/>
+
+
+<menuitem id="menu_fact" parent="main_menu" sequence="12" name="Facturation"/>
+<menuitem id="menu_fact_client" parent="menu_fact" sequence="2" name="Saisie/MàJ Clients" action="sigepe_budget.act_contribuables"/>
+<menuitem id="menu_fact_prest" parent="menu_fact" sequence="3" name="Saisie/MàJ Prestation" action="sigepe_compta.act_opguichet"/>
+<menuitem id="menu_fact_prof" parent="menu_fact" sequence="4" name="Emission Facture proforma" action="act_facture_prof"/>
+<menuitem id="menu_fact_def" parent="menu_fact" sequence="5" name="Emission Facture définitive" action="act_facture"/>
+<menuitem id="menu_fact_struct" parent="menu_fact" sequence="1" name="Saisie/MàJ Structure" action="act_structure"/>
+<menuitem id="menu_fact_annuler" parent="menu_fact" sequence="6" name="Annulation Facture" action="act_annuler_facture"/>
+
+
+
+</odoo>

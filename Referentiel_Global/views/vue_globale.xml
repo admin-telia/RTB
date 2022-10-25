@@ -1,0 +1,3229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<!--Definition de la vue-->
+	
+	<!--Definition de la vue-->
+	
+	<!-- Vue liées aux données GRH -->
+	<!-- vue classe form-->
+
+	<record model="ir.ui.view" id="view_id_form_classes1">
+		<field name="name">view.classe.form</field>
+		<field name="model">hr_classe</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des classes">
+			<sheet>
+					<div class="oe_button_box" name="button_box">
+						<button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+							<field name="active" widget="boolean_button" options='{"terminology":"archive"}'/>
+						</button>
+					</div>
+					<group col = '3'>
+							<group><field name="libcourt" style="width:20%"/></group>
+							<group><field name="name" style="width:20%"/></group>
+							<group><field name="sequence" style="width:20%"/></group>
+					</group>
+					<group><field name="description"/></group>
+					<group><field name="company_id" invisible = '1'/></group>
+			</sheet>
+			</form>
+		</field>
+	</record>
+
+
+
+
+<record model="ir.ui.view" id="view_id_classe_tree">
+	<field name="name">view.hr_classe</field>
+	<field name="model">hr_classe</field>
+	<field name="priority" eval="16"/>
+	<field name="arch" type="xml">
+		<tree string="Liste des classes">
+			<field name="sequence"/>
+			<field name="name"/>
+			<field name="libcourt"/>
+			<field name="description"/>
+		</tree>
+	</field>
+</record>
+
+
+
+	<record model="ir.ui.view" id="view_id_form_categories1">
+		<field name="name">view.categorie.form</field>
+		<field name="model">hr_categorie</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des catégories">
+			<sheet>
+					<div class="oe_button_box" name="button_box">
+						<button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+							<field name="active" widget="boolean_button" options='{"terminology":"archive"}'/>
+						</button>
+					</div>
+					<group col = '3'>
+							<group><field name="libcourt" style="width:20%"/></group>
+							<group><field name="name" style="width:20%"/></group>
+							<group><field name="sequence" style="width:20%"/></group>
+					</group>
+					<group><field name="description"/></group>
+					<field name="company_id" invisible = '1'/>
+			</sheet>
+			</form>
+		</field>			
+		
+	</record>
+
+
+
+
+<record model="ir.ui.view" id="view_id_categorie">
+	<field name="name">view.hr_categorie</field>
+	<field name="model">hr_categorie</field>
+	<field name="priority" eval="16"/>
+	<field name="arch" type="xml">
+		<tree string="Liste des catégories">
+			<field name="sequence"/>
+			<field name="name"/>
+			<field name="libcourt"/>
+			<field name="description"/>
+		</tree>
+	</field>
+</record>
+
+
+
+
+	<record model="ir.ui.view" id="view_id_form_echelles1">
+		<field name="name">view.echelle.form</field>
+		<field name="model">hr_echelle</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des echelles">
+			<sheet>
+					<div class="oe_button_box" name="button_box">
+						<button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+							<field name="active" widget="boolean_button" options='{"terminology":"archive"}'/>
+						</button>
+					</div>
+					<group col = '3'>
+							<group><field name="libcourt" style="width:20%"/></group>
+							<group><field name="name" style="width:20%"/></group>
+							<group><field name="sequence" style="width:20%"/></group>
+					</group>
+					<group><field name="description"/></group>
+					<field name="company_id" invisible = '1'/>
+			</sheet>
+			</form>
+		</field>
+	</record>
+
+
+
+
+<record model="ir.ui.view" id="view_id_echelle">
+	<field name="name">view.hr_echelle</field>
+	<field name="model">hr_echelle</field>
+	<field name="priority" eval="16"/>
+	<field name="arch" type="xml">
+		<tree string="Liste des echelles">
+			<field name="sequence"/>
+			<field name="name"/>
+			<field name="libcourt"/>
+			<field name="description"/>
+		</tree>
+	</field>
+</record>
+
+
+
+
+	<record model="ir.ui.view" id="view_id_form_echelons1">
+		<field name="name">view.echelon.form</field>
+		<field name="model">hr_echellon</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des echelons">
+			<sheet>
+					<div class="oe_button_box" name="button_box">
+						<button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+							<field name="active" widget="boolean_button" options='{"terminology":"archive"}'/>
+						</button>
+					</div>
+					<group col = '3'>
+							<group><field name="libcourt" style="width:20%"/></group>
+							<group><field name="name" style="width:20%"/></group>
+							<group><field name="sequence" style="width:20%"/></group>
+					</group>
+					<group><field name="description"/></group>
+					<field name="company_id" invisible = '1'/>
+			</sheet>
+			</form>
+		</field>
+	</record>
+
+
+
+<record model="ir.ui.view" id="view_id_echelon1">
+	<field name="name">view.hr_echellon</field>
+	<field name="model">hr_echellon</field>
+	<field name="priority" eval="16"/>
+	<field name="arch" type="xml">
+		<tree string="Liste des echelons">
+			<field name="sequence"/>
+			<field name="name"/>
+			<field name="libcourt"/>
+			<field name="description"/>
+		</tree>
+	</field>
+</record>
+
+
+	<record model="ir.ui.view" id="view_id_zones_tree">
+		<field name="name">view.zone.tree</field>
+		<field name="model">hr_zone</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<tree string="Liste des zones">
+				<field name="name"/>
+				<field name="libcourt"/>
+			</tree>
+		</field>
+	</record>
+	
+	
+
+	<record model="ir.ui.view" id="view_id_form_zone">
+		<field name="name">view.zone.form</field>
+		<field name="model">hr_zone</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des zones">
+			<sheet>
+					<div class="oe_button_box" name="button_box">
+						<button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+							<field name="active" widget="boolean_button" options='{"terminology":"archive"}'/>
+						</button>
+					</div>
+					<group>
+							<field name="libcourt" style="width:60%"/>
+							<field name="name" style="width:80%"/>
+					</group>
+					<field name="company_id" invisible = '1'/>
+			</sheet>
+			</form>
+		</field>
+	  </record>
+	
+	
+	
+	
+
+	<record model="ir.ui.view" id="view_id_form_diplome">
+		<field name="name">view.diplome.form</field>
+		<field name="model">hr_diplome</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des diplômes">
+			<sheet>
+					<div class="oe_button_box" name="button_box">
+						<button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+							<field name="active" widget="boolean_button" options='{"terminology":"archive"}'/>
+						</button>
+					</div>
+					<group>
+							<field name="libcourt" style="width:60%"/>
+							<field name="name" style="width:80%"/>
+					</group>
+			</sheet>
+			</form>
+		</field>
+	</record>
+	
+	
+	
+
+	<record model="ir.ui.view" id="view_id_zone_tree">
+		<field name="name">view.diplome.tree</field>
+		<field name="model">hr_diplome</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<tree string="Liste des zones">
+				<field name="libcourt"/>
+				<field name="name"/>
+			</tree>
+		</field>
+	</record>
+	
+
+	<record model="ir.ui.view" id="view_id_tree">
+		<field name="name">view.hr_typeindemnite.tree</field>
+		<field name="model">hr_typeindemnite</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<tree string="Liste Des types d'indemnités">
+				<field name="code"/>
+				<field name="libcourt"/>
+				<field name="name"/>
+				<field name="concat_fields"/>
+			</tree>
+		</field>
+	</record>
+	
+	
+
+	<record model="ir.ui.view" id="view_id_form_type_indemn_fo">
+		<field name="name">view.hr_typeindemnite.form</field>
+		<field name="model">hr_typeindemnite</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des types d'indemnités">
+			<sheet>
+					<div class="oe_button_box" name="button_box">
+						<button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+							<field name="active" widget="boolean_button" options='{"terminology":"archive"}'/>
+						</button>
+					</div>
+					<group>
+							<field name="code" style="width:40%"/>
+							<field name="libcourt" style="width:60%"/>
+							<field name="name" style="width:80%"/>
+					</group>
+			</sheet>
+			</form>
+		</field>
+	</record>
+	
+	
+	
+	<record model="ir.ui.view" id="view_id_typ_piece">
+		<field name="name">view.type.piece.tree</field>
+		<field name="model">hr_typepiece</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<tree string="Liste des types de pièces">
+				<field name="sequence" widget="handle"/>
+				<field name="name"/>
+				<field name="lib_long"/>
+			</tree>
+		</field>
+	</record>
+	
+
+	<record model="ir.ui.view" id="view_id_form_typ_piece">
+		<field name="name">view.type.piece.form</field>
+		<field name="model">hr_typepiece</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des types de pièce">
+			<sheet>
+					<div class="oe_button_box" name="button_box">
+						<button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+							<field name="active" widget="boolean_button" options='{"terminology":"archive"}'/>
+						</button>
+					</div>
+					<group>
+							<field name="name" style="width:60%"/>
+							<field name="lib_long" style="width:80%"/>
+					</group>
+			</sheet>
+			</form>
+		</field>
+	</record>
+	
+
+<record model="ir.ui.view" id="view_id_grille_sal_tree">
+	<field name="name">view.hr_grillesalariale.tree</field>
+	<field name="model">hr_grillesalariale</field>
+	<field name="priority" eval="16"/>
+	<field name="arch" type="xml">
+	        <tree string="Liste des grilles salariales">
+			   <field name="x_class_id"/>
+			   <field name="x_categorie_id"/>
+			   <field name="x_echelle_id"/>
+	           <field name="x_echellon_id"/>
+	           <field name="x_indice"/>
+			   <field name="x_point_indiciaire"/>
+	           <field name="x_salbase"/>
+	       </tree>
+	</field>
+</record>
+
+<record model="ir.ui.view" id="view_id_grille_sal_form">
+	<field name="name">view.hr_grillesalariale.form</field>
+	<field name="model">hr_grillesalariale</field>
+	<field name="priority" eval="16"/>
+	<field name="arch" type="xml">
+	        <form string="Liste des grilles salariales">
+		      <sheet>
+		        <group col = "3">
+		            <group>
+		            	<field name="x_class_id"/>
+		            	<field name="x_categorie_id"/>
+		            	
+		            </group>
+				    <group>
+				       <field name="x_echelle_id"/>
+				       <field name="x_echellon_id"/>
+				    </group>
+				    <group>
+				        <field name="x_indice"/>	
+				        <field name="x_point_indiciaire"/>
+		                <field name="x_salbase"/>
+				    </group>   
+		        </group>
+		      </sheet>
+	       </form>
+	</field>
+</record>
+
+
+
+
+
+	<record model="ir.ui.view" id="view_id_cat_emp_form">
+		<field name="name">view.catemp.form</field>
+		<field name="model">hr_catemp</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des categories employés">
+			<sheet>
+					<div class="oe_button_box" name="button_box">
+						<button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+							<field name="active" widget="boolean_button" options='{"terminology":"archive"}'/>
+						</button>
+					</div>
+					<group>
+							<field name="lib_court" style="width:60%"/>
+							<field name="name" style="width:80%"/>
+					</group>
+			</sheet>
+				
+			</form>
+		</field>
+	</record>
+	
+	
+	<record model="ir.ui.view" id="view_id_catemp">
+		<field name="name">view.catemp.tree</field>
+		<field name="model">hr_catemp</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<tree string="Liste des categories">
+				<field name="lib_court"/>
+				<field name="name"/>
+			</tree>
+		</field>
+	</record>
+	
+	
+	
+	
+	<record model="ir.actions.act_window" id="act_list_catempl">
+			<field name="name">Liste des catégories employés</field>
+			<field name="res_model">hr_catemp</field>
+			<field name="view_mode">tree,form</field>
+		
+	</record>
+	
+	
+	
+	<record model="ir.actions.act_window" id="act_list_type_piece">
+			<field name="name">Liste des Types de pièce</field>
+			<field name="res_model">hr_typepiece</field>
+			<field name="view_mode">tree,form</field>
+		
+	</record>
+	
+	
+
+<record model="ir.actions.act_window" id="act_list_categorie">
+		<field name="name">Liste des Categories</field>
+		<field name="res_model">hr_categorie</field>
+		<field name="view_mode">tree,form,kanban</field>
+</record>
+
+
+<record model="ir.actions.act_window" id="act_list_classe">
+		<field name="name">Liste des Classes</field>
+		<field name="res_model">hr_classe</field>
+		<field name="view_mode">tree,form,kanban</field>
+</record>
+
+
+<record model="ir.actions.act_window" id="act_list_echelle">
+		<field name="name">Liste des Echelles</field>
+		<field name="res_model">hr_echelle</field>
+		<field name="view_mode">tree,form,kanban</field>
+</record>
+
+
+<record model="ir.actions.act_window" id="act_list_echellon">
+		<field name="name">Liste des Echelons</field>
+		<field name="res_model">hr_echellon</field>
+		<field name="view_mode">tree,form,kanban</field>
+</record>
+
+	<record model="ir.actions.act_window" id="act_list_zone">
+			<field name="name">Liste des zones</field>
+			<field name="res_model">hr_zone</field>
+			<field name="view_mode">tree,form</field>
+		
+	</record>
+	
+	
+	<record model="ir.actions.act_window" id="act_list_diplome">
+			<field name="name">Liste des diplômes</field>
+			<field name="res_model">hr_diplome</field>
+			<field name="view_mode">tree,form</field>
+		
+	</record>
+	
+	
+	<record model="ir.actions.act_window" id="act_list_type_indemnite">
+			<field name="name">Liste des Types Indemnités</field>
+			<field name="res_model">hr_typeindemnite</field>
+			<field name="view_mode">tree,form</field>
+	</record>
+	
+	
+	<record model="ir.actions.act_window" id="act_list_grille_salariale">
+			<field name="name">Grille Salariale Fonctionnaire</field>
+			<field name="res_model">hr_grillesalariale</field>
+			<field name="view_mode">tree,form</field>
+	</record>
+	
+	
+	
+	
+	
+
+	<!-- Définition des vues liées au menu Données Géographiques -->
+	<!-- vue continent -->
+	<record model="ir.ui.view" id="view_id_continent_form">
+		<field name="name">view.continent.form</field>
+		<field name="model">ref_continent</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des continents">
+				<sheet>
+					<group>
+					<field name="code_continent" style="width:5%" />
+					<field name="libcourt" style="width:35%" />
+					<field name="name" style="width:65%" />
+					<field name="description"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+
+	<record model="ir.ui.view" id="view_id_continent">
+		<field name="name">view.continent</field>
+		<field name="model">ref_continent</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<tree string="Liste des continents">
+				<field name="sequence" widget="handle"/>
+				<field name="code_continent" />
+				<field name="libcourt"/>
+				<field name="name" />
+				<field name="description"/>
+			</tree>
+		</field>
+	</record>
+            
+
+	<!-- vue pays -->
+	<record model="ir.ui.view" id="view_id_pays_form">
+		<field name="name">view.pays.form</field>
+		<field name="model">ref_pays</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des pays">
+				<sheet>
+					<group>
+						<field name="code_pays"  style="width:5%"/>
+						<field name="name" style="width:35%"/>
+						<field name="lib_long" style="width:65%" />
+						<field name="country_id" style="width:65%"/>
+						<field name="ref_continent_id" style="width:65%"/>
+					</group>
+				</sheet>	
+			</form>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="view_id_pays_tree">
+		<field name="name">view.pays.tree</field>
+		<field name="model">ref_pays</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<tree string="Liste des pays">
+                <field name="sequence" widget="handle"/>
+				<field name="code_pays"/>
+				<field name="name"/>
+				<field name="lib_long"/>
+				<field name="country_id"/>
+				<field name="ref_continent_id"/>	
+			</tree>
+		</field>
+	</record>
+
+	<!-- vue region -->
+	<record model="ir.ui.view" id="view_id_region_form">
+		<field name="name">view.region.form</field>
+		<field name="model">ref_region</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des régions">
+				<sheet>
+					<group>
+						<field name="code_region" style="width:5%"/>
+						<field name="libcourt" style="width:35%"/>
+						<field name="name" style="width:65%"/>
+						<field name="ref_pays_id" style="width:35%"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="view_id_region_tree">
+		<field name="name">view.region.tree</field>
+		<field name="model">ref_region</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<tree string="Liste des régions">
+                <field name="sequence" widget="handle"/>
+				<field name="code_region"/>
+				<field name="libcourt"/>
+				<field name="name"/>
+				<field name="ref_pays_id"/>
+			</tree>
+		</field>
+	</record>
+
+	<!-- vue regionLine -->
+	<record model="ir.ui.view" id="view_id_region">
+		<field name="name">view.region.Line</field>
+		<field name="model">ref_region_line</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<tree string="Liste des régions" editable="bottom">
+                <field domain="[('ref_code_province', '=', ref_province_id)]" name="ref_code_province" on_change="on_change_Code(ref_code_province)"/>
+				<field name="ref_province_id"/>				
+			</tree>
+		</field>
+	</record>
+
+
+
+	<!-- vue province -->
+
+		<record model="ir.ui.view" id="view_id_province_form">
+		<field name="name">view.province.form</field>
+		<field name="model">ref_province</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des provinces">
+				<sheet>
+					<group>
+				<field name="code_province" style="width:5%"/>
+				<field name="libcourt" style="width:35%"/>
+				<field name="name" style="width:65%"/>
+				<field name="chef_lieu" style="width:35%"/>
+                <field name="ref_region_id" style="width:35%"/>
+                	</group>
+                </sheet>				
+			</form>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="view_id_province_tree">
+		<field name="name">view.province.tree</field>
+		<field name="model">ref_province</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<tree string="Liste des provinces">
+                <field name="sequence" widget="handle"/> 
+				<field name="code_province" />
+				<field name="libcourt" />
+				<field name="name" />
+				<field name="chef_lieu" />
+                <field name="ref_region_id"/>			
+			</tree>
+		</field>
+	</record>
+
+	<!-- vue departement -->
+
+		<record model="ir.ui.view" id="view_id_department_form">
+		<field name="name">view.departement.form</field>
+		<field name="model">ref_departement</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des provinces">
+				<sheet>
+					<group>
+						<field name="code_dep"  style="width:5%"/>
+						<field name="libcourt"  style="width:35%"/>
+						<field name="name" style="width:65%"/>
+						<field name="ref_province_id" style="width:35%"/>
+					</group>
+				</sheet>
+            </form>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="view_id_department_tree">
+		<field name="name">view.departement.tree</field>
+		<field name="model">ref_departement</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<tree string="Liste des provinces">
+                <field name="sequence" widget="handle"/>
+				<field name="code_dep"/>
+				<field name="libcourt"/>
+				<field name="name"/>
+				<field name="ref_province_id"/>
+            </tree>
+		</field>
+	</record>
+
+	<!-- vue commune -->
+		<record model="ir.ui.view" id="view_id_commune_form">
+		<field name="name">view.commune.form</field>
+		<field name="model">ref_commune</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des communes">
+				<sheet>
+					<group>
+						<field name="code_commune" style="width:5%"/>
+						<field name="libcourt" style="width:35%"/>
+						<field name="name" style="width:65%"/>
+						<field name="ref_departement_id" style="width:35%"/>
+		                <field name="ref_province_id" style="width:35%"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="view_id_commune_tree">
+		<field name="name">view.commune.tree</field>
+		<field name="model">ref_commune</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<tree string="Liste des communes">
+                <field name="sequence" widget="handle"/>
+				<field name="code_commune"/>
+				<field name="libcourt"/>
+				<field name="name"/>
+				<field name="ref_departement_id"/>
+                <field name="ref_province_id"/>
+			</tree>
+		</field>
+	</record>
+
+	<!-- vue localité -->
+		<record model="ir.ui.view" id="view_id_localite_form">
+		<field name="name">view.localite.form</field>
+		<field name="model">ref_localite</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des localités">
+				<sheet>
+					<group>
+						<field name="code_localite" style="width:5%"/>
+						<field name="libcourt" style="width:35%"/>
+						<field name="name" style="width:65%"/>
+						<field name="ref_departement_id" style="width:35%"/>
+		                 <field name="ref_province_id" style="width:35%"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="view_id_localite_tree">
+		<field name="name">view.localite.tree</field>
+		<field name="model">ref_localite</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<tree string="Liste des localités">
+                <field name="sequence" widget="handle"/>
+				<field name="code_localite"/>
+				<field name="libcourt"/>
+				<field name="name"/>
+				<field name="ref_departement_id"/>
+                <field name="ref_province_id"/>
+			</tree>
+		</field>
+	</record>
+
+
+
+<!-- Définition des vues liées au menu Données Géographiques -->
+
+
+	<!-- Vue Type structure -->
+
+		<record model="ir.ui.view" id="view_id_type_structure_form">
+		<field name="name">view.ref_type_structure.form</field>
+		<field name="model">ref_type_structure</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des types de structure">
+				<sheet>
+					<group>
+						<field name="code" style= "width:20%" />
+		                <field name="lib_court" style= "width:35%" />
+						<field name="name" style= "width:65%"/>
+						<field name="actif"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="view_id_type_structure_tree">
+		<field name="name">view.ref_type_structure.tree</field>
+		<field name="model">ref_type_structure</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<tree string="Liste des types de structure">
+                <field name="sequence" widget="handle"/>
+                <field name="code" />
+				<field name="name"/>
+				<field name="lib_court"/>
+				<field name="actif"/>
+				<!--<field name="code_type_struct"/>-->
+			</tree>
+		</field>
+	</record>
+
+	<!-- Vue Catégorie structure -->
+		<record model="ir.ui.view" id="view_id_categorie_structure_form">
+		<field name="name">view.ref_categorie_structure.form</field>
+		<field name="model">ref_categorie_structure</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des catégories de structures">
+				<sheet>
+					<group>
+						<field name="code_cat_struct" style="width:20%"/>
+						<field name="abreg" style="width:15%"/>
+						<field name="lib_court" style="width:35%"/>
+						<field name="name" style="width:65%"/>
+						<!--<field name="type_struct" style="width:65%"/>-->
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="view_id_categorie_structure_tree">
+		<field name="name">view.ref_categorie_structure.tree</field>
+		<field name="model">ref_categorie_structure</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<tree string="Liste des catégories de structures">
+                <field name="sequence" widget="handle"/>
+				<field name="code_cat_struct"/>
+				<!--<field name="abreg"/>-->
+				<field name="lib_court"/>
+				<field name="name"/>
+				<!--<field name="type_struct"/>-->
+			</tree>
+		</field>
+	</record>
+
+	<!-- Vue Profil structure 
+	<record model="ir.ui.view" id="view_id_profil_structure">
+		<field name="name">view.ref_profil_structure</field>
+		<field name="model">ref_profil_structure</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<tree string="Liste des profils des structures">
+				<field name="code_profil_struct"/>
+				<field name="lib_court"/>
+				<field name="name"/>
+				<field name="ref_fonction_id"/>
+				<field name="actif"/>
+				<field name="ref_employe_id"/>
+			</tree>
+		</field>
+	</record>-->
+
+	<!-- Vue structure rattachée 
+	<record model="ir.ui.view" id="view_id_structure_rattache">
+		<field name="name">view.ref_structure_rattache</field>
+		<field name="model">ref_structure_rattache</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<tree string="Liste de structures rattachées">
+				<field name="name"/>
+				<field name="lib_court"/>
+				<field name="actif"/>
+				<field name="code_attach_struct"/>
+			</tree>
+		</field>
+	</record>-->
+
+	<!-- Vue  structure -->
+    <record model="ir.ui.view" id="res_comapny_form">
+		<field name="name">res.company.tree</field>
+		<field name="model">res.company</field>
+	        <field name="inherit_id" ref="base.view_company_form"/>
+		<field name="arch" type="xml">	
+	        <notebook>
+		        <page string = "Détails Structure">
+		        	<group string="Détails Structure">
+					    <group>
+							<field name="code_struct" style= "width:40%" />
+							<field name="ref_localite_id"/>
+					    </group>
+					    <group>
+					    	<field name="ministere" options="{'no_create':True}"/>
+							<field name="ref_type_struct_id" options="{'no_create':True}"/>
+							<field name="ref_cat_struct_id" options="{'no_create':True}"/>
+						</group>
+					 </group>		   
+				</page>
+	        </notebook>
+			<xpath expr="//field[@name='country_id']" position="after">
+		     	<field name = "actif"/>
+			</xpath>
+
+			<xpath expr="//field[@name='partner_id']" position="attributes">
+			     <attribute name = "invisible">True</attribute>
+			</xpath>
+			
+			</field>
+    </record>
+    
+    
+    <!-- Vue  utilisateur tree
+    <record model="ir.ui.view" id="res_users_tree">
+	<field name="name">res.users.tree</field>
+	<field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+	<field name="arch" type="xml">	
+		<xpath expr="//field[@name='login']" position="after">
+		     <field name = "x_exercice_id"/>
+		</xpath>
+	</field>
+    </record>-->
+    
+    <!-- Vue  utilisateur form-->
+    <record model="ir.ui.view" id="res_users_form">
+	<field name="name">res.users.form</field>
+	<field name="model">res.users</field>
+    <field name="inherit_id" ref="base.view_users_form"/>
+	<field name="arch" type="xml">	
+			 <div class="oe_title">
+		          
+				<xpath expr="//field[@name='login']" position="after">
+				     <label for="x_exercice_id" class="oe_edit_only"/>
+				     <h3><field name = "x_exercice_id"/></h3>
+				</xpath>
+				 <xpath expr="//field[@name='x_exercice_id']" position="after">
+				     <label for="x_service_id" class="oe_edit_only"/>
+				     <h4><field name = "x_service_id"/></h4>
+				</xpath>
+			</div>
+	</field>
+    </record>
+    
+    <!-- vue direction-->
+
+	<record model="ir.ui.view" id="view_id_direction_form">
+		<field name="name">view.direction.form</field>
+		<field name="model">ref_direction</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des directions">
+				<sheet>
+					<group>
+						<field name="code" style= "width:20%" />
+						<field name="libcourt" style= "width:35%"/>
+						<field name="name" style= "width:65%"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="view_id_direction_tree">
+		<field name="name">view.direction.tree</field>
+		<field name="model">ref_direction</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<tree string="Liste des directions">
+				<field name="code"/>
+				<field name="libcourt"/>
+				<field name="name"/>
+			</tree>
+		</field>
+	</record>
+	
+	<!-- vue direction form-->
+	<record model="ir.ui.view" id="view_id_orm_direction">
+		<field name="name">view.direction</field>
+		<field name="model">ref_direction</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des directions">
+			<sheet>
+					<div class="oe_button_box" name="button_box">
+						<button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+							<field name="active" widget="boolean_button" options='{"terminology":"archive"}'/>
+						</button>
+					</div>
+					<group>
+							<field name="code" style="width:40%"/>
+							<field name="libcourt" style="width:40%"/>
+							<field name="name" style="width:60%"/>
+					</group>
+			
+			</sheet>
+				
+			</form>
+		</field>
+	</record>
+	
+	
+	<!-- Action  direction-->
+	<record model="ir.actions.act_window" id="act_list_direction">
+			<field name="name">Liste des directions</field>
+			<field name="res_model">ref_direction</field>
+			<field name="view_mode">tree,form</field>
+		
+	</record>
+	
+	
+
+ 
+    <!-- vue service form-->
+	<record model="ir.ui.view" id="view_id_form">
+		<field name="name">view.service.form</field>
+		<field name="model">ref_service</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des services">
+				<sheet>
+					<group>
+						<field name="code" style="width:20%" />
+						<field name="x_direction_id" style= "width:35%"/>
+						<field name="libcourt" style= "width:35%"/>
+						<field name="name" style= "width:65%"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+    <!-- vue service tree-->
+
+	<record model="ir.ui.view" id="view_id">
+		<field name="name">view.service</field>
+		<field name="model">ref_service</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<tree string="Liste des services">
+				<field name="code"/>
+				<field name="x_direction_id"/>
+				<field name="libcourt"/>
+				<field name="name"/>
+			</tree>
+		</field>
+	</record>
+	
+	<!-- vue service form-->
+	<record model="ir.ui.view" id="view_id_orm">
+		<field name="name">view.service</field>
+		<field name="model">ref_service</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des services">
+			<sheet>
+					<div class="oe_button_box" name="button_box">
+						<button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+							<field name="active" widget="boolean_button" options='{"terminology":"archive"}'/>
+						</button>
+					</div>
+					<group>
+						<field name="code" style="width:20%"/>
+						<field name="x_direction_id" style="width:40%"/>
+						<field name="libcourt" style="width:40%"/>
+						<field name="name" style="width:60%"/>
+					</group>
+					<!--<group><field name="x_lines_ids"/></group>-->
+			</sheet>
+				
+			</form>
+		</field>
+	</record>
+	
+	<!-- Action  service-->
+	<record model="ir.actions.act_window" id="act_list_service">
+			<field name="name">Liste des services</field>
+			<field name="res_model">ref_service</field>
+			<field name="view_mode">tree,form</field>
+		
+	</record>
+	
+	
+
+    <!-- vue ministère tree-->
+	<record model="ir.ui.view" id="view_id_ministere">
+		<field name="name">view.ministere</field>
+		<field name="model">ref_ministere</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<tree string="Liste des ministères">				
+				<field name="code_ministere"/>
+				<field name="name"/>
+				<field name="lib_long"/>
+			</tree>
+		</field>
+	</record>
+	
+	<!-- vue ministere form-->
+	<record model="ir.ui.view" id="view_id_form_ministere">
+		<field name="name">view.ministere</field>
+		<field name="model">ref_ministere</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des ministères">
+			<sheet>
+					<div class="oe_button_box" name="button_box">
+						<button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+							<field name="active" widget="boolean_button" options='{"terminology":"archive"}'/>
+						</button>
+					</div>
+					<group>
+							<field name="code_ministere" style="width:20%"/>
+							<field name="name" style="width:60%"/>
+							<field name="lib_long" style="width:80%"/>
+					</group>
+			</sheet>
+				
+			</form>
+		</field>
+	</record>
+	
+	<!-- Action  ministère-->
+	<record model="ir.actions.act_window" id="act_list_ministere">
+			<field name="name">Liste des ministères</field>
+			<field name="res_model">ref_ministere</field>
+			<field name="view_mode">tree,form</field>
+		
+	</record>
+	
+	
+	
+<!-- Vue service direction liée
+<record model="ir.ui.view" id="view_id_service_direction">
+	<field name="name">view.service.direction</field>
+	<field name="model">ref_servicedirection</field>
+	<field name="priority" eval="16"/>
+	<field name="arch" type="xml">
+		<tree string="Liste des services_directions">
+		    <field name="name"/>
+			<field name="x_service_ids"/>
+		</tree>
+	</field>
+</record>--> 
+
+
+<!-- vue service form
+	<record model="ir.ui.view" id="view_id_orm_direction_service">
+		<field name="name">view.service.direction</field>
+		<field name="model">ref_servicedirection</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des services/directions">
+			<sheet>
+					<div class="oe_button_box" name="button_box">
+						<button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+							<field name="active" widget="boolean_button" options='{"terminology":"archive"}'/>
+						</button>
+					</div>
+					<group>
+							<field name="name" style="width:40%"/>
+							<field name="x_service_ids"  />
+					</group>
+					<group><field name="x_lines_ids"/></group>
+			</sheet>
+				
+			</form>
+		</field>
+	</record>-->
+	
+	
+	<!-- Action  service direction liée
+	<record model="ir.actions.act_window" id="act_list_service_direction">
+			<field name="name">Liste des Directions et services liées</field>
+			<field name="res_model">ref_servicedirection</field>
+			<field name="view_mode">tree,form</field>
+		
+	</record>-->
+	
+
+
+
+	<!--<record model="ir.ui.view" id="view_id_structure">
+		<field name="name">view.ref_structure</field>
+		<field name="model">ref_structure</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<tree string="Liste de structures">
+				<field name="name"/>
+				<field name="code_struct"/>
+				<field name="lib_court"/>
+				<field name="ref_type_struct_id"/>
+				<field name="telephone"/>
+				<field name="ref_cat_struct_id"/>
+				<field name="actif"/>
+				<field name="ref_localite_id"/>
+			</tree>
+		</field>
+	</record>-->
+
+
+	
+	<!-- vue nationalité tree -->
+	<record model="ir.ui.view" id="view_id_nationalite_t">
+		<field name="name">view.nationalite.tree</field>
+		<field name="model">ref_nationalite</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<tree string="Liste des nationalités">
+                <field name="sequence" widget="handle"/>
+				<field name="code_nationalite"/>
+				<field name="name"/>
+				<field name="lib_long"/>
+			</tree>
+		</field>
+	</record>
+	
+	
+	<!-- vue nationalité form -->
+	<record model="ir.ui.view" id="view_id_nationalite_f">
+		<field name="name">view.nationalite.form</field>
+		<field name="model">ref_nationalite</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des nationalités">
+				<sheet>
+					<div class="oe_button_box" name="button_box">
+						<button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+							<field name="active" widget="boolean_button" options='{"terminology":"archive"}'/>
+						</button>
+					</div>
+					<group>
+							<field name="code_nationalite" style="width:5%"/>
+							<field name="name" style="width:60%"/>
+							<field name="lib_long" style="width:80%"/>
+					</group>
+			</sheet>
+			</form>
+		</field>
+	</record>
+	
+	
+
+	<!-- Vue exercice-->
+	<record model="ir.ui.view" id="view_id_exercice_form">
+		<field name="name">view.ref_exercice.form</field>
+		<field name="model">ref_exercice</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des exercices">
+				<sheet>
+					<group>
+						<field name="code_exo_struct" style="width:5%" />
+						<field name="lib_court" style="width:35%"/>
+						<field name="name" style="width:65%"/>
+						<field name="no_ex" style="width:35%"/>
+						<field name="etat" style="width:15%"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="view_id_exercice_tree">
+		<field name="name">view.ref_exercice.tree</field>
+		<field name="model">ref_exercice</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<tree string="Liste des exercices">
+                <field name="sequence" widget="handle"/>
+				<field name="code_exo_struct"/>
+				<field name="lib_court"/>
+				<field name="name"/>
+				<field name="no_ex"/>
+				<field name="etat"/>
+			</tree>
+		</field>
+	</record>
+	
+	
+	<!-- Vue exercice  form-->
+	<record model="ir.ui.view" id="view_id_exercice">
+		<field name="name">view.ref_exercice.form</field>
+		<field name="model">ref_exercice</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des exercices">
+			<!-- <header>
+					<buttn></buttn>
+			</header>-->
+				<field name="name"/>
+				<field name="lib_court"/>
+				<field name="code_exo_struct"/>
+				<field name="no_ex"/>
+				<field name="etat"/>
+			</form>
+		</field>
+	</record>
+
+	<!-- vue type pièce -->
+		<record model="ir.ui.view" id="view_id_type_piece_form">
+		<field name="name">view.piece.form</field>
+		<field name="model">ref_type_piece</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des type de pièce">
+				<sheet>
+					<group>
+						<field name="code_type_piec_struct" style="width:5%"/>
+						<field name="libcourt" style="width:35%"/>
+						<field name="name" style="width:65%"/>
+						<field name="description"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="view_id_type_piece_tree">
+		<field name="name">view.piece.tree</field>
+		<field name="model">ref_type_piece</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<tree string="Liste des type de pièce">
+                <field name="sequence" widget="handle"/>
+				<field name="code_type_piec_struct"/>
+				<field name="libcourt"/>
+				<field name="name"/>
+				<field name="description"/>
+			</tree>
+		</field>
+	</record>
+
+	<!-- vue secteur activité-->
+		<record model="ir.ui.view" id="view_id_secteur_form">
+		<field name="name">view.secteur.form</field>
+		<field name="model">ref_secteur_activite</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des secteurs d'activités">
+				<sheet>
+					<group>
+						<field name="code_sect_struct" style="width:5%"/>
+						<field name="libcourt" style="width:35%"/>
+						<field name="name" style="width:65%"/>
+						<field name="description"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="view_id_secteur">
+		<field name="name">view.secteur</field>
+		<field name="model">ref_secteur_activite</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<tree string="Liste des secteurs d'activités">
+				<field name="sequence" widget="handle"/>
+				<field name="name"/>
+				<field name="libcourt"/>
+				<field name="code_sect_struct"/>
+				<field name="description"/>
+			</tree>
+		</field>
+	</record>
+
+	
+	
+
+<!-- Définition des vues liées au menu Données Financières -->
+
+	<!-- Vue res partner banque 
+
+	<record model="ir.ui.view" id="res_bank_form">
+		<field name="name">res.partner.bank.form</field>
+			<field name="model">res.partner.bank</field>
+			<field name="inherit_id" ref="base.view_partner_bank_form"/>
+			<field name="arch" type="xml">	
+			<xpath expr="//field[@name='acc_holder_name']" position="attributes">
+			     <attribute name = "invisible">True</attribute>
+			</xpath>
+			
+			<xpath expr="//field[@name='company_id']" position="attributes">
+			     <attribute name = "invisible">True</attribute>
+			</xpath>
+			
+			<xpath expr="//field[@name='acc_type']" position="attributes">
+			     <attribute name = "invisible">True</attribute>
+			</xpath>
+			
+					</field>
+		
+	</record>-->
+	
+	<!-- Vue heritee banque  
+	<record id="isr_res_bank_form" model="ir.ui.view">
+            <field name="name">l10n_ch.res.bank.form</field>
+            <field name="model">res.bank</field>
+            <field name="inherit_id" ref="base.view_res_bank_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='bic']" position="after">
+                    <field name="cd_agence_bceao"/>
+                </xpath>
+
+				<xpath expr="//field[@name='bic']" position="replace">
+                    <field name="code_swift"/>
+                </xpath>
+
+                <xpath expr="//field[@name='cd_agence_bceao']" position="after">
+                    <field name="cd_banque_bceao"/>
+                </xpath>
+
+				<xpath expr="//field[@name='cd_banque_bceao']" position="after">
+				    <field name="sigle"/>
+				</xpath>
+		
+				<xpath expr="//field[@name='sigle']" position="after">
+		                    <field name="uemoa"/>
+		                </xpath>
+		
+				<xpath expr="//field[@name='name']" position="after">
+		                    <field name="sequence"/>
+		                </xpath>
+				
+				<xpath expr="//field[@name='state']" position="attributes">
+					     <attribute name = "invisible">True</attribute>
+				</xpath>
+
+
+	     </field>
+        </record>-->
+        
+   <!-- vue heritee tree -->   
+   <record id="isr_res_bank_tree" model="ir.ui.view">
+            <field name="name">l10n_ch.res.bank.tree</field>
+            <field name="model">res.bank</field>
+            <field name="inherit_id" ref="base.view_res_bank_tree"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='bic']" position="after">
+                    <field name="code_swift"/>
+                </xpath>
+                
+                <xpath expr="//field[@name='bic']" position="attributes">
+					     <attribute name = "invisible">True</attribute>
+				</xpath>
+	        </field>
+   </record>
+   
+   <!-- Vue  agence bancaire-->
+   <record model="ir.ui.view" id="view_banque_agence_form">
+		<field name="name">view.banque.agence</field>
+		<field name="model">ref_banque_agence</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des agences bancaires">
+			<sheet>
+				<div class="oe_button_box" name="button_box">
+					<button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+						<field name="active" widget="boolean_button" options='{"terminology":"archive"}'/>
+					</button>
+				</div>
+				<group>
+					<field name="banque_id" style="width:50%"/>
+					<field name="code_agence" style="width:35%"/>
+					<field name="lb_court" style="width:50%"/>
+					<field name="lb_long" style="width:75%"/>
+					<field name="adresse" style="width:50%"/>
+				</group>
+			</sheet>
+			</form>
+		</field>
+	</record>
+	
+	
+	<record model="ir.ui.view" id="view_banque_agence_tree">
+		<field name="name">view.banque.agence.tree</field>
+		<field name="model">ref_banque_agence</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<tree string="Liste des agences bancaires">
+				<field name="banque_id"/>
+				<field name="code_agence"/>
+				<field name="lb_court"/>
+				<field name="lb_long"/>
+			</tree>
+		</field>
+	</record>
+	
+
+	<!-- vue structure compte banque orm -->
+	<record model="ir.ui.view" id="view_id_compte_banque">
+		<field name="name">view.compte.structure.banque</field>
+		<field name="model">ref_structcomptebanque</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des comptes des structures">
+			    <field name="name"/>
+			</form>
+		</field>
+	</record>
+	
+	<!-- vue structure compte banque tree -->
+	<record model="ir.ui.view" id="view_id_compte_banque">
+		<field name="name">view.compte.structure.banque</field>
+		<field name="model">ref_structcomptebanque</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<tree string="Liste des comptes des structures">
+				<field name="sequence" widget="handle"/>
+			    <field name="name"/>
+			</tree>
+		</field>
+	</record>
+	
+	
+
+	<!-- vue structure compte banque Line -->
+	<record model="ir.ui.view" id="view_id_compte_banque_line">
+		<field name="name">view.compte.structure.banque.Line</field>
+		<field name="model">ref_structcomptebanque_line</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<tree string="des comptes des structures" editable="bottom">
+				<field name="x_banque_id"/>
+                <field name="num_compte" />
+                <field name="lib_court" />
+                <field name="lib_long" />
+				
+			</tree>
+		</field>
+	</record>
+	
+	
+	<!-- Vue Changer Exercice-->
+	<record model="ir.ui.view" id="view_id_form_exercice">
+		<field name="name">view.temp_change_exo_user.form</field>
+		<field name="model">temp_change_exo_user</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Changer Exercice">
+			<header>
+                <!--<button string="Valider" name="afficher_exercice_en_cours" type="object"  class="oe_highlight"/>-->
+                <button string="Valider" name="changer_exercice" type="object"  class="oe_highlight"/>
+            </header>
+            <sheet>
+            	<group col = "3">
+					<!-- <field name="user_id"/>-->
+					<group></group>
+	            	<group>
+		            	<!--<field name="x_exercice_en_cours"/>-->
+		            	<field name="x_exercices_id" options="{'no_create':True}"/>
+		            	<field name="x_datetime" invisible = '1'/>
+	            	</group>
+	            	<group></group>
+			    </group>
+			</sheet> 	
+			</form>
+           
+			
+		</field>
+	 </record>
+	 
+	 
+	 <!-- Vue Changer Exercice-->
+	<record model="ir.ui.view" id="view_id_tree_exercice">
+		<field name="name">view.temp_change_exo_user.tree</field>
+		<field name="model">temp_change_exo_user</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<tree string="Changer Exercice">
+            	<!-- <field name="user_id"/>-->
+            	<field name="x_exercice_en_cours"/>
+            	<field name="x_datetime" />
+			</tree>
+		</field>
+	 </record>
+	 
+	 
+
+	 
+<record model="ir.ui.view" id="view_id_class_form">
+    <field name="name">view.classepcg.form</field>
+    <field name="model">ref_classe_pcg</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">
+        <form string="Classe du plan comptable générale">
+            <sheet>
+                <group>
+                    <field name ="cl_cpt_pcg" style = "width:10%"/>
+                    <field name ="name" style = "width:35%" invisible='1'/>
+                    <field name ="lb_long" style = "width:50%"/>
+                    <field name ="type_structure" style = "width:50%"/>
+                </group>
+                <notebook>
+                <page string="Sous classes rattachées">
+                <field name ="scl_cpt_pcg_ids" nolabel = "1">
+	                <tree string="Sous classes rattachés" editable = "bottom">
+	                	<field name ="scl_cpt_pcg"/>
+	                	<field name ="name" invisible='1'/>
+                    	<field name ="lb_long"/>
+                    	<field name ="type_structure"/>
+	                </tree>
+                </field>
+                </page>
+                </notebook>
+            </sheet>    
+        </form>
+    </field>
+</record>
+
+
+<record model="ir.ui.view" id="view_id_class_tree">
+    <field name="name">view.classepcg.tree</field>
+    <field name="model">ref_classe_pcg</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">
+        <tree string="Classe du plan comptable générale">
+            <field name ="cl_cpt_pcg" />
+            <field name ="name" invisible='1'/>
+            <field name ="lb_long"/>
+            <field name ="type_structure"/>
+        </tree>
+    </field>
+</record>
+
+
+<record model="ir.ui.view" id="view_id_sousclass_form">
+    <field name="name">view.sclassepcg.form</field>
+    <field name="model">ref_sousclasse_pcg</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">
+        <form string="Sous classe du plan comptable générale">
+            <sheet>
+                <group>
+                    <field name ="scl_cpt_pcg" style = "width:10%"/>
+                    <field name ="name" style = "width:35%" invisible='1'/>
+                    <field name ="lb_long" style = "width:50%"/>
+                    <field name ="type_structure" style = "width:50%"/>
+                </group>
+            </sheet>    
+        </form>
+    </field>
+</record>
+
+
+<record model="ir.ui.view" id="view_id_sousclass_tree">
+    <field name="name">view.sclassepcg.tree</field>
+    <field name="model">ref_sousclasse_pcg</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">
+        <tree string="Classe du plan comptable générale">
+        	<field name ="cl_cpt_pcg_id"/>
+            <field name ="scl_cpt_pcg"/>
+            <field name ="name" invisible='1'/>
+            <field name ="lb_long"/>
+            <field name ="type_structure"/>
+        </tree>
+    </field>
+</record>
+
+
+<record model="ir.ui.view" id="view_compte_view_form">
+        <field name="name">view.compte.form</field>
+        <field name="model">ref_compte</field>
+        <field name="arch" type="xml">
+            <form string="Comptes">
+                <sheet>
+                     <div class="oe_button_box" name="button_box">
+                    <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                     <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                    </button>
+                </div>
+                <group>
+                    <field name = "compte" style = "width:10%"/>                   
+                    <field name = "lb_court" style = "width:50%"/>
+                    <field name = "lb_long" style = "width:75%"/>
+                    <field name = "type_structure" style = "width:75%"/>
+                </group>
+          
+                </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="view_compte_view_tree">
+    <field name="name">view.compte.tree</field>
+    <field name="model">ref_compte</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">
+        <tree string="Comptes">
+        	<field name = "compte"/>
+            <field name="lb_court"/>
+            <field name="lb_long"/>
+            <field name="type_structure"/>
+            <field name="active"/>
+        </tree>
+    </field>
+</record> 
+
+
+<record model="ir.ui.view" id="view_souscompte_form">
+        <field name="name">view.souscompte.form</field>
+        <field name="model">ref_souscompte</field>
+        <field name="arch" type="xml">
+            <form string="Sous comptes">
+                <sheet>
+                     <div class="oe_button_box" name="button_box">
+                    <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                     <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                    </button>
+                </div>
+                <group>
+                    <field name = "souscpte" style = "width:10%"/>                   
+                    <field name = "lb_court" style = "width:50%"/>
+                    <field name = "lb_long" style = "width:75%"/>
+                    <field name = "type_struct" style = "width:75%"/>
+                </group>
+          
+                </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="view_souscompte_tree">
+    <field name="name">view.souscompte.tree</field>
+    <field name="model">ref_souscompte</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">
+        <tree string="Sous comptes">
+        	<field name = "souscpte"/>
+            <field name="lb_court"/>
+            <field name="lb_long"/>
+            <field name="type_struct"/>
+        </tree>
+    </field>
+</record> 
+
+
+<record model="ir.ui.view" id="view_id_plan_form">
+    <field name="name">view.plan.form</field>
+    <field name="model">ref_plan_comptable</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">
+        <form string="Comptes du plan comptable générale">
+            <sheet> 
+              <group>
+              <field name ="sous_classe_id" style = "width:50%" options="{'no_create': True}"/>
+              </group>
+                  <field name="compte_ids" nolabel = "1">
+	                    <tree string="Comptes comptables" editable = "bottom">
+	                    <!--<field name ="cpte" />-->
+	                    <field name = "compte"/>
+	                    <field name ="souscpte"/>
+	                    <field name ="lb_court"/>
+	                    <field name ="lb_long"/>
+	                    <field name ="fg_sens"/>
+	                    <field name ="fg_terminal"/>
+	                    <field name ="active"/>	       	                    
+                   </tree>
+                  </field>
+            </sheet>    
+        </form>
+    </field>
+</record>
+
+<record model="ir.ui.view" id="view_id_plan_tree">
+    <field name="name">view.plan.tree</field>
+    <field name="model">ref_plan_comptable</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">
+        <tree string="Comptes du plan comptable générale"> 
+           <field name ="sous_classe_id"/>
+        </tree>
+    </field>
+</record> 
+
+	
+<!-- Vue nomenclature budgetaire --> 
+
+<record model="ir.ui.view" id="ref_titre_view_form">
+        <field name="name">ref.titre.view.form</field>
+        <field name="model">ref_titre</field>
+        <field name="arch" type="xml">
+            <form string="Titre">
+                <sheet>    
+	                <group>
+		                <field name = "cd_titre" style ="width:10%"/>
+		                <field name = "lb_court" style ="width:50%"/>
+		                <field name = "lb_long" style ="width:75%"/>
+				<field name = "type_titre" style ="width:75%"/>
+	                </group>
+            </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="ref_titre_view_tree">
+        <field name="name">ref.titre.view.tree</field>
+        <field name="model">ref_titre</field>
+        <field name="arch" type="xml">
+            <tree string="Titre">
+                <field name = "cd_titre"/>
+                <field name = "lb_court"/>
+                <field name = "lb_long"/>
+            </tree>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="ref_section_view_form">
+        <field name="name">ref.section.view.form</field>
+        <field name="model">ref_section</field>
+        <field name="arch" type="xml">
+            <form string="Section">
+			   <sheet>              
+	             <group>
+	                <field name = "cd_section" style ="width:10%"/>
+	                <field name = "lb_court" style ="width:50%"/>
+	                <field name = "lb_long" style ="width:75%"/>
+	            </group>
+			   </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="ref_section_view_tree">
+        <field name="name">ref.section.view.tree</field>
+        <field name="model">ref_section</field>
+        <field name="arch" type="xml">
+            <tree string="Section">                
+                <field name = "cd_section"/>
+                <field name = "lb_court"/>
+                <field name = "lb_long"/>
+            </tree>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="ref_chapitre_form">
+        <field name="name">ref.chapitre.form</field>
+        <field name="model">ref_chapitre</field>
+        <field name="arch" type="xml">
+            <form string="Chapitre">
+         <sheet>
+             <group>
+                <field name = "cd_chapitre" style ="width:10%"/>
+                <field name = "lb_court" style ="width:50%"/>
+                <field name = "lb_long" style ="width:75%"/>
+            </group>
+        </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="ref_chapitre_tree">
+        <field name="name">ref.chapitre.tree</field>
+        <field name="model">ref_chapitre</field>
+        <field name="arch" type="xml">
+            <tree string="Chapitre">
+                <field name = "cd_chapitre"/>
+                <field name = "lb_court"/>
+                <field name = "lb_long"/>
+            </tree>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="article_view_form">
+        <field name="name">article.view.form</field>
+        <field name="model">ref_article</field>
+        <field name="arch" type="xml">
+            <form string="Article">
+                <sheet>
+                <group>
+                <field name = "cd_article" style ="width:10%"/>
+                <field name = "lb_court" style ="width:50%"/>
+                <field name = "lb_long" style ="width:75%"/>
+                </group>
+            </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="article_view_tree">
+        <field name="name">article.view.tree</field>
+        <field name="model">ref_article</field>
+        <field name="arch" type="xml">
+            <tree string="Article">              
+                <field name = "cd_article"/>
+                <field name = "lb_court"/>
+                <field name = "lb_long"/>
+            </tree>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="ref_paragraphe_view_form">
+        <field name="name">ref.paragraphe.view.form</field>
+        <field name="model">ref_paragraphe</field>
+        <field name="arch" type="xml">
+            <form string="Paragraphe">
+                <sheet>
+	                <group>
+		                <field name = "cd_paragraphe" style ="width:10%"/>
+		                <field name = "lb_court" style ="width:50%"/>
+		                <field name = "lb_long" style ="width:75%"/>
+	                </group>
+            	</sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="ref_paragraphe_view_tree">
+        <field name="name">ref.paragraphe.view.tree</field>
+        <field name="model">ref_paragraphe</field>
+        <field name="arch" type="xml">
+            <tree string="Paragraphe">              
+                <field name = "cd_paragraphe"/>
+                <field name = "lb_court"/>
+                <field name = "lb_long"/>
+            </tree>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="rubrique_view_form">
+        <field name="name">rubrique.view.form</field>
+        <field name="model">ref_rubrique</field>
+        <field name="arch" type="xml">
+            <form string="Rubrique">
+                <sheet>
+                <group>
+                    <field name = "cd_rubrique" style ="width:10%" />
+                    <field name = "lb_court" style ="width:50%"/>
+                    <field name = "lb_long" style ="width:75%"/>
+                </group>
+            </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="rubrique_view_tree">
+        <field name="name">rubrique.view.tree</field>
+        <field name="model">ref_rubrique</field>
+        <field name="arch" type="xml">
+            <tree string="Rubrique">          
+                <field name = "cd_rubrique"/>
+                <field name = "lb_court"/>
+                <field name = "lb_long"/>
+            </tree>
+        </field>
+</record>
+
+
+<!-- Vue piece justificatives -->
+
+<record model="ir.ui.view" id="view_pj_form">
+    <field name="name">pj.view.form</field>
+    <field name="model">ref_piece_justificatives</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">
+        <form string="Pieces justificatives">
+	        <sheet>
+		        <group col="2">
+			    <field name="refe" style = "width:65%"/>
+		            <field name="lb_court" style = "width:35%"/>                    
+		            <field name="lb_long" style = "width:65%"/>                    		            	
+		            <field name="modereg" style = "width:65%"/>
+		            <field name="fg_guichet" style = "width:20%" invisible="1"/>           
+		        </group>                           
+	   		</sheet>
+  		</form>
+ 	</field>
+</record>
+
+
+<record model="ir.ui.view" id="view_pj_tree">
+    <field name="name">pj.view.tree</field>
+    <field name="model">ref_piece_justificatives</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">
+        <tree string="Liste des pieces justificatives">  
+		    <field name="refe"/>                       
+		    <field name="lb_long"/>                    		    	
+		    <field name="modereg"/>     
+  		</tree>
+ 	</field>
+</record>
+
+
+<record model="ir.ui.view" id="modepaiement_view_form">
+        <field name="name">modepaiement.view.form</field>
+        <field name="model">ref_modereglement</field>
+        <field name="arch" type="xml">
+            <form string="Mode Paiement">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                    <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                     <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                    </button>
+                </div>
+                <group>
+                <field name = "mode_reg" style ="width:10%"/>
+                <field name = "lb_court" style ="width:50%"/>
+                <field name = "lb_long" style ="width:75%"/>
+            </group>
+            </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="modepaiement_view_tree">
+        <field name="name">modepaiement.view.tree</field>
+        <field name="model">ref_modereglement</field>
+        <field name="arch" type="xml">
+            <tree string="Mode Paiement">
+                <field name = "mode_reg"/>
+                <field name = "lb_court"/>
+                <field name = "lb_long"/>
+            </tree>
+        </field>
+</record>
+	 
+
+<!-- Vue domaine d'activité  form-->
+	<record model="ir.ui.view" id="view_domaine_form">
+		<field name="name">view.domaine.form</field>
+		<field name="model">ref_domaine</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<form string="Liste des domaines d'acivités">
+			<sheet>
+			<group>
+				<field name="lb_court" style= "width:50%"/>
+				<field name="lb_long" style= "width:100%"/>
+				<field name="company_id" invisible="1"/>
+			</group>
+			</sheet>
+			</form>
+		</field>
+	</record>
+
+	<!-- vue domaine d'activité tree-->
+	<record model="ir.ui.view" id="view_domaine_tree">
+		<field name="name">view.domaine.tree</field>
+		<field name="model">ref_domaine</field>
+		<field name="priority" eval="16"/>
+		<field name="arch" type="xml">
+			<tree string="Liste des domaines d'activités">
+				<field name="sequence" widget="handle"/>
+				<field name="lb_court"/>
+				<field name="lb_long"/>
+			</tree>
+		</field>
+	</record>
+	
+
+<record model="ir.ui.view" id="titre_view_tree">
+        <field name="name">titre.view.tree</field>
+        <field name="model">budg_titre</field>
+        <field name="arch" type="xml">
+            <tree string="Titre">
+                <field name = "titre"/>
+                <!-- <field name = "type_titre"/>-->
+                <field name = "active"/>
+            </tree>
+        </field>
+</record>
+
+<record model="ir.ui.view" id="titre_view_form">
+        <field name="name">titre.view.form</field>
+        <field name="model">budg_titre</field>
+        <field name="arch" type="xml">
+            <form string="Section">
+            <div class="oe_button_box" name="button_box">
+                    <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                     <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                    </button>
+                </div>  
+	       <sheet>              
+	             <group>
+	                <field name = "titre" style ="width:50%" options="{'no_create': True}"/>
+	                <field name = "type_titre" invisible="1" force_save="1"/>	                
+	            </group>
+	       </sheet>
+            </form>
+        </field>
+</record>
+
+
+
+<record model="ir.ui.view" id="section_view_form">
+        <field name="name">section.view.form</field>
+        <field name="model">budg_section</field>
+        <field name="arch" type="xml">
+            <form string="Section">
+            <div class="oe_button_box" name="button_box">
+                    <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                     <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                    </button>
+                </div>  
+			   <sheet>              
+	             <group>
+	                <field name = "cd_titre_id" style ="width:50%" options="{'no_create': True}"/>
+	                <field name = "section" style ="width:75%" options="{'no_create': True}"/>	                
+	            </group>
+			   </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="section_view_tree">
+        <field name="name">section.view.tree</field>
+        <field name="model">budg_section</field>
+        <field name="arch" type="xml">
+            <tree string="Section">              
+                <field name = "section"/>               
+                <field name = "cd_titre_id"/>
+                <field name = "active"/>
+            </tree>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="budg_chapitre_view_form">
+        <field name="name">budg.chapitre.view.form</field>
+        <field name="model">budg_chapitre</field>
+        <field name="arch" type="xml">
+            <form string="Form Chapitre">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                    <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                     <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                    </button>
+                </div>
+	            <group>
+	                <field name = "cd_titre_id" style ="width:50%" options="{'no_create': True}"/>
+	                <field name = "cd_section_id" style ="width:75%" domain = "[('cd_titre_id', '=', cd_titre_id)]" options="{'no_create': True}"/>
+	                <field name = "chapitre" style ="width:75%" options="{'no_create': True}"/>
+	            </group>
+        		</sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="budg_chapitre_view_tree">
+        <field name="name">budg.chapitre.view.tree</field>
+        <field name="model">budg_chapitre</field>
+        <field name="arch" type="xml">
+            <tree string="Tree Chapitre">
+                <field name = "chapitre"/>               
+                <field name = "cd_titre_id"/>
+                <field name = "cd_section_id"/>
+                <field name= "active"/>
+            </tree>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="articleparam_view_form">
+        <field name="name">articleparam.view.form</field>
+        <field name="model">budg_param_article</field>
+        <field name="arch" type="xml">
+            <form string="Article">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                    <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                     <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                    </button>
+                </div>
+                <group>
+	                <field name = "cd_titre_id" style ="width:50%" options="{'no_create': True}"/>
+	                <field name = "cd_section_id" style ="width:50%" domain = "[('cd_titre_id', '=', cd_titre_id)]" options="{'no_create': True}"/>
+	                <field name = "cd_chapitre_id" style ="width:75%" domain = "[('cd_section_id', '=', cd_section_id)]" options="{'no_create': True}"/>
+	                <field name = "article" style ="width:75%" options="{'no_create': True}"/>
+                </group>
+            </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="articleparam_view_tree">
+        <field name="name">articleparam.view.tree</field>
+        <field name="model">budg_param_article</field>
+        <field name="arch" type="xml">
+            <tree string="Article">              
+                <field name = "article"/>              
+                 <field name = "cd_titre_id"/>
+                <field name = "cd_section_id"/>
+                <field name = "cd_chapitre_id"/>
+                <field name="active"/>
+            </tree>
+        </field>
+</record>
+
+
+
+<record model="ir.ui.view" id="paragraphe_view_form">
+        <field name="name">paragraphe.view.form</field>
+        <field name="model">budg_paragraphe</field>
+        <field name="arch" type="xml">
+            <form string="Paragraphe">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                    <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                     <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                    </button>
+                </div>
+                <group>
+	                <field name = "cd_titre_id" style ="width:50%" options="{'no_create': True}"/>
+	                <field name = "cd_section_id" style ="width:50%" domain = "[('cd_titre_id', '=', cd_titre_id)]" options="{'no_create': True}"/>
+	                <field name = "cd_chapitre_id" style ="width:50%" domain = "[('cd_section_id', '=', cd_section_id)]" options="{'no_create': True}"/>
+	                <field name = "cd_article_id" style ="width:50%" domain = "[('cd_chapitre_id', '=', cd_chapitre_id)]" options="{'no_create': True}"/>
+	                <field name = "paragraphe" style ="width:75%" options="{'no_create': True}"/>
+                </group>
+            </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="paragraphe_view_tree">
+        <field name="name">paragraphe.view.tree</field>
+        <field name="model">budg_paragraphe</field>
+        <field name="arch" type="xml">
+            <tree string="Paragraphe">              
+                <field name = "paragraphe"/>
+                 <field name = "cd_titre_id"/>
+                <field name = "cd_section_id"/>
+                <field name = "cd_chapitre_id"/>
+                <field name = "cd_article_id"/>
+                <field name="active"/>
+            </tree>
+        </field>
+</record>
+
+ 	  
+	 <!-- Action changer exercice -->
+	<record model="ir.actions.act_window" id="act_list_changer">
+			<field name="name">Changer Exercice</field>
+			<field name="res_model">temp_change_exo_user</field>
+			<field name="view_mode">form</field>
+	</record>
+	 
+
+
+	<!--Definition des actions-->
+
+	<!--Definition des actions liées au menu Données Géographiques-->
+
+	<!-- Action continent-->
+	<record model="ir.actions.act_window" id="act_list_continent">
+			<field name="name">Liste des Continents</field>
+			<field name="res_model">ref_continent</field>
+			<field name="view_mode">tree,form,kanban</field>
+	</record>
+
+	<!-- Action  pays-->
+	<record model="ir.actions.act_window" id="act_list_pays">
+			<field name="name">Liste des Pays</field>
+			<field name="res_model">ref_pays</field>
+			<field name="view_mode">tree,form,kanban</field>
+		
+	</record>
+
+	<!-- Action  region-->
+	<record model="ir.actions.act_window" id="act_list_region">
+			<field name="name">Liste des regions</field>
+			<field name="res_model">ref_region</field>
+			<field name="view_mode">tree,form,kanban</field>
+		
+	</record>
+
+	<!-- Action  province-->
+	<record model="ir.actions.act_window" id="act_list_province">
+			<field name="name">Liste des provinces</field>
+			<field name="res_model">ref_province</field>
+			<field name="view_mode">tree,form,kanban</field>
+		
+	</record>
+
+	<!-- Action  departement-->
+	<record model="ir.actions.act_window" id="act_list_departement">
+			<field name="name">Liste des departements</field>
+			<field name="res_model">ref_departement</field>
+			<field name="view_mode">tree,form,kanban</field>
+		
+	</record>
+
+        <!-- Action  commune-->
+	<record model="ir.actions.act_window" id="act_list_commune">
+			<field name="name"> Liste des communes</field>
+			<field name="res_model">ref_commune</field>
+			<field name="view_mode">tree,form,kanban</field>
+		
+	</record>
+
+	<!-- Action  localité-->
+	<record model="ir.actions.act_window" id="act_list_localite">
+			<field name="name">Liste des localités</field>
+			<field name="res_model">ref_localite</field>
+			<field name="view_mode">tree,form,kanban</field>
+		
+	</record>
+
+	<!--Definition des actions liées au menu Données Administratives-->
+
+	<!-- Action Type Structure -->
+	<record model="ir.actions.act_window" id="act_list_type_structure">
+			<field name="name">Liste des Types Structures</field>
+			<field name="res_model">ref_type_structure</field>
+			<field name="view_mode">tree,form,kanban</field>
+	</record>
+
+	<!-- Action Categorie Structure -->
+	<record model="ir.actions.act_window" id="act_list_cat_structure">
+			<field name="name">Liste des Catégories Structures</field>
+			<field name="res_model">ref_categorie_structure</field>
+			<field name="view_mode">tree,form,kanban</field>
+	</record>
+
+	<!-- Action Profil Structure 
+	<record model="ir.actions.act_window" id="act_list_profil_structure">
+			<field name="name">Profil Structure</field>
+			<field name="res_model">ref_profil_structure</field>
+			<field name="view_mode">tree,form,kanban</field>
+	</record>-->
+
+	<!-- Action Structure rattachée 
+	<record model="ir.actions.act_window" id="act_list_structure_rattachee">
+			<field name="name">Structure Rattachée</field>
+			<field name="res_model">ref_structure_rattache</field>
+			<field name="view_mode">tree,form,kanban</field>
+	</record>-->
+
+	<!-- Action Structure 
+	<record model="ir.actions.act_window" id="act_list_structure">
+			<field name="name">Structure</field>
+			<field name="res_model">ref_structure</field>
+			<field name="view_mode">tree,form,kanban</field>
+	</record>-->
+   
+
+       <!-- Action Company -->
+	<record model="ir.actions.act_window" id="act_list_company">
+			<field name="name">Liste des Structures</field>
+			<field name="res_model">res.company</field>
+			<field name="view_mode">tree,form</field>
+	</record>
+	
+	
+	   <!-- Action Company -->
+	<record model="ir.actions.act_window" id="act_list_users">
+			<field name="name">Liste des Utilisateurs</field>
+			<field name="res_model">res.users</field>
+			<field name="view_mode">tree,form</field>
+	</record>
+
+	
+
+	<!-- Action  nationalité-->
+	<record model="ir.actions.act_window" id="act_list_nationalite">
+			<field name="name">Liste des Nationalités</field>
+			<field name="res_model">ref_nationalite</field>
+			<field name="view_mode">tree,form,kanban</field>
+		
+	</record>
+
+	<!-- Action Type pièce -->
+	<record model="ir.actions.act_window" id="act_list_type_piece">
+			<field name="name">Liste des Type Pièce</field>
+			<field name="res_model">ref_type_piece</field>
+			<field name="view_mode">tree,form,kanban</field>
+	</record>
+
+	<!-- Action Secteur Activité-->
+	<record model="ir.actions.act_window" id="act_list_secteur_activite">
+			<field name="name">Liste des Secteurs Activités</field>
+			<field name="res_model">ref_secteur_activite</field>
+			<field name="view_mode">tree,form,kanban</field>
+	</record>	
+
+	<!-- Action Exercice -->
+	<record model="ir.actions.act_window" id="act_list_exercice">
+			<field name="name">Liste des Exercices</field>
+			<field name="res_model">ref_exercice</field>
+			<field name="view_mode">tree,form,kanban</field>
+	</record>
+
+<record model="ir.actions.act_window" id="act_sous">
+			<field name="name">Liste des Exercices</field>
+			<field name="res_model">ref_sousclasse_pcg</field>
+			<field name="view_mode">tree,form,kanban</field>
+	</record>
+
+
+
+	<!--Definition des actions liées au menu Données Financières-->
+
+        <!-- Action Banque -->
+	<record model="ir.actions.act_window" id="act_list_banque">
+			<field name="name">Liste des Banques</field>
+			<field name="res_model">res.bank</field>
+			<field name="view_mode">tree,form,kanban</field>
+	</record>
+	
+	<!-- Action Mode de paiement--> 
+	<record model="ir.actions.act_window" id="act_list_compte_banque">
+			<field name="name">Liste des comptes bancaires par structure</field>
+			<field name="res_model">ref_structcomptebanque</field>
+			<field name="view_mode">tree,form</field>
+	</record>
+
+
+
+<!-- Action Classe--> 
+<record id="act_classepcg" model="ir.actions.act_window">
+    <field name="name">Classes et sous classes du plan comptable général</field>
+    <field name="res_model">ref_classe_pcg</field>
+    <field name="view_mode">tree,form,kanban</field>
+    <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cliquer pour créer une classe du plan comptable général.
+            </p>
+        </field>
+</record>
+
+
+<record id="act_cpte" model="ir.actions.act_window">
+    <field name="name">Comptes</field>
+    <field name="res_model">ref_compte</field>
+    <field name="view_mode">tree,form,kanban</field>
+    <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cliquer pour créer un compte.
+            </p>
+        </field>
+</record>
+
+
+<record id="act_souscpte" model="ir.actions.act_window">
+    <field name="name">Sous comptes</field>
+    <field name="res_model">ref_souscompte</field>
+    <field name="view_mode">tree,form,kanban</field>
+	 <field name= "context">{'group_by' : ['type_struct']}</field>
+    <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cliquer pour créer un sous compte.
+            </p>
+        </field>
+</record>
+
+<record id="act_planold" model="ir.actions.act_window">
+    <field name="name">Plan comptable général</field>
+    <field name="res_model">ref_plan_comptable</field>
+    <field name="view_mode">tree,form,kanban</field>
+    <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+                Cliquer pour créer un plan comptable général.
+        </p>
+    </field>
+</record>
+
+
+<record id="act_titre" model="ir.actions.act_window">
+    <field name="name">Titre</field>
+    <field name="res_model">ref_titre</field>
+    <field name="view_mode">tree,form,kanban</field>
+</record>
+
+
+<record id="act_section" model="ir.actions.act_window">
+    <field name="name">Section</field>
+    <field name="res_model">ref_section</field>
+    <field name="view_mode">tree,form,kanban</field>
+</record>
+
+
+<record id="act_list_chapitre" model="ir.actions.act_window">
+    <field name="name">Chapitre</field>
+    <field name="res_model">ref_chapitre</field>
+    <field name="view_mode">tree,form,kanban</field>
+</record>
+
+
+<record id="act_article" model="ir.actions.act_window">
+    <field name="name">Article</field>
+    <field name="res_model">ref_article</field>
+    <field name="view_mode">tree,form,kanban</field>    
+</record>
+
+
+<record id="act_paragraphes" model="ir.actions.act_window">
+    <field name="name">Paragraphe</field>
+    <field name="res_model">ref_paragraphe</field>
+    <field name="view_mode">tree,form,kanban</field>
+</record>
+
+
+<record id="act_rubrique" model="ir.actions.act_window">
+    <field name="name">Rubrique</field>
+    <field name="res_model">ref_rubrique</field>
+    <field name="view_mode">tree,form,kanban</field>
+</record>
+
+
+<record model="ir.actions.act_window" id="act_agence_bancaire">
+			<field name="name">Liste des agences bancaires</field>
+			<field name="res_model">ref_banque_agence</field>
+			<field name="view_mode">tree,form</field>
+		
+	</record>
+	
+	<record id="act_domaine" model="ir.actions.act_window">
+    <field name="name">Liste des domaines d'activités</field>
+    <field name="res_model">ref_domaine</field>
+    <field name="view_mode">tree,form,kanban</field>
+    <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cliquer pour créer un domaine d'activité .
+            </p>
+        </field>
+</record>
+
+
+
+<record id="act_pj" model="ir.actions.act_window">
+    <field name="name">Pièces justificatives</field>
+    <field name="res_model">ref_piece_justificatives</field>
+    <field name="view_mode">tree,form,kanban</field>
+</record>
+
+<record id="act_modepaiement" model="ir.actions.act_window">
+    <field name="name">Liste des modes paiement</field>
+    <field name="res_model">ref_modereglement</field>
+    <field name="view_mode">tree,form,kanban</field>
+    <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cliquer pour créer un mode de paiement.
+            </p>
+        </field>
+</record>
+
+
+<!--Définitions du actions du menu parametre-->
+
+<record id="act_ptitre" model="ir.actions.act_window">
+    <field name="name">Paramétrage Titre</field>
+    <field name="res_model">budg_titre</field>
+    <field name="view_mode">tree,form,kanban</field>
+    <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cliquer pour créer un titre budgetaire.
+            </p>
+        </field>
+</record>
+
+
+<record id="act_psection" model="ir.actions.act_window">
+    <field name="name">Paramétrage Section</field>
+    <field name="res_model">budg_section</field>
+    <field name="view_mode">tree,form,kanban</field>
+    <field name="help" type="html">
+    <field name= "context">{'group_by' : ['cd_titre_id']}</field>
+    </field>
+</record>
+
+
+<record id="act_pchapitre" model="ir.actions.act_window">
+    <field name="name">Paramétrage Chapitre</field>
+    <field name="res_model">budg_chapitre</field>
+    <field name="view_mode">tree,form,kanban</field>
+    <field name= "context">{'group_by' : ['cd_titre_id', 'cd_section_id']}</field>
+</record>
+
+
+<record id="act_pparam" model="ir.actions.act_window">
+    <field name="name">Paramétrage article</field>
+    <field name="res_model">budg_param_article</field>
+    <field name="view_mode">tree,form</field>
+    <field name= "context">{'group_by' : ['cd_titre_id', 'cd_section_id', 'cd_chapitre_id']}</field>
+</record>
+
+
+<record id="act_pparagraphe" model="ir.actions.act_window">
+    <field name="name">Paramétrage Paragraphe</field>
+    <field name="res_model">budg_paragraphe</field>
+    <field name="view_mode">tree,form,kanban</field>
+    <field name= "context">{'group_by' : ['cd_titre_id', 'cd_section_id', 'cd_chapitre_id','cd_article_id']}</field>
+    <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cliquer pour créer un paragraphe budgetaire.
+            </p>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="res_country_form">
+		<field name="name">res.country.form</field>
+		<field name="model">res.country</field>
+	        <field name="inherit_id" ref="base.view_country_form"/>
+		<field name="arch" type="xml">	
+			<xpath expr="//field[@name='name']" position="after">
+		     	<field name = "continent_id"/>
+			</xpath>
+			<xpath expr= "//label[1]" position= "attributes" >
+				<attribute name= "invisible">True</attribute>
+			</xpath>
+			<xpath expr="//field[@name='state_ids']" position="attributes">
+		     	<attribute name= "invisible">True</attribute>
+			</xpath>
+			<xpath expr= "//group[3]" position= "attributes" >
+				<attribute name= "invisible">True</attribute>
+			</xpath>
+		</field>
+    </record>
+    
+    <record model="ir.ui.view" id="res_country_tree">
+		<field name="name">res.country.tree</field>
+		<field name="model">res.country</field>
+	        <field name="inherit_id" ref="base.view_country_tree"/>
+		<field name="arch" type="xml">	
+			<xpath expr="//field[@name='name']" position="after">
+		     	<field name = "continent_id"/>
+			</xpath>
+		</field>
+    </record>
+    
+    
+    <!-- Action changer exercice -->
+	<record model="ir.actions.act_window" id="act_res_country_form">
+			<field name="name">Liste des Pays</field>
+			<field name="res_model">res.country</field>
+			<field name="view_mode">tree,form</field>
+	</record>
+	
+	
+<!-- A partir de referentiel 
+<record model="ir.ui.view" id="view_typecontribuables_form">
+        <field name="name">typecontribuable.view.form</field>
+        <field name="model">ref_typecontribuable</field>
+        <field name="arch" type="xml">
+            <form string="Type contribuable/client">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                    <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                     <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                    </button>
+                </div>
+                <group>
+	                <field name = "cate_id" style = "width:50%"/>
+	                <field name = "lb_long" style = "width:50%"/>
+	                <field name = "name" style = "width:75%"/>
+					<field name = "cpte_client" style = "width:75%"/>
+	                <field name = "company_id" invisible="1"/>
+                </group>
+            </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="view_typecontribuables_tree">
+        <field name="name">typecontribuable.view.tree</field>
+        <field name="model">ref_typecontribuable</field>
+        <field name="arch" type="xml">
+            <tree string="Type contribuable/client">
+            	<field name="sequence" widget="handle"/>
+                <field name = "cate_id"/>
+                <field name = "name"/>
+                <field name = "lb_long"/>
+				<field name = "cpte_client"/>
+                <field name = "active"/>
+            </tree>
+        </field>
+</record>
+
+
+
+<record model="ir.ui.view" id="ref_beneficiaire_form">
+        <field name="name">ref_beneficiaire.view.form</field>
+        <field name="model">ref_beneficiaire</field>
+        <field name="arch" type="xml">
+            <form string="Bénéficiaire">
+                <sheet>
+                   <div class="oe_button_box" name="button_box">
+                    <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                     <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                    </button>
+                </div>
+                <group>
+                     <group>                       
+                        <field name = "type_beneficiaire_id" style ="width:100%"/>
+                        <field name = "nm" style ="width:100%"/>    
+                        <field name = "cd_mat" style ="width:100%"/>
+                        <field name = "no_ifu" style ="width:100%"/>
+                     	<field name = "domaine_id" style ="width:100%"/>
+                    </group>
+                    <group string ="Contacts et addresse">
+                    	<field name = "tel" style ="width:100%"/>
+                    	<field name = "ap_pays" style ="width:100%"/>
+                        <field name = "ap_ville" style ="width:100%"/> 
+                        <field name = "ap_bp" style ="width:100%"/>         
+                    </group>
+                    <group string="Informations bancaires">
+                        <field name = "bank_id" style ="width:100%"/>         
+                        <field name = "acc_number" style ="width:100%"/>
+                    </group>
+                    <field name = "company_id" invisible="1"/>
+                </group>
+            </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="ref_beneficiaire_view_tree">
+        <field name="name">ref_beneficiaire.view.tree</field>
+        <field name="model">ref_beneficiaire</field>
+        <field name="arch" type="xml">
+            <tree string="Bénéficiaire">
+                <field name = "nm"/>
+                <field name = "type_beneficiaire_id"/>
+                <field name = "no_ifu"/>
+		 		<field name = "tel"/> 
+                <field name="active"/>           
+            </tree>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="view_typebeneficiaire_form">
+        <field name="name">typebeneficiaire.view.form</field>
+        <field name="model">ref_typebeneficiaire</field>
+        <field name="arch" type="xml">
+            <form string="Types bénéficiaires/fournisseurs">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                    <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                     <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                    </button>
+                </div>
+                <group>
+                <field name = "cat_id" style = "width:50%"/>
+                <field name = "name" style = "width:50%"/>
+                <field name = "lb_long" style = "width:75%"/>
+                <field name = "cpte_client" style = "width:75%"/>
+                <field name = "company_id" invisible="1"/>
+                </group>
+            </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="view_typebeneficiaire_tree">
+        <field name="name">typepbeneficiaire.view.tree</field>
+        <field name="model">ref_typebeneficiaire</field>
+        <field name="arch" type="xml">
+            <tree string="Types bénéficiaires/fournisseurs">
+            	<field name="sequence" widget="handle"/>
+                <field name = "cat_id"/>
+                <field name = "name"/>
+                <field name = "lb_long" />
+                <field name = "cpte_client" />
+                <field name="active"/>
+            </tree>
+        </field>
+</record>
+
+ 
+<record model="ir.ui.view" id="contribuable_view_form">
+        <field name="name">contribuable.view.form</field>
+        <field name="model">ref_contribuable</field>
+        <field name="arch" type="xml">
+            <form string="Contribuable/Client">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                    <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                     <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                    </button>
+                </div>
+                <group>
+               		 <group>   
+                        <field name = "type_contribuable_id" style ="width:100%"/>
+                        <field name = "nm_rs" style ="width:100%"/>       
+                        <field name = "no_ifu" style ="width:100%"/>                                         
+                    </group>
+                    <group string ="Contacts et addresses">
+                    	<field name = "tel" style ="width:100%"/>               
+                        <field name = "ap_pays" style ="width:100%"/>
+                        <field name = "ap_ville" style ="width:100%"/>
+                        <field name = "ap_bp" style ="width:100%"/>
+                    </group>
+                    <group string ="Informations bancaires">
+                        <field name = "bank_id" style ="width:100%"/>
+                        <field name = "acc_number" style ="width:100%"/>
+                    </group>
+                    <group string ="Informations comptables">    
+                        <field name = "cpte_client" style ="width:100%"/>
+                        <field name = "cpte_fournisseur" style ="width:100%"/>
+                    </group>
+                    <field name = "company_id" invisible="1"/>
+                </group>
+            </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="contribuable_view_tree">
+        <field name="name">contribuable.view.tree</field>
+        <field name="model">ref_contribuable</field>
+        <field name="arch" type="xml">
+            <tree string="Fournisseur">               
+                <field name = "nm_rs"/>
+                <field name = "ap_pays"/>
+                <field name = "tel"/> 
+                <field name = "type_contribuable_id"/> 
+                <field name="active"/>              
+            </tree>
+        </field>
+</record> -->
+
+
+
+
+<record model="ir.ui.view" id="bailleur_view_form">
+        <field name="name">bailleur.view.form</field>
+        <field name="model">ref_bailleur</field>
+        <field name="arch" type="xml">
+            <form string="Bailleur/Partenaires">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                    <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                     <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                    </button>
+                </div>            
+              <group string="Informations Bailleur">    
+                <group>
+                                                
+                   <field name = "type_bailleur" style ="width:100%"/>
+                   <field name = "nm_bail" style ="width:100%"/>                                
+                </group> 
+                <group string = "Informations bancaires">
+                   <field name = "bank_id" style ="width:100%"/> 
+                   <field name = "acc_bank_id" style ="width:100%"/>  
+                </group>  
+              </group>
+              <group string="Contacts et Adresses">
+                <group>   
+                     <field name = "ap_pays" style ="width:100%"/>
+                     <field name = "ap_ville" style ="width:100%"/>
+                     <field name = "ap_bp" style ="width:100%"/>
+                     <field name = "ap_cd_post" style ="width:100%"/>                    
+                </group>
+                <group>
+                     <field name = "tel" style ="width:100%"/>
+                     <field name = "mail" style ="width:100%"/>
+                     <field name = "site" style ="width:100%"/>
+                     <field name = "ap_rue" style ="width:100%"/>
+                </group>                 
+	         </group>
+			<field name = "company_id" invisible="1"/>
+
+            </sheet>
+            </form>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="bailleur_view_tree">
+        <field name="name">bailleur.view.tree</field>
+        <field name="model">ref_bailleur</field>
+        <field name="arch" type="xml">
+            <tree string="Bailleur/Partenaires">           	
+                <field name = "nm_bail"/>
+                <field name = "lb_sigle"/>
+                <field name = "type_bailleur"/>               
+                <field name="active"/>
+            </tree>
+        </field>
+</record>
+
+<record model="ir.ui.view" id="catcont_view_form">
+        <field name="name">catcont.view.form</field>
+        <field name="model">ref_categoriecontribuable</field>
+        <field name="arch" type="xml">
+            <form string="Catégorie contribuable"> 
+            <sheet> 
+	            <group>
+	             	<field name = "lb_court" style ="width:50%"/>
+	                <field name = "name" style ="width:75%"/>
+	                <field name="active" style ="width:10%"/>
+	            </group>         	
+           </sheet>
+            </form>
+        </field>
+</record>
+
+<record model="ir.ui.view" id="catcont_view_tree">
+        <field name="name">catcont.view.tree</field>
+        <field name="model">ref_categoriecontribuable</field>
+        <field name="arch" type="xml">
+            <tree string="Catégorie contribuable">           	
+                <field name = "lb_court"/>
+                <field name = "name"/>
+                <field name="active"/>
+            </tree>
+        </field>
+</record>
+
+
+<record model="ir.ui.view" id="catbenef_view_form">
+        <field name="name">catbenef.view.form</field>
+        <field name="model">ref_categoriebeneficiaire</field>
+        <field name="arch" type="xml">
+            <form string="Catégorie bénéficiaire"> 
+            <sheet> 
+	            <group>
+	             	<field name = "lb_court" style ="width:50%"/>
+	                <field name = "name" style ="width:75%"/>
+	                <field name="active" style ="width:10%"/>
+	            </group>         	
+           </sheet>
+            </form>
+        </field>
+</record>
+
+<record model="ir.ui.view" id="catbenef_view_tree">
+        <field name="name">catbenef.view.tree</field>
+        <field name="model">ref_categoriebeneficiaire</field>
+        <field name="arch" type="xml">
+            <tree string="Catégorie bénéficiaire">           	
+                <field name = "lb_court"/>
+                <field name = "name"/>
+                <field name="active"/>
+            </tree>
+        </field>
+</record>
+
+
+
+	 
+<record model="ir.ui.view" id="view_id_plan_comptable_form">
+    <field name="name">view.plan.compte.form</field>
+    <field name="model">compta_plan</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">  	
+	    <form string="Plan comptable">
+	    <sheet>
+	    	<group>
+	    		<field name="sousclasse_id" style = "width:50%" options="{'no_create': True}"/>
+	    	</group>
+	    	<group invisible = "1">
+	    	<field name="structure" invisible = "0"/>	    
+		    <field name="x_exercice_id" invisible = "0"/>
+            <field name="company_id" invisible = "0"/> 
+            </group>
+	        <field name = "plan_line" nolabel ="1">
+             	<tree string = "Plan comptable" editable = "bottom">
+             		<field name = "cpte" options="{'no_create': True}"/>
+             		<field name = "souscpte"/>
+		        	<field name = "libelle" force_save='1'/>
+             		<field name = "fg_sens"/>
+					<field name = "fg_finance"/>
+					<field name = "fg_attente"/>
+					<field name = "fg_lettrage"/>
+					<field name = "company_id" invisible="1"/>
+					<field name = "type_structure" invisible="1"/>
+             	</tree>
+             </field>
+             </sheet> 
+	    </form>
+	</field>
+</record>
+	 
+	 
+<record model="ir.ui.view" id="view_plan_compte_tree">
+        <field name="name">view.plan.tree</field>
+        <field name="model">compta_plan</field>
+        <field name="arch" type="xml">
+            <tree string="Mode Paiement">
+                <field name = "sousclasse_id"/>
+            </tree>
+        </field>
+</record>	
+
+
+<record model="ir.ui.view" id="line_view_tree">
+        <field name="name">lines.view.tree</field>
+        <field name="model">compta_plan_line</field>
+        <field name="arch" type="xml">
+            <tree string="Catégorie bénéficiaire"> 
+				<field name = "plan_id"/>
+               <field name = "cpte" options="{'no_create': True}"/>
+				<field name = "souscpte"/>
+				<field name = "libelle" force_save='1'/>
+				<field name = "fg_sens"/>
+				<field name = "fg_finance"/>
+				<field name = "fg_attente"/>
+				<field name = "fg_lettrage"/>
+				<field name = "company_id" invisible="0"/>
+				<field name = "type_structure" invisible="0"/>
+            </tree>
+        </field>
+</record>
+
+
+<!-- Référentiel -->
+<record id="act_catcontribuable" model="ir.actions.act_window">
+    <field name="name">Liste des catégories de contribuables/clients</field>
+    <field name="res_model">ref_categoriecontribuable</field>
+    <field name="view_mode">tree,form,kanban</field>
+    <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cliquer pour créer une catégorie de contribuable.
+            </p>
+        </field>
+</record>
+
+<!--<record id="act_typecontribuable" model="ir.actions.act_window">
+    <field name="name">Liste des types de contribuables/clients</field>
+    <field name="res_model">ref_typecontribuable</field>
+    <field name="view_mode">tree,form,kanban</field>
+    <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cliquer pour créer un type de contribuable.
+            </p>
+        </field>
+</record>
+
+
+<record id="act_contribuable" model="ir.actions.act_window">
+    <field name="name">Liste des contribuables/clients</field>
+    <field name="res_model">ref_contribuable</field>
+    <field name="view_mode">tree,form,kanban</field>
+    <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cliquer pour créer d'un contribuable.
+            </p>
+        </field>
+</record>-->
+
+
+<record id="act_catbeneficiaire" model="ir.actions.act_window">
+    <field name="name">Liste des catégories de bénéficiaires/fournisseurs</field>
+    <field name="res_model">ref_categoriebeneficiaire</field>
+    <field name="view_mode">tree,form,kanban</field>
+    <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cliquer pour créer une catégorie de bénéficiaire.
+            </p>
+        </field>
+</record>
+
+<!--<record id="act_typebeneficiaire" model="ir.actions.act_window">
+    <field name="name">Liste des types de bénéficiaires/fournisseurs</field>
+    <field name="res_model">ref_typebeneficiaire</field>
+    <field name="view_mode">tree,form,kanban</field>
+    <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cliquer pour créer un type de bénéficiaire.
+            </p>
+        </field>
+</record>-->
+
+<record id="act_bailleur" model="ir.actions.act_window">
+    <field name="name">Liste des bailleurs/partenaires</field>
+    <field name="res_model">ref_bailleur</field>
+    <field name="view_mode">tree,form,kanban</field>
+    <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cliquer pour créer un bailleur .
+            </p>
+        </field>
+</record>
+
+
+<!-- Action Bénéficiaire/fournisseur
+<record model="ir.actions.act_window" id="act_list_beneficiaire">
+		<field name="name">Liste des bénéficiaires</field>
+		<field name="res_model">ref_beneficiaire</field>
+		<field name="view_mode">tree,form</field>
+</record>--> 
+
+<record id="act_plan" model="ir.actions.act_window">
+    <field name="name">Plan comptable </field>
+    <field name="res_model">compta_plan</field>
+    <field name="view_mode">tree,form,kanban</field>
+</record>
+
+
+<record id="act_plan_line" model="ir.actions.act_window">
+    <field name="name">Plan comptable ligne </field>
+    <field name="res_model">compta_plan_line</field>
+    <field name="view_mode">tree</field>
+</record>
+
+
+
+
+
+	<!--Definition du menu-->
+	<menuitem id="main_menu" name ="Reférentiel Global" sequence="1" groups="Referentiel_Global.group_agent"/>
+
+
+		<!--Definition du menu Donnéees Géographiques-->
+	<menuitem id="main_menu_conf" name ="Données Géographiques" sequence="2" action="" parent="main_menu"/>
+	<menuitem id="main_menu_continent" name ="Saisie/Maj Continent" sequence="3" action="act_list_continent" parent="main_menu_conf"/>
+	<menuitem id="main_menu_pays" name ="Saisie/Maj Pays" sequence="4" action="act_res_country_form" parent="main_menu_conf"/>
+	<menuitem id="main_menu_region" name ="Saisie/Maj Région" sequence="5" action="act_list_region" parent="main_menu_conf"/>
+	<menuitem id="main_menu_province" name ="Saisie/Maj Province" sequence="6" action="act_list_province" parent="main_menu_conf"/>
+	<menuitem id="main_menu_departement" name ="Saisie/Maj Departement" sequence="6" action="act_list_departement" parent="main_menu_conf"/>
+	<menuitem id="main_menu_commune" name ="Saisie/Maj Commune" sequence="7" action="act_list_commune" parent="main_menu_conf"/>
+	<menuitem id="main_menu_localite" name ="Saisie/Maj Localité" sequence="8" action="act_list_localite" parent="main_menu_conf"/>
+
+
+
+		<!--Definition du menu Donnéees Administratives-->
+    <menuitem id="main_menu_adm" name ="Données Administratives" sequence="3" parent="main_menu"/>
+
+    <menuitem id="main_menu_ministere" name ="Saisie/Màj Ministère" sequence="1" action="act_list_ministere" parent="main_menu_adm"/>
+
+    <menuitem id="main_menu_type_structure" name ="Saisie/Màj Type Structure" sequence="2" action="act_list_type_structure" parent="main_menu_adm"/>
+
+	<menuitem id="main_menu_cat_structure" name ="Saisie/Màj Catégorie Structure" sequence="3" action="act_list_cat_structure" parent="main_menu_adm"/>
+
+	<menuitem id="main_menu_structure" name ="Saisie/Màj Structure" sequence="4" action="act_list_company" parent="main_menu_adm"/>
+
+	<menuitem id="menu_direction" parent="main_menu_adm" name="Saisie/Màj-Direction/ Departement" action="act_list_direction" sequence = "4"/> 
+
+	<menuitem id="menu_service" parent="main_menu_adm" name="Saisie/Màj-Service" action="act_list_service" sequence = "5"/> 
+
+	<!--<menuitem id="main_menu_profil_structure" name ="Profil Structure" sequence="23" action="act_list_profil_structure" parent="main_menu_adm"/>
+	<menuitem id="main_menu_structure_ra" name ="Structure Rattachée" sequence="24" action="act_list_structure_rattachee" parent="main_menu_adm"/>-->
+	
+	<menuitem id="menu_nationalite" parent="main_menu_adm" name="Saisie/Maj Nationalité" action="act_list_nationalite" sequence = "5"/> 
+	<menuitem id="main_menu_piece" name ="Saisie/Màj Type pièce" sequence="6" action="act_list_type_piece" parent="main_menu_adm"/>
+	<menuitem id="main_menu_secteur" name ="Saisie/Màj Secteur Activité" sequence="7" action="act_list_secteur_activite" parent="main_menu_adm"/>
+	<menuitem id="main_menu_exercice" name ="Saisie/Màj Exercice" sequence="8" action="act_list_exercice" parent="main_menu_adm"/>
+
+	
+	<!--Definition du menu Donnéees Financières-->
+	<menuitem id="main_menu_financ" name ="Données Financières et Comptables" sequence="4" action="" parent="main_menu" />
+	<menuitem id="main_menu_banque" name ="Saisie/Màj Banques" sequence="1" action="act_list_banque" parent="main_menu_financ"/>
+	<menuitem id="main_menu_banque_agence" name ="Saisie/Màj Agences bancaires" sequence="2" action="act_agence_bancaire" parent="main_menu_financ"/>	
+	<menuitem id="menu_modepaiement" parent="main_menu_financ" sequence="3" name="Saisie/MàJ des modes de paiements" action="act_modepaiement"/>
+	<menuitem id="menu_pj" parent="main_menu_financ" sequence="4" name="Saisie/MàJ des pièces justificatives" action="act_pj"/> 
+	<!--<menuitem id="menu_domain" parent="main_menu_financ" sequence="5" name="Saisie/MàJ des domaines d'activité" action="act_domaine"/>-->
+	
+	<menuitem id="menu_changer" name="Choisir Exercice" action="act_list_changer" sequence = "100"/>
+	<menuitem id="menu_plan_comptable" parent="main_menu_financ" sequence="6" name="PLAN COMPTABLE"/>
+	<menuitem id="menu_parametre_classpcg" parent="menu_plan_comptable" sequence="1" name="Saisie/MàJ des classes et sous classes du plan comptable" action="act_classepcg"/>
+	<menuitem id="menu_parametre_compte" parent="menu_plan_comptable" sequence="2" name="Saisie/Màj des Comptes" action="act_cpte"/>
+	<menuitem id="menu_parametre_souscompte" parent="menu_plan_comptable" sequence="3" name="Saisie/Màj des Sous Comptes" action="act_souscpte"/>	
+	<!--<menuitem id="menu_parametre_sousclass" parent="menu_plan_comptable" sequence="4" name="Charger les Sous classes" action="act_sous"/>-->
+	<menuitem id="menu_parametre_plan" parent="menu_plan_comptable" sequence="5" name="Saisie/MàJ du Plan comptable" action="act_plan"/>
+	<!--<menuitem id="menu_parametre_plan_line" parent="menu_plan_comptable" sequence="6" name="Charger ligne Plan comptable" action="act_plan_line" />-->
+
+
+	<menuitem id="menu_parametre_nom" parent="main_menu_financ" sequence="8" name="NOMENCLATURE BUDGETAIRE"/>
+	<menuitem id="menu_titre" parent="menu_parametre_nom" sequence="9" name="Saisie/MàJ des Titres" action="act_titre"/>
+	<menuitem id="menu_section" parent="menu_parametre_nom" sequence="10" name="Saisie/MàJ des Sections" action="act_section"/>
+	<menuitem id="menu_chapitre" parent="menu_parametre_nom" sequence="11" name="Saisie/MàJ des Chapitres" action="act_list_chapitre"/>
+	<menuitem id="menu_article" parent="menu_parametre_nom" sequence="12" name="Saisie/MàJ des Articles" action="act_article"/>
+	<menuitem id="menu_paragraphe" parent="menu_parametre_nom" sequence="13" name="Saisie/MàJ des Paragraphes" action="act_paragraphes"/>
+	
+	<menuitem id="menu_param_nom" parent="main_menu_financ" sequence="9" name="PARAMETRAGE NOMENCLATURE BUDGETAIRE"/>
+	<menuitem id="menu_ptitre" parent="menu_param_nom" sequence="3" name="Paramètrage des Titres" action="act_ptitre"/>
+	<menuitem id="menu_psection" parent="menu_param_nom" sequence="4" name="Paramètrage des Sections" action="act_psection"/>
+	<menuitem id="menu_pchapitre" parent="menu_param_nom" sequence="5" name="Paramètrage des Chapitres" action="act_pchapitre"/>
+	<menuitem id="menu_particle" parent="menu_param_nom" sequence="6" name="Paramètrage des Articles" action="act_pparam"/>
+	<menuitem id="menu_pparagraphe" parent="menu_param_nom" sequence="7" name="Paramètrage des Paragraphes" action="act_pparagraphe"/>
+	
+	
+	<!--Definition du menu Donnéees Cadres-->
+	<menuitem id="main_menu_cadre" name ="INTERVENANTS" sequence="10" parent="main_menu_financ"/>
+	<menuitem id="main_menu_catcontribuable" name ="Saisie/Maj Catégorie Contribuable/Client" sequence="2" action="act_catcontribuable" parent="main_menu_cadre"/>
+	<menuitem id="main_menu_catbeneficiaire" name ="Saisie/Maj Catégorie Bénéficiaire/Fournisseur" sequence="3" action="act_catbeneficiaire" parent="main_menu_cadre"/>
+	<!--<menuitem id="main_menu_typecontribuable" name ="Saisie/Maj Type Contribuable/Client" sequence="4" action="act_typecontribuable" parent="main_menu_cadre"
+	groups="Referentiel_Global.group_admin"/>
+	<menuitem id="main_menu_typebeneficiaire" name ="Saisie/Maj Type Bénéficiaire/Fournisseur" sequence="5" action="act_typebeneficiaire" parent="main_menu_cadre"
+	groups="Referentiel_Global.group_admin_epe"/>
+	<menuitem id="main_menu_contribuable" name ="Saisie/Maj Contribuables/Clients" sequence="6" action="act_contribuable" parent="main_menu_cadre"
+	groups="Referentiel_Global.group_admin_epe"/>
+	<menuitem id="main_menu_beneficiaire" name ="Saisie/Màj Bénéficiaires/Fournisseurs" sequence="7" action="act_list_beneficiaire" parent="main_menu_cadre"
+	groups="Referentiel_Global.group_admin_epe"/>
+	<menuitem id="main_menu_bailleur" name ="Saisie/Màj Bailleurs/Partenaires" sequence="8" action="act_bailleur" parent="main_menu_cadre"
+	groups="Referentiel_Global.group_admin_epe"/>-->
+
+	
+	
+	<!-- DONNEES GRH
+	<menuitem id="main_menu_grh" name ="Données GRH" sequence="6" action="" parent="main_menu" groups="Referentiel_Global.group_admin"/>
+		<menuitem id="menu_classif" parent="main_menu_grh" name="CLASSIFICATION" sequence = "61"/>
+			<menuitem id="menu_classe" parent="menu_classif" name="Saisie/Màj-Classe" action="act_list_classe" sequence = "612"/> 
+				<menuitem id="menu_cat" parent="menu_classif" name="Saisie/Màj-Categorie" action="act_list_categorie" sequence = "613"/> 
+				<menuitem id="menu_echelle" parent="menu_classif" name="Saisie/Màj-Echelle" action="act_list_echelle" sequence = "614"/> 
+				<menuitem id="menu_echellon" parent="menu_classif" name="Saisie/Màj-Echellon" action="act_list_echellon" sequence = "615"/> 
+				<menuitem id="menu_zone" parent="menu_classif" name="Saisie/Màj-Zone" action="act_list_zone" sequence = "616"/> 
+				<menuitem id="menu_diplome" parent="menu_classif" name="Saisie/Màj-Diplôme" action="act_list_diplome" sequence = "617"/>
+				
+		<menuitem id="menu_typage" parent="main_menu_grh" name="TYPAGE" sequence = "63"/>
+			<menuitem id="menu_catemp" parent="menu_typage" name="Saisie/Maj-Catégorie Employé" action="act_list_catempl" sequence = "631"/> 
+			<menuitem id="menu_type_piece" parent="menu_typage" name="Saisie/Maj-Type Pièce" action="act_list_type_piece" sequence = "634"/>
+		
+		<menuitem id="menu_grille" parent="main_menu_grh" name="GRILLE" sequence = "80"/> 
+			<menuitem id="menu_grille_salaire_fct" parent="menu_grille" name="Saisie/Maj-Grille salariale Fonctionnaire" action="act_list_grille_salariale" sequence = "81"/> 
+	 
+		<menuitem id="menu_indemn" parent="main_menu_grh" name="INDEMNITES" sequence = "90"/>
+			<menuitem id="menu_type_indemnite" parent="menu_indemn" name="Saisie/Maj-Type Indemnité" action="act_list_type_indemnite" sequence = "91"/> -->
+	
+	
+	
+</odoo>
+
+
